@@ -3,6 +3,8 @@ title: Creating an XML Compare File with WinMerge
 description: How to create an XML Compare file using WinMerge after a patch
 ---
 
+<sup><sub>A tutorial by Amethyst Lilac</sup></sub>
+
 An XML Compare file is used to compare the XML tuning from the game before and after a patch so that you can see what changed. You can use that information to find what you need to update in your mods or why things are different now than before the patch. If you want to know when something changed, this is also a good way to check, if you have extracted tuning from before the change.
 
 To do an XML Compare, you need to have extracted tuning from the game *before* and *after* the patch in question, into *separate* folders. I usually have folders for each patch, sometimes multiple folders if there were hot fixes for the major patch, and one for the current patch. So as of right now, I have `1.116 Patch XMLs 1`, `1.116 Patch XMLs 2`, `1.116 Patch XMLs 3`, `1.116 Patch XMLs 4`, and `Current Patch XMLs`, along with folders for older patches. You could export to files with the full patch number, or any other naming scheme that you'll remember, but you do need to keep different patches in different folders. Unless you're very low on space, it's not recommended to delete old extracted files, because you never know when you'll need them.
@@ -127,3 +129,7 @@ If you exported the report, you can search using it using Ctrl + F. So if you wa
 If you're looking at the report in WinMerge, you can collapse and open folders. If you have Show Identical Items toggled on, you can see if all of a type of file has changed or just some. You can right-click the files to open them. But you can't search.
 
 Both methods have benefits. You can use both or one or the other.
+
+---
+
+Originally written by [Amethyst Lilac](https://www.patreon.com/c/amethystlilac/) for this site.
