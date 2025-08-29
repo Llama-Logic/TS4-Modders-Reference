@@ -1,5 +1,5 @@
 ---
-title: How to contribute to this site
+title: How to contribute to this site using GitHub
 description: A tutorial on how to contribute to this site
 tableOfContents: true
 ---
@@ -166,7 +166,12 @@ We also use the `#` to create bookmarks within a website. This is so you can go 
 
 ## How do I write a tutorial directly on the site?
 
-Fun fact, I'm writing this as I'm learning to do this myself.
+Go to the `src/content/docs/tutorials` folder and make a new file with the `.md` extension. Name it after the subject of your tutorial. Some examples are:
+
+```markdown
+modifying-sim-appearances.md
+xml-extractor.md
+```
 
 ## I want to add my biography to the contributors page, or I want to change it
 
@@ -218,7 +223,7 @@ Is it working? Great! Keep reading for instructions on how to make the pull requ
 
 You had an error? Please contact me on discord!
 
-## How to I make a pull request? 
+## How do I make a pull request? 
 
 TODO: Finish writing this after I finished actually writing the tutorial in the website
 

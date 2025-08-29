@@ -54,7 +54,7 @@ If you use plain text, we'll do our best with what we're given.
 
 ### If you're submitting through GitHub
 
-Please use markdown and the guidelines above. If you have any doubts, please refer to the rest of the website for more examples, or contact amethyst lilac.
+Please use markdown and the guidelines above. If you have any doubts, please refer to the rest of the website for more examples, or contact amethyst lilac or Jimantha through Discord.
 
 <!--Note: If other modders want to be reached out for solving these questions, let me know!-->
 
