@@ -16,9 +16,12 @@ Feel free to skim through the site, go back and forth through the index, or reac
 
 ## I have tutorials and resources that can help modders, or I want to directly write tutorials for the website. How can I help? 
 
-You can either send them to amethystliliac or Jimantha* (that's me! Hello!), or, if you want to do it yourself, you need to make your own fork of [The Modders Reference](https://github.com/Llama-Logic/TS4-Modders-Reference) GitHub repository, and then a pull request.
+You can either send them to amethystliliac or Jimantha (that's me! Hello!), or, if you want to do it yourself, you need to make your own fork of [The Modders Reference](https://github.com/Llama-Logic/TS4-Modders-Reference) GitHub repository, and then a pull request.
 
-* I can't personally approve changes or update the website, but I can do pull requests, and I don't mind helping out. This means that, even if I make the pull request, it doesn't mean it'll be accepted or merged instantly, or at all. I'm a volunteer, just like you!
+<details>
+<summary>About sending things to Jimantha...</summary>
+I can't personally approve changes or update the website, but I can do pull requests, and I don't mind helping out. This means that, even if I make the pull request, it doesn't mean it'll be accepted or merged instantly, or at all. I'm a volunteer, just like you!
+</details>
 
 ## What's GitHub and why do you use it? 
 
@@ -32,13 +35,12 @@ You can also make secret/private repos that are only accessible to the people yo
 
 Frankk wrote an excellent explanation:
 
-" a very high level intro: 
-
-Repositories (or “repos”) are just projects managed with git, meaning their history is tracked as snapshots in time called “commits”. Every repo has at least one “branch”, by default called “main”, but you can create more branches to have various version of your project coexist. All a branch is is a named pointer to a commit, and it can change which commit it points to - for example, say you’re working on a new feature for a game, you may have a branch named after that feature, and each time you finish a bite-sized piece of that feature, you make a new commit to save your progress, the branch will update to point to the latest commit. Making a pull request (or a “PR”) is asking a code owner to add your commits to a particular branch’s history.
-
-forks are when you clone someone else’s repo and make your own version of it
-
-branches are timelines in the same universe while forks are a different universe all together."
+> a very high level intro: 
+> 
+> Repositories (or “repos”) are just projects managed with git, meaning their history is tracked as snapshots in time called “commits”. Every repo has at least one “branch”, by default called “main”, but you can create more branches to have various version of your project coexist. All a branch is is a named pointer to a commit, and it can change which commit it points to - for example, say you’re working on a new feature for a game, you may have a branch named after that feature, and each time you finish a bite-sized piece of that feature, you make a new commit to save your progress, the branch will update to point to the latest commit. Making a pull request (or a “PR”) is asking a code owner to add your commits to a particular branch’s history.
+>
+> forks are when you clone someone else’s repo and make your own version of it
+> branches are timelines in the same universe while forks are a different universe all together.
 
 ### I still don't get it...
 
@@ -81,7 +83,7 @@ Go back to GitHub Desktop and go to File -> Clone Repository. Then, click on the
 From here, click on the button "current branch" and make a new branch. Name it whatever you want. I named my current branch "tutorial".
 
 You'll see something similar to this.
-![[Pasted image 20250814202934.png]]
+![An image asking if you want to publish a new branch](~/assets/new-branch-fork-example-jimantha.png)
 
 Click "Fork this repository"
 ![[Pasted image 20250814203035.png]]
