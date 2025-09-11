@@ -276,6 +276,12 @@ After that, you'll see the option to `Preview Pull Request` in the main menu.
 
 ![An image showing the Github Desktop interface. Highlighted in a blue box, there's text that says "Preview the Pull request from your current branch. The current branch(tutorial) is already published on GitHub. Preview the changes this pull request will have before proposing your changes. Branch menu or CTRL + Alt + P](~/assets/preview-pull-request-jimantha.png)
 
+When you press the `Preview Pull Request` button, you'll be taken to the preview of your pull request. On the drop down menu, select "upstream/main" and then `Create pull request`.
+
+You'll be taken to Github's website, where you'll be able to add a title and a description of all the changes you've made. Once that's done, click on the green `Create pull request` button.
+
+Congratulations! You just made the pull request!
+
 ## What's next? 
 
 You wait! GitHub should give you a notification and an email once your pull request gets merged. Or if it has comments requesting changes. 
