@@ -262,6 +262,16 @@ You can also extend yourself with the description. This is public too!
 
 Once you've done that, click on the button that says `Commit X files to branch-name`. My branch name is "tutorial", and at the time of the screenshot, I made 6 changes, so my button says `Commit 6 files to tutorial`.
 
+Once you've clicked that button, and the committing is done, you'll see this below.
+
+![An image that says "Commited just now. Finishing "github-and-writing-tutorial.md"". To the right, there's a button that says "Undo".](~/assets/just-committed-jimantha.png)
+
+To the upper part of GitHub desktop, there'll be a button that says "Push origin". 
+
+![An image with a button that says "Push origin" and an arrow pointing upwards.](~/assets/push-origin-jimantha.png)
+
+Press it.
+
 ## What's next? 
 
 You wait! GitHub should give you a notification and an email once your pull request gets merged. Or if it has comments requesting changes. 
