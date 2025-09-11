@@ -282,6 +282,8 @@ You'll be taken to Github's website, where you'll be able to add a title and a d
 
 Congratulations! You just made the pull request!
 
+Fun fact: You can see my own pull request, along the history of changes, [here!](https://github.com/Llama-Logic/TS4-Modders-Reference/pull/25)
+
 ## What's next? 
 
 You wait! GitHub should give you a notification and an email once your pull request gets merged. Or if it has comments requesting changes. 
