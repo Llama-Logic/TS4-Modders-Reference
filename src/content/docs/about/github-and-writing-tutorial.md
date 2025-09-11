@@ -86,7 +86,7 @@ You'll see something similar to this.
 ![An image asking if you want to publish a new branch](~/assets/new-branch-fork-example-jimantha.png)
 
 Click "Fork this repository"
-![[Pasted image 20250814203035.png]]
+![An image of a menu. The title is "How are you planning to use this fork?". Then it says "This repository is a fork. How do you plan to use it?". It presents two options, "To contribute to the parent project" and "For my own purposes". The highlighted option is "To contribute to the parent project".](~/assets/new-branch-fork-example-2-jimantha.png)
 
 When it asks you what do you want to do with this fork, put "To contribute to the parent project" and then click "continue".
 
@@ -98,9 +98,9 @@ Now that we have our own fork, we can click on the "Open in Visual Studio Code" 
 
 The big advantage about Astro is that it uses markdown, and markdown is very friendly since you don't need to know how to program to write your tutorials. If you use discord or Obsidian, you're already familiar with markdown. If you're still unsure of how it works, check the documentation here.
 
-Take a look at the files in the repo. There's many folders. There are two files that interest us, both inside "src/content/docs/tutorials" :  "index.md and "links-offsite-tutorials.md".
+Take a look at the files in the repo. There's many folders. There are two files that interest us, both inside `src/content/docs/tutorials` :  `index.md` and `links-offsite-tutorials.md`.
 
-Let's tackle "links-offsite-tutorials.md" first.
+Let's tackle `links-offsite-tutorials.md` first.
 
 ### links-offsite-tutorials.md
 
@@ -112,7 +112,7 @@ Once you identified where your tutorial should be, use markdown to put it in lik
 > Description goes here
 ```
 
-In the end, it should look something like this:
+In the end, your link should look similar to the example below:
 
 ```
 ### [Sims 4 Debugging Tips](https://imtheproblemitsjim.neocities.org/Sims%20content/Sims%204%20Modding/ModdingDebuggingTips), by Jimantha
@@ -122,9 +122,9 @@ In the end, it should look something like this:
 
 And in the website, that will look like this:
 
-![[Pasted image 20250814204853.png]]
+![An image that shows the title "Sims 4 Debugging Tips by Jimantha". The text "Sims 4 Debugging Tips is highlighted in blue". Below the title, it has a description, which says "It givbes a glimpse on how to debug, which tools to use, and some general advice on problem-solving and when to ask for help](~/assets/website-example-jimantha.png)
 
-If you want to know why it works like this, please check out [[GitHub tutorial brainstorm#Why does THAT work? (Markdown explanation)]].
+If you want to know why it works like this, please check out [Why does THAT work?(Markdown explanation)](#why-does-that-work-markdown-explanation).
 
 ### index.md
 
@@ -138,18 +138,21 @@ Note: Once again, tutorials aren't automatically sorted alphabetically. So, plea
 
 This time, the syntax you need to use is a little different, but nothing complicated!
 
-	`* [Tutorial Name](../tutorials/links-offsite-tutorials/#tutorial-name-in-links-offsite-tutorials-by-YourName), by YourName`
+	* [Tutorial Name](../tutorials/links-offsite-tutorials/#tutorial-name-in-links-offsite-tutorials-by-YourName), by YourName
 
 I know it looks very confusing at first glance! But if you write the `#` in Visual Studio Code, you'll notice it'll try to autocomplete. Like this!
 
-![[Pasted image 20250814210247.png]]
+![An image showing the autocomplete function from Visual Studio Code.](~/assets/vsc-autocomplete-example-jimantha.png) <!-- I had no idea what alternative text to put here.-->
 
 You can simply click your own tutorial from that list, and add "by YourName" at the end.
 
 It should look something similar to this:
-`* [Social Bunny Tweaks](../tutorials/links-offsite-tutorials/#social-bunny-tweaks-by-jimantha), by Jimantha`
+```
+* [Social Bunny Tweaks](../tutorials/links-offsite-tutorials/#social-bunny-tweaks-by-jimantha), by Jimantha
+```
 
-If you want to know why it works like this, please check out [[GitHub tutorial brainstorm#Explaining links-offsite-tutorials.md]].
+If you want to know why it works like this, please keep reading.
+
 ## Why does THAT work? (Markdown explanation)
 
 ### Explaining links-offsite-tutorials.md
@@ -174,12 +177,29 @@ Go to the `src/content/docs/tutorials` folder and make a new file with the `.md`
 modifying-sim-appearances.md
 xml-extractor.md
 ```
+Remember to read [The Contribution Guidelines!](../about/contribution-guidelines)
+
+### How do I put images to my tutorial?
+
+You need to put the image inside the `assets` folder. Give it a descriptive name, along with your creator name at the end. Something like the example below.
+
+```
+vsc-autocomplete-example-jimantha.png
+```
+
+Then, to show it on the website, you need to do it like so:
+
+```
+![Alternative text](~assets/name-of-your-image.png)
+```
+
+This needs to follow [The Contribution Guidelines!](../about/contribution-guidelines) too.
 
 ## I want to add my biography to the contributors page, or I want to change it
 
 This is a piece of cake once you did everything else!
 
-On Visual Studio Code, go to "src/assets/content/docs/about", and open "contributors.mdx".
+On Visual Studio Code, go to `src/assets/content/docs/about`, and open `contributors.mdx`.
 
 Here, once again, the alphabetical sort is NOT automated, so put yourself in the right place!
 
@@ -197,7 +217,8 @@ Once you figured out where you should be, follow this syntax:
 
 I'm going to be honest, I have no idea *why* or *how* this works, but it looks nice!
 
-![[Pasted image 20250814212741.png]]
+![An image showing how your biography should look. Beside a GitHub icon, it says "YourName". In smaller letters below, it says "A cool description about yourself!. Find YourName your website". The words "your website" are an hyperlink highlighted in blue.](~/assets/yourName-image-jimantha.png)
+
 Note: You can get the icons from [this site](https://starlight.astro.build/reference/icons).
 
 ## How do I see my changes? 
@@ -219,7 +240,7 @@ Once you did that, and it finishes installing, write "npm run dev". Wait a littl
 
 Press CTRL and click on the link. On your browser, you'll see a replica of this website... but in your computer! Isn't that fun? You can keep that tab open and it'll automatically refresh each time you make a change.
 
-If everything is working, and just to be safe, please go back to Visual Studio Code, click on the console and press "CTRL + C" to exit the development site. Then run "npm run build" and "npm run preview" to do another test. Again, just to be safe!
+If everything is working, and just to be safe, please go back to Visual Studio Code, click on the console and press "CTRL + C" to exit the development version of the site. Then run "npm run build" and "npm run preview" to do another test. Again, just to be safe!
 
 Is it working? Great! Keep reading for instructions on how to make the pull request.
 
@@ -227,8 +248,19 @@ You had an error? Please contact me on discord!
 
 ## How do I make a pull request? 
 
-TODO: Finish writing this after I finished actually writing the tutorial in the website
+You can do this either with Github Desktop or Visual Studio Code's Github extension.
 
+I recommend using Github Desktop if you don't feel like messing more with VSC than you need to.
+
+Once you made all of your changes, open Github Desktop. You should see the current repository, as well as your current branch. To the left, you'll see *all of the changes* you've made.
+
+![An image showing the Github Desktop interface with the files I changed at the time of writing this section of the tuturial.](~/assets/github-desktop-jimantha.png)
+
+In "Summary(Required)" write a summary of the changes you've made. `"Finishing "github-and-writing-tutorial.md"` is a good option! Obviously, you can write whatever you want here. Just make sure is understandable for you and others. Remember this is public!
+
+You can also extend yourself with the description. This is public too!
+
+Once you've done that, click on the button that says `Commit X files to branch-name`. My branch name is "tutorial", and at the time of the screenshot, I made 6 changes, so my button says `Commit 6 files to tutorial`.
 
 ## What's next? 
 
