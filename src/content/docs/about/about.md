@@ -2,8 +2,6 @@
 title: About This Site
 description: A description of the goals and purpose of this site
 tableOfContents: false
-sidebar:
-    order: 1
 ---
 
 **The Sims 4 Modders Reference** is a website that is intended to address certain problems in the Sims 4 modding community, including the lack of a centralized source for information, a lack of a searchable public resource for information, and difficulty finding and navigating information sources that exist.
