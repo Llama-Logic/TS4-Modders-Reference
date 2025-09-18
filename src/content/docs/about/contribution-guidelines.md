@@ -30,9 +30,9 @@ All images should have alternative text, also known as "alt text".
 
 ## Credits
 
-If you don't submit through GitHub, you can choose to be anonymous. 
+Whether you submit through GitHub or other means, you can choose to remain anonymous on the site. We will respect your wishes.
 
-If you want to be credited, please give amethyst lilac or Jimantha a name and a link to credit you with. Otherwise, your discord username will be used, as well as any link that can be found (or none, if no link can be found).
+If you want to be credited, please provide a name and a link to credit you with. Otherwise, your username will be used, as well as any link that can be found (or none, if no link can be found).
 
 The link can be of any website you host your mods in, as long as they're PG-13.
 
