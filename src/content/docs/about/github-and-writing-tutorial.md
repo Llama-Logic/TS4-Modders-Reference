@@ -6,8 +6,6 @@ tableOfContents: true
 
 <sup><sub> A tutorial by Jimantha</sup><sub>
 
-To Do: Write the "tutorial on website" section, fix images, fix formatting
-
 ## Welcome!
 
 Hello! Welcome to The Sims 4 Modders Reference! If you're reading this, this means you want to learn to mod the game, or maybe you want to learn how to contribute to this website. Or you want to learn to use GitHub. Or you got a little lost! Whatever the case, I hope this tutorial can help solve your questions!
@@ -96,7 +94,7 @@ Now that we have our own fork, we can click on the "Open in Visual Studio Code" 
 
 ## How do I add a link to a tutorial?
 
-The big advantage about Astro is that it uses markdown, and markdown is very friendly since you don't need to know how to program to write your tutorials. If you use discord or Obsidian, you're already familiar with markdown. If you're still unsure of how it works, check the documentation here.
+The big advantage about Astro is that it uses **markdown**, and markdown is very friendly since you don't need to know how to program to write your tutorials. If you use discord or Obsidian, you're already familiar with markdown. If you're still unsure of how it works, [feel free to check this guide](https://www.markdownguide.org).
 
 Take a look at the files in the repo. There's many folders. There are two files that interest us, both inside `src/content/docs/tutorials` :  `index.md` and `links-offsite-tutorials.md`.
 
@@ -156,7 +154,18 @@ If you want to know why it works like this, please keep reading.
 ## Why does THAT work? (Markdown explanation)
 
 ### Explaining links-offsite-tutorials.md
-The `###` tells markdown "This is a header, so I want the text to be THIS big".
+The `###` tells markdown "This is a header, so I want the text to be THIS big". It also creates an anchor point in the page, so you can link to just that place!
+<details>
+<summary>Further explanations on anchors</summary>
+
+Let's say you want to link to the "Formatting" section of the [Contribution Guidelines](~/about/contribution-guidelines). You can do it like this!
+```markdown
+
+[Contribution Guidelines](../about/contribution-guidelines#formatting)
+```
+Give it a shot! [Contribution Guidelines](../about/contribution-guidelines#formatting)
+</details>
+
 The `[Tutorial Name](link)` is syntax for "I want this text to redirect the user to this link when clicked".
 The `>` is simply to put the description of what your tutorial does.
 
@@ -190,7 +199,7 @@ vsc-autocomplete-example-jimantha.png
 Then, to show it on the website, you need to do it like so:
 
 ```
-![Alternative text](~assets/name-of-your-image.png)
+![Alternative text](~/assets/name-of-your-image.png)
 ```
 
 This needs to follow [The Contribution Guidelines!](../about/contribution-guidelines) too.
@@ -220,6 +229,10 @@ I'm going to be honest, I have no idea *why* or *how* this works, but it looks n
 ![An image showing how your biography should look. Beside a GitHub icon, it says "YourName". In smaller letters below, it says "A cool description about yourself!. Find YourName your website". The words "your website" are an hyperlink highlighted in blue.](~/assets/yourName-image-jimantha.png)
 
 Note: You can get the icons from [this site](https://starlight.astro.build/reference/icons).
+
+You can also add your own image in your bio. You just need to follow the syntax in [How do I put images to my tutorial?](#how-do-i-put-images-to-my-tutorial).
+
+Feel free to use both an icon and your own image, if you wish!
 
 ## How do I see my changes? 
 
