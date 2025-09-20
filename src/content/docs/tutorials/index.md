@@ -8,6 +8,7 @@ tableOfContents: false
 
 <summary>Beginner Tutorials</summary>
 
+* [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
@@ -36,6 +37,7 @@ tableOfContents: false
 
 <summary>Tuning Mods</summary>
 
+* [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
     * [How I made the "Sell to publication increases Entrepreneur Skill" mod](../tutorials/links-offsite-tutorials/#how-i-made-the-sell-to-publication-increases-entrepreneur-skill-mod-by-jimantha), by Jimantha
@@ -91,6 +93,7 @@ tableOfContents: false
 <summary>Text/Image Tutorials</summary>
 
 * [Comparing Files with WinMerge](../tutorials/winmerge/), by Waffle
+* [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
@@ -120,6 +123,7 @@ tableOfContents: false
 
 May be stream of consciousness or about the thought process of modding
 
+* [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
     * [Figuring Out Venue Stuff - Waffle Explains It All!](../tutorials/links-offsite-tutorials/#figuring-out-venue-stuff---waffle-explains-it-all-by-waffle), by Waffle
     * [How to Stop Adults from Complaining About Prom on the Social Bunny App](../tutorials/links-offsite-tutorials/#how-to-stop-adults-from-complaining-about-prom-on-the-social-bunny-app-by-jimantha), by Jimantha
@@ -133,6 +137,7 @@ May be stream of consciousness or about the thought process of modding
 <summary>All, Alphabetical</summary>
 
 * [Comparing Files with WinMerge](../tutorials/winmerge/), by Waffle
+* [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
