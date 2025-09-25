@@ -12,5 +12,6 @@ sidebar:
 * [Resource Type Index](../reference/resource-types/)
 * [Sims 4 Studio Menus](../reference/s4s-top-menus/)
 * [String Table File (STBL) format](../reference/stbl-format/)
+* [Collection of Random Modding Knowledge](../reference/random-modding-knowledge)
 * [Links to Off-Site References](../reference/links-offsite-reference/):
     * [TS4 World Documentation](../reference/links-offsite-reference/#ts4-world-documentation-by-kallixer-and-nerdydoll)

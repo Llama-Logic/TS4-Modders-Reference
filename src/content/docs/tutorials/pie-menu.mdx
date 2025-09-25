@@ -1,0 +1,253 @@
+---
+title: Creating a Custom Pie Menu
+description: How to create a custom pie menu
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by Amethyst Lilac</sub></sup>
+
+This tutorial will go over how to create a pie menu.
+
+You'll need:
+1. Lot 51's Tdesc Builder website https://tdesc.lot51.cc/
+2. Optional: Something to search the contents of XML files. My preferred tool for this is Doc Fetcher. Other options include FileSeek or whatever works for you.
+
+This is a very simple thing to create, even though it may seem like a lot of steps. It's intended to be a beginner level tutorial and goes over what I hope is every step.
+
+## Finding a Reference
+
+The easiest and safest way to create *anything* new is to base it on something similar that already exists. So that's what I'll be doing here. Once you know how to make things like that, it'll be easier to make things from scratch if you want.
+
+Step one is to find a pie menu to base ours from. Since I'm making this for a social interaction, we'll want a pie menu that appears when you click on another sim. Since I want to make the pie menu appear directly on the sim, not hidden inside another pie menu (I'll tell you how to do that though), I'll pick a top level pie menu. I'm picking Friendly.
+
+To search for tuning in Tdesc Builder, you need to click on Import EA Tuning, somewhere around the middle of the screen. A new window will pop up that you can search in.
+
+![The main page of Tdesc Builder, with the Import EA Tuning in a red box near the center.](~/assets/tdesc-main-search-amethyst.png)
+
+I'll try searching for `pie AND friendly` -- the AND in the middle is important, and it needs to be in capital letters. This is a Boolean operator, and Tdesc browser makes use of them to search for things that have both the first part and the second part instead of that exact phrase.
+
+![A search window open, with 'pie AND friendly' being searched for on the left, with various search results below and two filters for Types and Packs on the right, and on the right is a blank space that says 'Select a Document to Preview.'](~/assets/tdesc-search-pie-and-friendly-amethyst.png)
+
+None of these is what I want. There are some there that *might* work, but I'd need to check exactly what they do and how they're set up (for a pie menu, any pie menu should actually work, but I'm going through the full process here). I'm pretty sure the basic Friendly pie menu already does exactly what I want. So I need to dig a bit deeper.
+
+There are two ways to do that if you're working in Tdesc Builder, within Tdesc Builder or in another program. Both have advantages and disadvantages.
+
+### Using an External Program (Doc Fetcher)
+
+The main advantage of using Doc Fetcher for this is that it lets you search the file contents. Since EA has comments in the XML files, including the in game display name, you can search for what you see in game.
+
+Disadvantages include getting a lot of irrelevant results and having to switch between Tdesc Builder and Doc Fetcher.
+
+<Steps>
+
+1. Here in Doc Fetcher, I've already [extracted all the tuning files](../xml-extractor) and built an index so that it can search.
+
+   I have my settings so that it will use the Boolean operator AND instead of OR by default. Here you need to use * to indicate that there might be something before or after what you're searching for.
+
+   I know that the Friendly pie menu is available in the base game and doesn't require any packs, so I'll limit my search to base game.
+
+   I know that the text that we see in game is Friendly.
+
+   So knowing all of that, I'll open the list at the right of all the folders, uncheck all folders, and check BG.
+
+   Then I'll go to the search bar at the top and search for `*pie* friendly`.
+
+   This time I get some good results.
+
+   ![Doc Fetcher search results for `*pie* friendly`, with a long list of files](~/assets/doc-fetcher-search-friendly-amethyst.png)
+
+   Good, but sometimes there's a lot, so we'd need to narrow it down.
+
+2. We know we need a pie menu file. There are a few ways to find that.
+
+   The first way, for if you know ***exactly*** what kind of file you're looking for, would be to open the list of folders on the right and uncheck everything except that file type.
+
+   Another way is to click on the Path heading to sort it.
+
+   A third way, again for if you know ***exactly*** what kind of file you're looking for, would be to use more precise search terms. So if I know that the file type is `pie_menu_category` or the class is `PieMenuCategory`, I could search for that.
+
+   Since we're kind of exploring, I'll do the second one, and sort the results by path (folder) and then scroll to where the pie menus are.
+
+   That narrows it down to two files.
+   
+   ![Two files selected, sim_BeFriendly and sim_Friendly.](~/assets/doc-fetcher-sorted-friendly-amethyst.png)
+
+3. Again, there are different ways to figure out the right one. You could search both, one at a time, using the exact file name with no asterisks, and see which other files reference it. You could use Lumpinou's EA Tuning Reference Browser on [Mod Hound](https://app.ts4modhound.com/).
+
+   Since we have it open, I'll search the files in Doc Fetcher and.
+
+   Sim_BeFriendly has a few interactions that reference it, which means that those interactions are in the pie menu.
+
+   Sim_Friendly, on the other hand, has a lot more results, and they include other pie menus referencing it. It is the parent of those sub categories, meaning that those pie menus are inside the Sim_Friendly pie menu. That's what we want -- a top level pie menu.
+
+   ![Search results for Sim_Friendly, listing the files that reference that file. Sim_SubCat_Friendly_Activities is selected, and in the file below, Sim_Friendly is highlighted and its reference as the parent Sim_SubCat_Friendly_Activities of is underlined in red](~/assets/doc-fetcher-friendly-references-amethyst.png)
+
+   We've found what we need, so we'll head back to Tdesc Builder. 
+
+4. Here we search for sim_Friendly.
+
+   The first result is the one we're looking for. Sometimes you might have to scroll.
+
+   You'll also get results for any other files that have that exact phrase, such as `lootActions_Social_Media_OtherSim_Friendly` but we know what we need.
+
+   ![Search results in Tdesc Builder for sim_Friendly, with that file selected and others containing that phrase listed below.](~/assets/tdesc-sim-friendly-search-amethyst.png)
+
+   Click Import & Edit at the bottom. If you wanted to search for multiple things and edit them, or if you wanted to edit the same thing twice, you could use Import and the file would open behind the search window and you could keep searching, but we only need one copy of one file.
+
+   ![Tdesc Builder with the sim_Friendly file open](~/assets/tdesc-sim_friendly_open-amethyst.png)
+
+   An alternative to searching would be to open the folder that the XML file is in and drag it into the Tdesc Builder window, or to use the Open Tuning or Package button on the front page of Tdesc Builder.
+   
+   You can skip to [Building the Pie Menu](../pie-menu#building-the-pie-menu) if you'd like.
+
+</Steps>
+
+### Using Tdesc Builder
+
+An advantage of staying in Tdesc Builder is that you can see what you're searching right away and import it directly.
+
+The big disadvantage is that you can only search the file names. You can't search the file contents, and since sometimes the file name is not intuitive, that can be a problem. Usually it's fine though.
+
+<Steps>
+
+1. Since we know we're looking for a pie menu, we can narrow our search to that file type. To do that, we click on the dropdown menu at the top and either scroll to PIE_MENU_CATEGORY or, if we're not quite sure what we want or just don't want to scroll, search for pie, and then select the category. You can select multiple categories.
+
+   ![Tdesc's import file window being searched as described above](~/assets/tdesc-search-pie-amethyst.png)
+
+2. Next we search for friendly. At the top of the list are two likely candidates, sim_BeFriendly and sim_Friendly. If we click on each one, we can see that the BeFriendly one has a display name of Be Friendly (I think that one's probably for a Sim encouraging another sim to be friendly) and the other has a display name of Friendly. We want Friendly.
+
+   ![Search results showing sim_BeFriendly and sim_Friendly](~/assets/tdesc-search-freindlys-amethyst.png)
+
+   Click Import & Edit at the bottom. If you wanted to search for multiple things and edit them, or if you wanted to edit the same thing twice, you could use Import and the file would open behind the search window and you could keep searching, but we only need one copy of one file.
+
+   ![Tdesc Builder with the sim_Friendly file open](~/assets/tdesc-sim_friendly_open-amethyst.png)
+
+</Steps>
+
+## Building the Pie Menu
+
+<Steps>
+
+1. The first thing to do is rename the file. Otherwise we'll be overriding the existing Friendly pie menu, and we're making a new one.
+
+   You do this at the top. Click where it says `sim_Friendly` and type in the name you want for your file. It is ***essential*** that your file name is unique.
+   * Start with your name. This makes the name unique to you.
+   * Convention is to follow that with a colon (:), because in Sims 4 Studio, that's what tells the program to re-hash the file name. It's not essential in Tdesc Builder, but it's a good habit.
+   * Then add what you're calling the file. I like to start with the file type, then the mod name, then the name for this specific file within the mod.
+
+   As you type, the number below (the instance) will change. This is good. We want that. It's what tells the game your file is different than any other file.
+
+   If you're starting with a file from a pack, as you type, Tdesc Builder will, by default, make the file base game. You can turn that off in the site's settings, or you can change it back to your chosen pack.
+   
+   If it's set at being from a pack, people without that pack won't be able to use it.
+   * In some cases that's good, since some things aren't meant to be base game compatible, but make sure that nothing that requires it is marked base game compatible. If your pie menu comes from a pack, but your interaction doesn't, the player will get an error if they try to use your mod without that pack.
+   * Some things are fine to use despite parts of them requiring a pack, such as an interaction that requires a base game pie menu but itself requires a pack.
+   
+   Tdesc Builder will try to alert you to things that are **Pack Safe** or **Not Pack Safe** with symbols and hover text where you link them in the tuning.
+
+   ![My file name, amethyst:PieMenuCat_MoodBasedInteractions_Main, and its instance and the words Base Game below](~/assets/pie-menu-file-name-amethyst.png)
+
+2. I'll go through the options one by one. If you hover over most things, they'll have hover text that tells you what they are. This is called the Tuning Description, and comes from files provided by EA. If you click on them, a mini window will open in the bottom right with more information about it and a place to enter comments.
+
+   ![The options for a pie menu](~/assets/tdesc-pie-menu-options-amethyst.png)
+
+   First is Always Show Disabled Interactions.
+
+   You enable this is you want to show every possible interaction in the pie menu, even ones that aren't available at the current moment.
+
+   By default, it's off. Most of the time, you want to leave it off. If you don't want to make any changes from the default behaviour, normally you're safe to leave it alone.
+
+   So this one stays unchecked.
+
+3. Next is Collapsible.
+
+   This one tells the game that if there's only one thing in the pie menu, only show the thing and hide the pie menu.
+
+   By default, in a basic pie menu from the game, this is on. Whether you want this on or not is up to you. The Friendly category has it off, and I want it off in my mod too, so it stays off.
+
+   If you uncheck this circle, the game's default behaviour will take over, and it will be turned off.
+
+4. Next is Display Name.
+
+   Most of the time, this is something you'll want to change. You can use text from the game, or you can create custom strings.
+
+   To select a string from the game (or something in a file you imported), click the link symbol next to the box in this line. If you hover over the link, it says Select Reference. Pick whichever one you want for your pie menu's display name in game. Keep in mind that if you use a string from a pack that your mod doesn't require, it won't appear in game for players without that pack. I advise sticking to base game or packs that are a hard requirement for your mod, or making custom strings.
+
+   ![Searching game strings for 'friend'](~/assets/tdesc-string-ref-serach-amethyst.png)
+
+   Since I'm using custom strings, I'll enter their key (string of letters and numbers that represent the string, hashed from the string) in the box, and then I'll click on the line, so that it's outlined in yellow, and enter the string's text as the comment. This does nothing for the mod, but makes it *so much* easier for you when you need to see what you did next year sometime.
+
+   ![The options for a pie menu, with Display Name highlighted in yellow on the left, and with the comment Mood Based Interactions in a red box on the right.](~/assets/tdesc-enter-string-key-and-comment-amethyst.png)
+
+5. Next is Display Priority. This is how high your pie menu will appear in the main pie menu in game. What you put here is up to you. Lower numbers mean lower priority. If you always want it to be as far into the pie menu as possible, you can set it to 0.
+
+6. Next is Icon. This is the symbol that will show at the beginning of the pie menu bubble in game.
+
+   It's optional. If you uncheck it, there won't be an icon.
+
+   You can use one from the game, which you can select by clicking the reference button, or one you include in your package file.
+
+   If the icon you choose if from a pack the player doesn't own, isn't included in your package file, or has the wrong dimensions or is otherwise invalid, it will show up as a llama in game.
+
+   ![A pie menu icon showing at the top next to the pie menu name and next to a key/string of letters and numbers at the bottom.](~/assets/tdesc-icon-chosen-amethyst.png)
+
+7. Next is Mood Overrides.
+
+   Use this to give your pie menu a custom name and tooltip if a Sim is in a certain mood.
+    
+   Maybe you want a different pie menu name if they're sad, or a different tooltip if they're flirty.
+
+   If you want to use this, select the mood, and then enter the key and comments for your override. Tdesc Builder will automatically check the circle so that it's included.
+
+8. Next is Parent. This is where you'd pick a pie menu category that your pie menu would be inside.
+
+   Since we're making a top level pie menu, I won't be using this, but you would click the reference link to find the pie menu you want yours inside, either from the game or from a file you previously imported, or you'd put its instance number in the box. This is the decimal version of the instance number, the 's' number at the top of the file. If it has letters, it's the wrong one.
+
+   Note that this is NOT pack safe. The player must have the parent pie menu installed, whether it's from a pack or from a mod. If you wanted to add a pie menu inside the base game Friendly menu, though, that would be fine.
+
+9. Lastly, there's Special Category. By default, this is No Category, and most of the time, that's the way it should be left.
+
+   The only options available are NO_CATEGORY or MORE_CATEGORY.
+
+   In game, MORE_CATEGORY is used only for a pie menu that says More Choices.
+
+   For a basic pie menu, you can leave this alone and unchecked. It doesn't need to be included since the default is fine.
+
+</Steps>
+
+## SimData
+
+SimData is a kind of file that is required by some types of tuning. Pie menus are one.
+
+It speaks to different parts of the game than tuning does. Not having it, or having it formed incorrectly, will cause unexplained behaviour in game, such as tuning that should work just *not*.
+
+On all of the options for a pie menu, you can see a symbol like two little keys, and if you hover over them, it says Required in SimData. That means that everything in a pie menu needs to be reflected in the SimData.
+
+Luckily, Tdesc Builder will create your SimData for you. There may still be times that it's not correct or you'll need to edit it manually, but far less than if Tdesc Builder wasn't used.
+
+## Exporting Your Pie Menu
+
+To use your pie menu in a mod, it needs to be in a package file. That means you have to export it.
+
+There are two ways to do this with Tdesc Builder: you can download the tuning and SimData, or you can download a package file.
+
+The simplest way to download tuning and SimData from one file is to use the buttons at the top of the tuning display.
+
+The button on the left, a piece of paper with an arrow will download the tuning. The button on the right, a piece of paper with 01, will download the SimData.
+
+![The top of the tuning, with the file name visible and buttons below it, with two buttoms in a red box.](~/assets/tdesc-tuning-download-buttons-amethyst.png)
+
+Alternatively, you can export through the File menu at the top. Here you can download the tuning and SimData for the individual tab you have open, you can download a package file containing as many tabs as you choose and with the file name you choose, or you can download a .zip file of the tuning and SimData from as many tabs as you choose with the file name you choose.
+
+I *strongly recommend* exporting when you finish something. If you have too many files open, or a particularly large file, or if there's simply too much happening on your computer, Tdesc Builder can crash and you'll lose your work.
+
+## Using Your Pie Menu
+
+A pie menu does nothing on its own. It doesn't add any interactions. It gives interactions a place to be added.
+
+To use your pie menu, you need to reference it in another file.
+
+---
+
+Originally written by [Amethyst Lilac](https://www.patreon.com/c/amethystlilac) for this site.
