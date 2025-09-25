@@ -43,6 +43,10 @@ export default defineConfig({
 						{ label: 'How to Contribute', slug: 'about/how-to-contribute'}
 					]
 				},
+				{
+					label: 'Patch changes',
+					autogenerate: { directory: 'patch-changes'}
+				},
 			],
 		}),
 	],
