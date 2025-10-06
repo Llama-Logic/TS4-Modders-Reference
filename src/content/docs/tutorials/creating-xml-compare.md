@@ -1,6 +1,8 @@
 ---
 title: Creating an XML Compare File with WinMerge
 description: How to create an XML Compare file using WinMerge after a patch
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A tutorial by Amethyst Lilac</sup></sub>

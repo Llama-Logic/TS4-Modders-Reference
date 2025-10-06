@@ -2,6 +2,8 @@
 title: Index
 description: Index of Tutorials on the Modders Reference Website
 tableOfContents: false
+sidebar:
+  order: 1
 ---
 
 <details>

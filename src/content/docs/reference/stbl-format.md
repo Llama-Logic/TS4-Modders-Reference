@@ -1,6 +1,8 @@
 ---
 title: String Table File (STBL) format
 description: A Format of a .package/DBPF file
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A reference written by Fogity</sub></sup>

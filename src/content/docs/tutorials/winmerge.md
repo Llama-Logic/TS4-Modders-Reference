@@ -1,6 +1,8 @@
 ---
 title: Comparing Files with WinMerge
 description: A tutorial on how to compare files using WinMerge
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A tutorial by Waffle</sup></sub>

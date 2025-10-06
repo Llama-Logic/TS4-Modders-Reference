@@ -1,6 +1,8 @@
 ---
 title: Modifying Sim Appearances
 description: A tutorial for modifying sim appearances in a mod you're creating for The Sims 4
+sidebar:
+  order: 50
 ---
 
 <sup><sub>Originally posted on [Nexus](https://www.nexusmods.com/thesims4/articles/151) by [FellowFur](https://www.nexusmods.com/thesims4/users/42871565).</br>

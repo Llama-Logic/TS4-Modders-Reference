@@ -1,6 +1,8 @@
 ---
 title: Resource Type Index
 description: List of all resources types.
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A reference list compiled by Kallixer</sub></sup>

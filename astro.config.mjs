@@ -28,13 +28,16 @@ export default defineConfig({
 				{
 					label: 'Tutorials',
 					autogenerate: { directory: 'tutorials' },
+					collapsed: true
 				},
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
+					collapsed: true
 				},
 				{
 					label: 'About',
+					collapsed: true,
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'About This Site', slug: 'about/about' },
@@ -42,10 +45,6 @@ export default defineConfig({
 						{ label: 'Contribution Guidelines', slug: 'about/contribution-guidelines'},
 						{ label: 'How to Contribute', slug: 'about/how-to-contribute'}
 					]
-				},
-				{
-					label: 'Patch changes',
-					autogenerate: { directory: 'patch-changes'}
 				},
 			],
 		}),
