@@ -3,12 +3,13 @@ title: Index
 description: Index of References on the Modders Reference Website
 tableOfContents: false
 sidebar:
-    order: 1
+  order: 1
 ---
 
 * [Database Package File (DBPF) format](../reference/dbpf-format/)
 * [File Types](../reference/file-types/)
 * [Internal Compression of DBPF Files](../reference/internal-compression-dbpf/)
+* [Pack Data](../reference/pack_data/)
 * [Resource Type Index](../reference/resource-types/)
 * [Sims 4 Studio Menus](../reference/s4s-top-menus/)
 * [String Table File (STBL) format](../reference/stbl-format/)

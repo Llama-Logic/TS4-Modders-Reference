@@ -1,6 +1,8 @@
 ---
 title: Scumbumbo's XML File Finder
 description: A tutorial for using Scumbumbo XML File Finder
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A tutorial by Waffle</sup></sub>

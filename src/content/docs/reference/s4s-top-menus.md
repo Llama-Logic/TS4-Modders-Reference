@@ -4,6 +4,8 @@ description: A guide to using the menus at the top of Sims 4 Studio
 tableOfContents:
   minHeadingLevel: 1
   maxHeadingLevel: 4
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A reference by Amethyst Lilac</sup></sub>

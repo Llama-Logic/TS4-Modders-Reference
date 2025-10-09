@@ -1,6 +1,8 @@
 ---
 title: Links to Off-Site References
 description: A collection of links to references hosted on other sites
+sidebar:
+  order: 100
 ---
 
 ### [TS4 World Documentation](https://github.com/Kallixer/Ts4-World-Documentation/wiki), by Kallixer and NerdyDoll

@@ -1,6 +1,8 @@
 ---
 title: Scumbumbo's XML Extractor
 description: A tutorial for using Scumbumbo's XML Extractor
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A tutorial by Waffle</sup></sub>

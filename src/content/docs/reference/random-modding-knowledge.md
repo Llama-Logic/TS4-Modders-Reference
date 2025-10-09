@@ -1,6 +1,8 @@
 ---
 title: Collection of Random Modding Knowledge
 description: A collection of bits of random modding knowledge too small to become their own page
+sidebar:
+  order: 99
 ---
 
 Things you just need to *know* somehow, despite it not being told to you.

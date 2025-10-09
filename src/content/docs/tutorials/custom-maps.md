@@ -1,6 +1,8 @@
 ---
 title: Custom Maps
 description: A tutorial for creating custom maps for The Sims 4
+sidebar:
+  order: 50
 ---
 
 # How to Create World Map Overrides

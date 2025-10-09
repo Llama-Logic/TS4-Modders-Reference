@@ -1,6 +1,8 @@
 ---
 title: Internal Compression of DBPF Files
 description: Internal Compression of Database Package (DBPF/.package) Files
+sidebar:
+  order: 50
 ---
 
 <sup><sub>A reference written by Fogity</sub></sup>
