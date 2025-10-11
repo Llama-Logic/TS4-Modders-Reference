@@ -27,6 +27,7 @@ sidebar:
 
 * [Comparing Files with WinMerge](../tutorials/winmerge/), by Waffle
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
+* [Modding on Linux (a Guide for Newbies)](../tutorials/modding-on-linux), by OneMoreKayaker
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
 * [Scumbumbo's XML File Finder](../tutorials/xml-file-finder/), by Waffle
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
@@ -99,6 +100,7 @@ sidebar:
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
+* [Modding on Linux (a Guide for Newbies)](../tutorials/modding-on-linux), by OneMoreKayaker
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
 * [Scumbumbo's XML File Finder](../tutorials/xml-file-finder/), by Waffle
@@ -143,6 +145,7 @@ May be stream of consciousness or about the thought process of modding
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
+* [Modding on Linux (a Guide for Newbies)](../tutorials/modding-on-linux), by OneMoreKayaker
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
 * [Scumbumbo's XML File Finder](../tutorials/xml-file-finder/), by Waffle
