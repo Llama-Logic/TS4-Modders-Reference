@@ -52,7 +52,7 @@ A step-by-step breakdown of the above Terminal instructions:
 sudo dpkg --add-architecture i386
 ```
 
-This is instructing your computer to add support for 32 bit architecture, if you don't already have it. Because WINE needs 32 bit architecture for some of the programs it supports, you want to do this or else havoc ensues. This command works for Debian-based systems specifically - Debian is basis for Ubuntu, which is the basis for Mint, and they use the same stuff for this process.
+This is instructing your computer to add support for 32 bit architecture, if you don't already have it. Because WINE needs 32 bit architecture for some of the programs it supports, you want to do this or else havoc ensues. This command works for Debian-based systems specifically - Debian is the basis for Ubuntu, which is the basis for Mint, and they use the same stuff for this process.
 
 ```
 sudo mkdir -pm755 /etc/apt/keyrings
