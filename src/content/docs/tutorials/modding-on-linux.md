@@ -39,8 +39,53 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt update
 sudo apt install --install-recommends winehq-stable
 ```
+<details>
+<summary>What is this doing, exactly?</summary>
 
-This will install the most up-to-date version of WINE Stable, directly from WineHQ. Note that this is for *Mint* and *Ubuntu*, if you have a different distro you will want to use a different source that is built specifically for your distro. Do not use this one!
+Most of the time, when you want to install a program in Linux, you can use a typical "sudo apt install whatever" command from the Terminal, or find your program in Software Manager, or grab a .deb file or an AppImage from an official website if its not in the repo from your distro (the repositories the Linux Mint team - or whichever distro you use - maintains are the ones you get from "sudo apt install whatever" or the Software Manager).
+
+Some companies and sources might also give you instructions to install directly from their own repo, or repository, using the Terminal. The advantage of doing this is that you generally get faster updates than waiting for the version from your distro. The disadvantage is that sometimes you run into compatibility issues and bugs, so you should approach this on a case-by-case basis. For Linux Mint it is good to get WINE directly from WineHQ.
+
+A step-by-step breakdown of the above Terminal instructions:
+
+```
+sudo dpkg --add-architecture i386
+```
+
+This is instructing your computer to add support for 32 bit architecture, if you don't already have it. Because WINE needs 32 bit architecture for some of the programs it supports, you want to do this or else havoc ensues. This command works for Debian-based systems specifically - Debian is basis for Ubuntu, which is the basis for Mint, and they use the same stuff for this process.
+
+```
+sudo mkdir -pm755 /etc/apt/keyrings
+```
+
+Linux uses something called a "keyring" to keep track of sensitive data and will provide access to this data to the programs that need it - on a restricted basis. This command is telling your computer to make the keyring directory if it doesn't already exist and the "pm755" command is giving your Terminal the ability to temporarily read, write, and execute in here.
+
+```
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+```
+
+This command is getting the secret key from WineHQ that proves its identity and is adding it to your keyring, so your computer will know WineHQ is the right source for WINE updates.
+
+```
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+```
+
+This command is the one that actually adds WineHQ to your software sources list and gives your computer the location of the WINE repository. Note that this command directs your computer to the respository intended for *Ubuntu,* which also works for Mint.
+
+```
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+```
+
+These two lines (and they are *two* lines, please paste them in separately) will - for lack of a better term - update your Update Manager and then actually install WINE. You should do "sudo apt update" before installing things generally, it's a good idea and helps you avoid weird bugs and dependencies issues.
+
+The version of WINE we're installing is the WineHQ-Stable one, which is stable and generally the least bugged. There's also a WineHQ-Staging version, which is the the most recent testing version, and a third version that has some corporate use that we don't care about.
+
+Staging might let you avoid certain bugs, but it will also introduce other new and exciting ones, so we're just going to use Stable instead.
+
+</details>
+
+This will install the most up-to-date version of WINE, directly from WineHQ. Note that this is compatible with *Mint* and *Ubuntu*, if you have a different distro you will want to use a different set of instructions that are intended specifically for your distro. Do not use this one!
 
 If, during the WINE installation, you are asked to install Mono, please install Mono.
 
@@ -120,7 +165,7 @@ I've added symbolic links to my Desktop and Documents folder, targeting my Downl
 
 Setting up Blender is a more complicated process, and one that I haven't entirely cracked yet.
 
-You need to download the Windows Portable version from the Blender site (the one that comes in a zip file) and *not* the Linux version (Studio doesn't know what to do with it) or the installer (that is a .msi and won't actually install.) I put mine in my "Applications" folder alongside XML Extractor and Finder and my other random applications.
+You need to download the Windows Portable (WinPort) version from the Blender site (the one that comes in a zip file) and *not* the Linux version (Studio doesn't know what to do with it) or the installer (that is a .msi and won't actually install.) I put mine in my "Applications" folder alongside XML Extractor and Finder and my other random applications.
 
 Once the WinPort version of Blender has been put in an appropriate home, you'll need to manually install several files into the 4.5 folder. The files and instructions can be found here on the official Sims 4 Studio site: https://sims4studio.com/thread/38676/blender-install-add-ons-solved
 
