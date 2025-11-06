@@ -10,6 +10,7 @@ sidebar:
 * [File Types](../reference/file-types/)
 * [Internal Compression of DBPF Files](../reference/internal-compression-dbpf/)
 * [Pack Data](../reference/pack_data/)
+* [Patch Changes Index](../reference/patch-changes-index/)
 * [Resource Type Index](../reference/resource-types/)
 * [Sims 4 Studio Menus](../reference/s4s-top-menus/)
 * [String Table File (STBL) format](../reference/stbl-format/)
