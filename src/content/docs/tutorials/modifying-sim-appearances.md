@@ -8,6 +8,8 @@ sidebar:
 <sup><sub>Originally posted on [Nexus](https://www.nexusmods.com/thesims4/articles/151) by [FellowFur](https://www.nexusmods.com/thesims4/users/42871565).</br>
 May need minor updates</sup></sub>
 
+<!--Header and footer credits are formatted differently by request. Please don't revert-->
+
 This is a guide for how to modify sim's appearances in a mod you're creating.
 
 This guide assumes a basic knowledge of Sims 4 Modding, including Tuning, Python, and Sims 4 Studio. It focuses primarily on editing appearances through script, since it's much more powerful, but tuning options are also mentioned when available. It's split up into individual sections based on what category of appearance changes you want to make. They are collapsed to be less overwhelming. There's also "Notes" section at the end which has some relevant info, in particular the "Sims with Occult Forms" section is **extremely important** when editing appearances, even if you don't intent to edit any occult forms themselves.
@@ -470,13 +472,61 @@ sim_info.resend_facial_attributes()
 
 </details>
 
-### Sliders:
+### Modifiers/Sliders:
 
 <details>
 
 <summary>Show</summary>
 
-These are all the mouse movement you make on sims to adjust their appearances. I don't actually know how these work, so for now just reference [this thread](https://modthesims.info/showthread.php?t=642941).
+These are all the mouse movement you make on sims to adjust their appearances. They are split into two categories, face modifiers and body modifiers.
+
+First you need to know the modifier's ID, which uniquely identifies it. If you open up a Sim Modifier in S4S and go the the warehouse tab, you can find its ID in the 'Instance' column on the left, as well as under 'Key' -> 'Instance' in the Data tab on the right. Note that this number will be in Hexadecimal, you'll need to convert it to Decimal before using it. This can be done in S4S using 'Tools' -> 'Hash Generator', or in Python with `int({new_modifier_id}, 16)`. In these examples, the  variable `new_modifier_id` will refer to the id of the modifier, while `new_modifier_value` will refer to the new value to set the modifier to, which will be a float between 0.0 and 1.0. 
+
+It is important to note that modifiers are often paired, where one modifier will be a 'positive' change on a part, and the other modifier will be a 'negative' change. Functionally, this means that instead of having one modifier with a value of -1 to 1, there will be one negative modifier for -1 to 0 and one positive modifier for 0 to 1 (although each modifier's actual values are still 0.0 to 1.0). Therefore, if you are editing a modifier from a 'negative' value to a 'positive' one (or vise versa), you'll need to remove the modifier entirely and add the paired modifier with its ID and value.
+
+You'll need to parse the modifiers the sim currently has:
+
+```python
+appearance_attributes = PersistenceBlobs_pb2.BlobSimFacialCustomizationData()
+appearance_attributes.ParseFromString(sim_info.facial_attributes)
+current_face_modifiers = appearance_attributes.face_modifiers
+current_body_modifiers = appearance_attributes.body_modifiers
+```
+
+That gives you a list of modifiers. Each of the modifiers has a key and an amount. Body modifiers and face modifiers have the exact same structure so the following steps apply the same for either.
+
+To add a new slider:
+
+```python
+new_modifier = current_modifiers.add()
+new_modifier.key = new_modifier_id
+new_modifier.amount = new_modifier_value
+```
+
+To edit or remove modifiers, you'll need to determine which of the existing modifiers has a key that matches `new_modifier_id` (just iterate through the list and compare). Once you have the index of the modifier in the the list the modifier list, you can edit its amount or delete it:
+
+```python
+current_modifiers[target_index].amount= new_modifier_value
+
+del current_modifiers[target_index]
+```
+
+However, you'll also need to edit the sim's aged modifiers. No one quite knows what these are used for, but if you don't edit them, your changes might get reverted when a sim or save gets reloaded. Luckily they are edited identically to the actual modifiers. I recommend creating a method for editing modifiers, such as `edit_modifiers`, and just pass both sets of modifiers into them. You can also use the same method for editing face and body modifiers. For example:
+
+```python
+edit_modifiers(new_face_modifiers, appearance_attributes.face_modifiers)
+edit_modifiers(new_face_modifiers, appearance_attributes.aged_face_modifiers)
+
+edit_modifiers(new_body_modifiers, appearance_attributes.body_modifiers)
+edit_modifiers(new_body_modifiers, appearance_attributes.aged_body_modifiers)
+```
+
+Finally, save your changes to the appearance attributes and tell the game to instantly update the sim's in-game appearance with their new appearance data.
+
+```python
+sim_info.facial_attributes = appearance_attributes.SerializeToString()
+sim_info.resend_facial_attributes()
+```
 
 </details>
 
@@ -486,12 +536,23 @@ These are all the mouse movement you make on sims to adjust their appearances. I
 
 <summary>Show</summary>
 
-These are just the Fit and Fat sliders next to your sims, they can be easily edited directly.
+These are just the Fit and Fat sliders next to your sims, they can be easily edited relatively easily. In this example, the variables new_fitness_level and `new_fatness_level` will refer to the new fitness or fatness levels, which are floats between -100.0 and 100.0.
 
 ```python
-sim_info.fit = new_fitness_level
-sim_info.fat = new_fatness_level
+from objects.components.consumable_component import ConsumableComponent
+
+sim_info.commodity_tracker.set_value(ConsumableComponent.FIT_COMMODITY, new_fitness_level)
+sim_info.commodity_tracker.set_value(ConsumableComponent.FAT_COMMODITY, new_fatness_level)
 ```
+
+Then, tell the game to instantly update the sim's in-game appearance with their new fitness data. This is technically a private method, but the public one (update_fitness_state) will throw an exception if the sim isn't actually currently loaded in so this option is safer.
+
+```python
+sim_info._set_fit_fat()
+```
+
+If you just want to get the existing values, you can just get them from `sim_info.fit` and `sim_info.fat`.
+
 
 </details>
 
@@ -858,12 +919,15 @@ vanilla_sculpts = {
 
 ## Credits
 
-- Thanks to MizoreYukii for help setting parts via tuning 
-- Thanks to Lynire's Unify Hair, Makeup, and Tattoos mod for help setting non-genetic parts in script, and managing outfits
-- Thanks to Deaderpool for help with setting genetic parts
-- Thanks to TurboDriver for help modifying sculpts
-- Thanks to Scumbumbo's 'Change Sim Name or Gender' mod for help determining Gender Attributes
+- Thanks to [MizoreYukii](https://www.patreon.com/MizoreYukii) for help setting parts via tuning 
+- Thanks to [Lynire's Unify Hair, Makeup, and Tattoos](https://modthesims.info/d/572899/unify-hair-makeup-and-or-tattoos.html) mod for help setting non-genetic parts in script, and managing outfits
+- Thanks to [Deaderpool](https://deaderpool-mccc.com/) for help with setting genetic parts
+- Thanks to [TurboDriver](https://turbodriver.io/) for help modifying sculpts
+- Thanks to [Scumbumbo's Change Sim Name or Gender](https://scumbumbomods.com/change-sim-name-and-gender) mod for help determining Gender Attributes
+- Thanks to [thepancake1](https://www.patreon.com/pancakemizore) and [MycroftJr](https://modthesims.info/m/10338110) for helping me figure out Aged Modifiers
 
 ---
+
+<!--Header and footer credits are formatted differently by request. Please don't revert-->
 
 Originally posted on [Nexus](https://www.nexusmods.com/thesims4/articles/151) by [FellowFur](https://www.nexusmods.com/thesims4/users/42871565).
