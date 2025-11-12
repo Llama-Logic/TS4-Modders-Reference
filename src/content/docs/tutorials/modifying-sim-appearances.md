@@ -5,8 +5,7 @@ sidebar:
   order: 50
 ---
 
-<sup><sub>Originally posted on [Nexus](https://www.nexusmods.com/thesims4/articles/151) by [FellowFur](https://www.nexusmods.com/thesims4/users/42871565).</br>
-May need minor updates</sup></sub>
+<sup><sub>Originally posted on [Nexus](https://www.nexusmods.com/thesims4/articles/151) by [FellowFur](https://www.nexusmods.com/thesims4/users/42871565).</sup></sub>
 
 <!--Header and footer credits are formatted differently by request. Please don't revert-->
 
