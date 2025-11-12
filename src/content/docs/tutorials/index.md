@@ -42,6 +42,7 @@ sidebar:
 
 * [Creating a Custom Pie Menu](../tutorials/pie-menu), by Amethyst Lilac
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
+* [Restricting a File to a Pack Using Group ID](../tutorials/pack-restrict-by-group-id), by Amethyst Lilac
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
     * [How I made the "Sell to publication increases Entrepreneur Skill" mod](../tutorials/links-offsite-tutorials/#how-i-made-the-sell-to-publication-increases-entrepreneur-skill-mod-by-jimantha), by Jimantha
     * [How to Stop Adults from Complaining About Prom on the Social Bunny App](../tutorials/links-offsite-tutorials/#how-to-stop-adults-from-complaining-about-prom-on-the-social-bunny-app-by-jimantha), by Jimantha
@@ -102,6 +103,7 @@ sidebar:
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
 * [Modding on Linux (a Guide for Newbies)](../tutorials/modding-on-linux), by OneMoreKayaker
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
+* [Restricting a File to a Pack Using Group ID](../tutorials/pack-restrict-by-group-id), by Amethyst Lilac
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
 * [Scumbumbo's XML File Finder](../tutorials/xml-file-finder/), by Waffle
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
@@ -147,6 +149,7 @@ May be stream of consciousness or about the thought process of modding
 * [Fixing CC For New Occults](../tutorials/new-occult-fix), by Amethyst Lilac
 * [Modding on Linux (a Guide for Newbies)](../tutorials/modding-on-linux), by OneMoreKayaker
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
+* [Restricting a File to a Pack Using Group ID](../tutorials/pack-restrict-by-group-id), by Amethyst Lilac
 * [Scumbumbo's XML Extractor](../tutorials/xml-extractor/), by Waffle
 * [Scumbumbo's XML File Finder](../tutorials/xml-file-finder/), by Waffle
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
