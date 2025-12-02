@@ -1,0 +1,693 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="/favicon.png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>XML Comparison Version 1.120.117</title>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+			font-size: .875rem;
+			background-color: rgb(23, 24, 28);
+			color: rgb(168, 168, 168);
+			overflow-y: scroll;
+		}
+		h2 {
+			font-size: 2.1875rem;
+			text-align: center;
+			color: white;
+		}
+		header {
+			display: flex;
+			justify-content: center;
+			margin: auto;
+			margin-bottom: 20px;
+			width: 75%;
+		}
+		input {
+			padding: 8px;
+			border-radius: 15px;
+			border: 0;
+			font-size: .875rem;
+			width: 400px;
+			margin-left: 25%;
+			margin-right: 25%;
+			flex-grow: 1;
+		}
+		a {
+			background-color: rgb(23, 24, 28);
+			border: 1px;
+			border-color: white;
+			border-style: solid;
+			border-radius: 15px;
+			width: 100px;
+			padding: 8px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+		}
+		table {
+			border-collapse: collapse;
+			border: 1px solid gray;
+			color: black;
+			margin: auto;
+			width: 75%
+		}
+		th,td {
+			padding: 5px;
+			text-align: left;
+			vertical-align: middle;
+			border: 1px solid gray;
+		}
+		th {
+			color: rgb(23, 38, 79);
+			padding: 8px 8px;
+			background: rgb(179, 199, 255);
+			position: sticky; top: 0;
+		}
+		p {
+			text-align: center;
+		}
+		.download {
+			background-color: rgb(179, 199, 255);
+			color: rgb(23, 24, 28);
+			border-color: rgb(179, 199, 255);
+		}
+		.icon0 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%234e2232' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%234e2232' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23304e22' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3Cline x1='12' y1='3' x2='12' y2='21' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon10 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEgSURBVDhPY2CgFmhgYPiPjY0OsMqBBGES6DS6OlxyGJLYFOGTw5DEpgifHIYkNkX45FAEsSqAApxyt9rb/4Pw2bi4/9daWsBsdDU4wctZs/4/crb5/yrA6//Xo0f+33R3/H/K0ug/SBwkj24rCv9khjtY80cvl/+/z5z5//fvX7Ahl6xM/h8y1sEwBERjGPDSzQFswJ9LlyAGnD0LN+B8bQyGK1AM2OusDXYBCCO7AOQFkAG7vEzwG3Ao2en/TWtTMH7g4wY24LKTDVjzbm3V/2dKQvAbsLSoCKz4jInu/7vV5WDng2iQ5rWKUv83VJmi+hndABBY4On5f7uyMjjAQC4A0culpP7XWligKsQHQC5Zbmv7f76sLJgG8dHVYAMAy53y+q6o1NoAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon11 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEqSURBVDhPY2AYNODMTOP/p2cY/T85zeD/8Sl6/xkYGFQYGBh40NVhBSDN6OBQvybIEBuChiA0z0TD///v7VL5v6td8f/2FjncLgI5+//3if//f+nDxEhgT6cydheB/Pz/dev//88a/h+dpIMVH+hVhxlQAXUJAoAC7P+DKrBCXAAkx8DAsAWrAWCNV/L+Q8ICPRxmImtuweoFUGj/P5MGjkKwJlB4QDFBzSAA8h/IAIgXZkLCAwlDDUlgYGCQQNcLBqCoAhmwv0cNYsCDKgwMNQS7C0DxDDJgR6s8xIAreRh4QS47GOMyRGVrk8z/zQ1S/zfUiv9fVy36f3WF0P8Vpfz/lxbx/F9cwAXTvAKXV0AmgkwGRdEEPBgkj9UFIAASBMWvAR6MNSkDAARxWN8RVHnBAAAAAElFTkSuQmCC'); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon13 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD/SURBVDhPY2AYBTjB0Uk6//d2qfzf1a74f3uL3P+tTTL/NzdI/d9QK/6fgYFBhYGBgQddDwoAGYANrKsWBRmQAzUENwAZAMMHetX/7+lU/r+jVf7/lkZpsEtAmJAhKlhd8awBTC0u4IK5BCcA+dEGYshMOP5xNB5ML8hlBxkwAV0TOkAY8n0iGL/fEwY2YF42K1EGQALzdSscP9vsCzZgTiYzYQPAmh9UoeA7K53BBsxKZ8RvwNIinv8g/P9KHgq+vMAKbMDMNAb8BjAwMEiADACFNijAQH4GORtkM1TzFgYGhgp0TcgAHIBQRSCb0DFIHCSPF4AMASUWAywYnJwB0dTkHazHTDAAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon26 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cpath d='M22,6H4A2,2,0,0,0,2,8v4' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpath d='M2,18H20a2,2,0,0,0,2-2V12' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpolyline points='18 10 22 6 18 2' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3Cpolyline points='6 14 2 18 6 22' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.indent0 { padding-left: 20px; background-position: 2px center; }
+	</style>
+</head>
+<body>
+<h2>XML Comparison Version 1.120.117</h2>
+<p>Made with WinMerge</p>
+<header>
+	<a href="../reference/patches/1120117">Back</a>
+	<input type="text" id="search" placeholder="Search" autocomplete="off">
+	<a href="/pages/1120117_report.html" download="1120117_report.html" class="download">Download</a>
+</header>
+<table id="table">
+<tr>
+<th>Comparison Result</th><th>Folder</th><th>Filename</th><th>Differences</th></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_01.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_02.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_03.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_04.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_05.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Collection_06.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_LittleLibrary.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_MagnetBoard.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Mailbox.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_ModularSlide.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_PalmTree.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Phone.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_Slide.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_BB_TicketMachine.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_Boots.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_EarMuffs.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_HawaiianShirt.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_Hoodie.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_HoodiePet.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_CAS_Mittens.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\account_reward</td><td>accountReward_EV007_Recipe_KrabbyPatty.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>loot_Buff_Ghost_Angry_Reset.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>loot_Buff_Ghost_Embarrassment_Reset.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>loot_Buff_Ghost_Playful_Reset.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_dialogDramaNode_LittleLibrary_LibraryMonitor.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_addBookstoInventory.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_applyHonorCodeBuffs.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_DonatedBookCount_add.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_honorCode_Add.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_honorCode_Subtract.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LittleLibrary_OpenClose_Notif.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LiveDrag_LittleLibrary_DonatedBookCount_Add.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LiveDrag_LittleLibrary_HonorCode_Add.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_EV007_LiveDrag_LittleLibrary_HonorCode_Sub.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_1.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_2.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_3.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_4.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_5.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>loot_LiveEvents_EV007_Collection_6.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\animation</td><td>littleLibrary_get.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\animation</td><td>littleLibrary_put.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\aspiration</td><td>simStat_TimeScared.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_KrabbyPatty_ImReady.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_LittleLibrary_CalledOut.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_LittleLibrary_GivingBack.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_LittleLibrary_TerribleCommunityMember.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_LittleLibrary_UnexpectedFind.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_EV007_LittleLibrary_YouGetABook.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>buff_LittleLibrary_AutonomyWalkby.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\cas_menu_item</td><td>CASMenuItem_Makeup.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\club_interaction_group</td><td>clubInteractionGroup_ObjectBased_Eat.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\drama_node</td><td>EV007_LittleLibrary_LibraryMonitor_DonatedManyBooks.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\drama_node</td><td>EV007_LittleLibrary_LibraryMonitor_HonorCode.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>EV007_LittleLibrary_BrowseDonations_Picker.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>EV007_LittleLibrary_DonateBook_Picker.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>EV007_LittleLibrary_DonateRandomBook_Picker.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>EV007_LittleLibrary_TakeRandomBook.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>grill_StartCrafting.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>immediate_EV007_LittleLibrary_Close.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>immediate_EV007_LittleLibrary_Open.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>littleLibrary_EV007_Walkby_Give.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>littleLibrary_EV007_Walkby_Take.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>mixer_social_Targeted_Friendly_DiscussFears.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>object_Repair_Computer.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>object_Repair_Computer_LowTable.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>Put_Away_Item_EV007_Littlelibrary.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>put_Item_In_My_Inventory_LittleLibrary.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>putDown_CarriedSim_Emergency.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>putDown_CarriedSim_Emergency_Immobile.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>rescueNeglectedDependent_Child.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>rescueNeglectedDependent_Infant.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>rescueNeglectedDependent_Toddler.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>sandActivities_PlayInSand_Auto.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>urnstone_MournAggregate.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Bartending_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Bartending_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Bartending_CulinaryCareer_BarGuide.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Bartending_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Bartending_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Charisma_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Charisma_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Charisma_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Charisma_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Comedy_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Comedy_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Comedy_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Comedy_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_ComedySkill_WriteComedy.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Cooking_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Cooking_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Cooking_CulinaryCareer_Cookbook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Cooking_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Cooking_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fishing_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fishing_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fishing_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fitness_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fitness_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fitness_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fitness_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_FlirtyLow.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Fun_Emotional_Energized.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Fun_Emotional_Flirty.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Fun_Emotional_Focused.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Fun_Emotional_Inspired.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Emotional_Inspired_Set2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Fun_Emotional_Playful.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_fun_NoRetailDisplay.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set10.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set11.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set14.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set4_Werewolf.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set5.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set6.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set7.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set8.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Set9.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Babies.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Dinos.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Farm.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Pets.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Playgrounds.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Princesses.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Seasons.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Shapes.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Sleepytime.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Superheroes.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Toys.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Fun_Toddler_Picture_Book_Vehicles.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Gardening_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Gardening_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Gardening_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Gardening_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GENMoon_Toddler_PictureBook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GENWerewolf_1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GENWerewolf_2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GENWerewolf_3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Gourmet_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GourmetCooking_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GourmetCooking_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_GourmetCooking_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Guitar_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Guitar_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Guitar_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Guitar_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Hacking_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Handiness_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Handiness_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Handiness_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Handiness_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Homework_Child.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Homework_Teen.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Logic_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Logic_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Logic_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Logic_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Mischief_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Mischief_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Mischief_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Mischief_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Notebook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Of_Life.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Painting_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Painting_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Painting_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Painting_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Piano_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Piano_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Piano_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Piano_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_PlayfulDirty.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Programming_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Programming_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Programming_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_RocketScience_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_RocketScience_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_RocketScience_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_RocketScience_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_RWCareerScience.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Skill_R3Event_GrimmsBook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Template_SciFi.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_VideoGaming_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_VideoGaming_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_VideoGaming_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_VideoGaming_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Violin_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Violin_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Violin_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Violin_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Biography.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Childrens.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_DollHouse.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Emotion_Confident.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Emotion_Energized.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Emotion_Flirty.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Emotion_Playful.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Emotion_Sad.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Fantasy.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Mystery.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_NonFiction.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Poems.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_PoemsThin.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_Romance.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_SciFi.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_ScreenPlay.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>Book_Write_Genres_ShortStories.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Writing_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Writing_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Writing_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>book_Writing_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_09.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_11.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_13.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_14.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_15.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_17.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookGENMotive_21.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThin_Charisma_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThin_Cooking_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThin_Fishing_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThinRWCareerAstrMag_01.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThinRWCareerIntMag_01.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>bookThinRWSpecArt_01.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object</td><td>object_EV007_LittleLibrary.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>object_Food_Ambrosia.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object</td><td>object_Food_KrabbyPatty_Single.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>object_InteractiveBush_Generic.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>object_PetBush.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object</td><td>object_toybox.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>LittleLibrary_Capacity_States.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_EV007_PublicStates_OpenClose.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_stateValue_empty.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_stateValue_full.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_stateValue_partialEmpty.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_Values_ClosePublic.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object_state</td><td>littleLibrary_Values_OpenPublic.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object_state</td><td>stereoChannel_NatureSounds.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object_state</td><td>stereoChannel_NatureSounds_Bot.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object_state</td><td>stereoChannel_NatureSounds_EarBuds.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\object_state</td><td>stereoWall_Channel_NatureSounds.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\objective</td><td>simStat_TimeScared.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\recipe</td><td>phaseSimple_Food_EV007_KrabbyPatty.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\recipe</td><td>recipe_Food_Homestyle_Grill_EV007_KrabbyPatty-Large.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\recipe</td><td>recipe_Food_Homestyle_Grill_EV007_KrabbyPatty-Single.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\recipe</td><td>recipe_Food_Homestyle_R5_EF63EVR_ForagedFood_Large.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\recipe</td><td>recipe_Food_Homestyle_R5_EF63EVR_ForagedFood_Medium.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\recipe</td><td>recipe_Food_Homestyle_R5_EF63EVR_ForagedFood_Single.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\relbit</td><td>relationshipbit_CoWorkers.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\role_state</td><td>roleState_LittleLibrary_GiveBook_Start.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\role_state</td><td>roleState_LittleLibrary_Take_Start.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\scommodity</td><td>staticCommodity_LittleLibraryWalkby.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\situation</td><td>situation_LittleLibrary_GiveWalkby.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\situation</td><td>situation_LittleLibrary_TakeWalkby.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\situation_goal</td><td>pivotalMomentsGoal_N7_addDecor.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\situation_job</td><td>walkby_jobs_LittleLibrary_Give.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\situation_job</td><td>walkby_jobs_LittleLibrary_Take.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\slot_type_set</td><td>objectSet_TicketMachineCounter.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>affordanceList_BlackList_HotTubAndSteamRoom.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>affordanceList_EatOrDrink.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>affordanceList_FoodConsume.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>affordanceList_FoodConsume_NoToddler.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\snippet</td><td>CollectionComplete_HolidayMagnetCollection.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>social_Mixers_Friendly_NonTouching_ForReference.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>testSet_MischiefSocialsAutonomous.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\statistic</td><td>commodity_Career_Child_Neglect.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\statistic</td><td>commodity_EV007_LittleLibrary_DonatedBooksTotal.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\statistic</td><td>commodity_EV007_LittleLibrary_HonorCode.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\statistic</td><td>statistic_EV007_LittleLibrary_DonatedBooksTotal.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\statistic</td><td>statistic_EV007_LittleLibrary_InventoryCapacity.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>curfew.curfew_service.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>objects.collection_manager.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>objects.collection_manager_enums.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>objects.components.inventory_enums.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>objects.components.inventory_type_tuning.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>tag.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>ui.ui_tuning.xml</td><td>9</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\zone_director</td><td>zone_director_apartment_player.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\zone_director</td><td>zone_director_penthouse_player.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\zone_director</td><td>zone_director_residential_player.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\object</td><td>book_Baking_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\object</td><td>book_Baking_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\object</td><td>book_Baking_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\situation_goal</td><td>situationGoalInteractionSim_Career_Doctor_GreetCoWorker.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\situation_goal</td><td>situationGoalInteractionSim_Career_Doctor_GreetCoworkers_2.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\situation_goal</td><td>situationGoalInteractionSim_Career_Doctor_GreetPatients_3.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP01\situation_goal</td><td>situationGoalInteractionSim_Career_Scientist_WorldEvent_Introduce_X.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP02\object</td><td>object_InteractiveBush.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP02\object</td><td>object_InteractiveBushHeartLeaf.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP03\action</td><td>loot_Career_Coworker_Meet_SocialMedia.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\career_track</td><td>careerTrack_SocialMedia_Track3_PublicRelations.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Folk_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Folk_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Folk_Song3.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Jazz_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Jazz_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Jazz_Song3.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Jazz_Written_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Jazz_Written_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Pop_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Pop_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Pop_Song3.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_Practice_Autonomous.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_TheaterDrama_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_TheaterDrama_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_TheaterDrama_Song3.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_TheaterDrama_Written_Song1.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>singingSkill_TieredMenu_Self_TheaterDrama_Written_Song2.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\zone_director</td><td>zone_director_apartment_player.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP04\buff</td><td>buff_Pets_BushPetCooldown.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\interaction</td><td>bushPet_Interactions_Explore.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP04\interaction</td><td>bushPet_Interactions_Explore_NoCooldown.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\interaction</td><td>sendPet_Explore_Picker_PetBush.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\interaction</td><td>si_GoNearObject_Leashed_SendPet_Bush.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\objective</td><td>interaction_Hunter_Cat.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\objective</td><td>Interaction_Hunter_Dog.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP04\snippet</td><td>affordanceList_Pets_BushExplore.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\interaction</td><td>computer_Scouting_DonateCraftedItemToCharity.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\object</td><td>book_Skill_FlowerArranging_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\object</td><td>book_Skill_FlowerArranging_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\object</td><td>book_Skill_FlowerArranging_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\buff</td><td>buff_DramaClub_FridayShow.xml</td><td>3</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP06\interaction</td><td>dramaClub_Self_AttendDramaClub.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\interaction</td><td>RabbitHoleInteractions_AttendDramaClub.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\interaction</td><td>simPickerInteraction_DramaClub_Attend.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\object</td><td>book_Acting_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\object</td><td>book_Skill_Acting_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\object</td><td>book_Skill_Acting_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\object</td><td>book_Skill_Acting_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\interaction</td><td>sandActivities_SandSculpture_Auto.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\interaction</td><td>sandActivities_SandSculpture_CreateObjectSelf.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\object</td><td>book_Write_Conservationist_GrantApplication.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Homework_Education_ForGrading.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Homework_SoccerTeam_Playbook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Homework_University.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_ResearchDebate_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Robotics_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_ResearchDebate_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_ResearchDebate_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_ResearchDebate_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_Robotics_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_Robotics_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_Skill_Robotics_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_ArtHistory.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Biology.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Communications.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_ComputerScience.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_CulinaryArts.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Drama.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Economics.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_FineArts.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_History.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_LanguageAndLiterature.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Physics.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Psychology.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\object</td><td>book_University_Text_Villiany.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\zone_director</td><td>zone_director_penthouse_player_UniversityHousing.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\zone_director</td><td>zone_director_residential_Player_UniversityHousing.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\object</td><td>book_Fabrication_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\object</td><td>book_Fabrication_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\object</td><td>book_Fabrication_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\object</td><td>book_Fabrication_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_RockClimbing_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skiing_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_RockClimbing_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_RockClimbing_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_RockClimbing_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Skiing_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Skiing_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Skiing_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Snowboarding_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Snowboarding_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Skill_Snowboarding_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>book_Snowboarding_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\object</td><td>object_InteractiveBush_Excursion.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP11\interaction</td><td>grill_StartCrafting_RequiredIngredients.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP11\object</td><td>book_Cooking_SimpleLiving_Cookbook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\object</td><td>object_Book_HighSchool_Active_WorkBook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_CouchSurf.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_Disaster.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_Friend.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_HouseholdLoss.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_InfantIntro.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_Kyle.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_Normal.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\sim_filter</td><td>filter_TemporaryStays_ParentalHelp.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_FrequentlyHiccups.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_FrequentlySneezes.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_Gassy.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_GoodAppetite.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_HappySpitter.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_HatesBeingHeld.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_HatesWakingUp.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_LovesBeingHeld.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_LovesWakingUp.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_MessyEater.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_ObsessedWithSound.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_OnlySleepsWhenHeld.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_PeesDuringChanges.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_PeesDuringFeeding.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_PickyEater.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_RisesWithTheSun.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_SelfSoother.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\trait</td><td>trait_Hidden_Infant_Element_Talker.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP14\interaction</td><td>mixer_social_Targeted_Friendly_DiscussFears_Horses.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\object</td><td>book_EquestrianSkill_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\object</td><td>book_EquestrianSkill_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\object</td><td>book_EquestrianSkill_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\object</td><td>book_EquestrianSkill_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\object</td><td>object_InteractiveBush_EP14.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\situation_goal</td><td>whim_FearConfrontation_Horses_GetAdvice.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\trait</td><td>trait_Fear_Horses.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP15\zone_director</td><td>zone_director_residential_MultiUnitCommunity_player.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\action</td><td>loot_Buff_Ghost_BrokenHeart_Reset.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\object</td><td>book_RomanceSkill_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\object</td><td>book_Skill_Romance_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\object</td><td>book_Skill_Romance_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\object</td><td>book_Skill_Romance_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\interaction</td><td>mentor_Career_Reaper_Practice.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_5.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Notebook_EP17_Journal_6.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Skill_Thanatology_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Skill_Thanatology_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Skill_Thanatology_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Template_ReaperCareer_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\object</td><td>book_Write_Genres_Horror.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\objective</td><td>objectives_UnfinishedBusiness_Party_CostumeParty.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\situation_job</td><td>job_Career_Reaper_HQSabotage_MischieviousGhost.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\animation</td><td>anim_EV007_TicketMachineCounter_CheckIn.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\interaction</td><td>autonomous_ObjectPicker_TicketMachine.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\interaction</td><td>autonomous_ObjectPicker_TicketMachine_Checkout.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_CheckIn_Autonomous.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_CheckIn_Entry.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_CheckIn_Hourly.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_CheckOut.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_CheckOut_Autonomous.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_SmallBusiness_Close.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_SmallBusiness_Open.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_SmallBusinessPerks_CustomerAppreciationDay_End.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\interaction</td><td>EV007_ticketMachineCounter_SmallBusinessPerks_CustomerAppreciationDay_Start.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Fun_EP18_Set1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Fun_EP18_Set2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Fun_EP18_Set3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Pottery_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Pottery_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Pottery_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Pottery_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Tattooing_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Tattooing_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Tattooing_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\object</td><td>book_Tattooing_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\object</td><td>object_EV007EVR_TicketMachineCounter.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\object_state</td><td>EV007_ticketMachineCounter_States.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\object_state</td><td>smallBusiness_EV007_TicketMachineCounter_ScreenOff.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP18\object_state</td><td>smallBusiness_EV007_TicketMachineCounter_ScreenOn.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_ApothecarySkill_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_NLS_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_NLS_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_NLS_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_NLS_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_skill_Apothecary_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_skill_Apothecary_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\object</td><td>book_skill_Apothecary_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon0 indent0">Removed</td><td>EP20\buff</td><td>buff_ChildhoodInspiration_RewardTrait_BeAGoodStudent.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Entomology_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Entomology_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Entomology_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Papercraft_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Papercraft_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Papercraft_Chronicler.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\object</td><td>book_Papercraft_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP01\object</td><td>book_fun_camping.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP01\object</td><td>book_Herbalism_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP01\object</td><td>book_Herbalism_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP01\object</td><td>book_Herbalism_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP02\object</td><td>book_Wellness_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP02\object</td><td>book_Wellness_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP02\object</td><td>book_Wellness_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>GP04\interaction</td><td>generic_consume_PlasmafruitSalad.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\object</td><td>book_VampireLore_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\object</td><td>book_VampireLore_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\object</td><td>book_VampireLore_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\object</td><td>book_VampireLore_UltimateTome.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\object</td><td>object_Food_PlasmafruitSalad.xml</td><td>5</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP05\object</td><td>book_Journal_Standard.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP05\object</td><td>book_Skill_Parenting_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP05\object</td><td>book_Skill_Parenting_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP05\object</td><td>book_Skill_Parenting_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>book_Archaeology_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>book_Skill_Archaeology_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>book_Skill_Archaeology_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>book_Skill_Archaeology_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>book_Write_Genres_TravelGuide.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP06\object</td><td>object_InteractiveBush_Jungle.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set5.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set6.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set7.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Fun_Magic_Set8.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Generic_High.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Generic_Low.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_1_Confuse.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_1_Sadness.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_2_Fight.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_2_Love.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_3_Steal.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Mischief_4_Tranform.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_0_FeelGood.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_0_Luck.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_0_MakeGlowy.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_0_Poison.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_0_SkillIncrease.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_1_Nullify.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_1_Pheromone.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_2_BFF.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_2_EmptyMind.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_3_Hate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_3_LifeExtension.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_3_RemoveCurse.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_4_Deathproof.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_4_Immortality.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Potion_4_Love.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_1_Clean.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_1_Repair.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_2_Food.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_2_Garden.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_3_Duplicate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_3_Teleport.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_4_GrowPlant.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Practical_4_Transport.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_1_Fire.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_2_Lightning.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_2_SummonGhost.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_3_Freeze.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_3_MindControl.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_4_RemoveCurse.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\object</td><td>book_Spells_MagicTome_Untamed_4_Resurrect.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP10\object</td><td>book_Write_Genres_InteriorDecorator_Design.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>custom_State_Wedding_Socials_SpousalKiss.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>picker_Custom_State_Wedding_SpousalKiss.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>picker_Custom_State_Wedding_Vows_OfficiantVows.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>picker_Custom_State_Wedding_Vows_OfficiantVowsKiss.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>picker_Custom_State_Wedding_Vows_Vows.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP11\interaction</td><td>picker_Custom_State_Wedding_Vows_VowsKiss.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\buff</td><td>buff_Temperament_Hidden_Carnivore.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PackABook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PackBBook.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PeterBarkerSeries_1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PeterBarkerSeries_2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PeterBarkerSeries_3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_PeterBarkerSeries_4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_Secret_1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_Secret_2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_Secret_3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_Secret_4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_VulfgangSeries_1.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_VulfgangSeries_2.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_VulfgangSeries_3.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>book_WerewolfLore_VulfgangSeries_4.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\object</td><td>object_InteractiveBush_GP12.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP09\object</td><td>book_FunOnly_Butler.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP15\object</td><td>book_Skill_Photography_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP15\object</td><td>book_Skill_Photography_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP17\object</td><td>book_Knitting_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP17\object</td><td>book_Knitting_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP17\object</td><td>book_Knitting_Intermediate.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP17\object</td><td>book_Knitting_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP49\object</td><td>book_GemologySkill_Manual.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP49\object</td><td>book_Skill_Gemology_Advanced.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP49\object</td><td>book_Skill_Gemology_Beginner.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP49\object</td><td>book_Skill_Gemology_Intermediate.xml</td><td>2</td></tr>
+</table>
+<script>
+var $rows = $('#table tr').not(':first');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
+</body>
+</html> 

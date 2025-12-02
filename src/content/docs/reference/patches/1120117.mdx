@@ -1,0 +1,84 @@
+---
+title: Patch 1.120.117
+description: Changes between last patch and the current patch
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import { LinkButton } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+
+**Update: December 2nd 2025** \
+\
+**Version: PC: 1.120.111.1030 / Mac: 1.120.117.1030**
+
+XML Comparison Included
+
+Pre-Patch for 3 new kits; *SpongeBob Kid's Room Kit* and *SpongeBob’s House Kit* both releasing December 4th 2025, and *Prairie Dreams Creator Kit* by Miiko, releasing December 11th 2025.
+
+This patch also brings 40+ bug fixes and the new Deck the Palms Login Event, running from December 16th 2025 until January 13th 2026.
+
+This event is the first to feature pack exclusive items, however they can be claimed before a player owns the pack.
+
+---
+<LinkButton href="/pages/1120117_report.html" icon="document" iconPlacement="start">XML Comparison</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/update-12-2-2025" variant="secondary" icon="external" iconPlacement="start">Patch Notes</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/deck-the-palms-login-event" variant="secondary" icon="external" iconPlacement="start">Event Blog Post</LinkButton>
+
+## New Kits
+
+    | **Pack** | **Group ID** | **Number**         | **Name**              |       | **Release Date** |                                                    |
+    | -------- | ------------ | ------------------ | --------------------- | ----- | ---------------- |----------------------------------------------------|
+    | SP68     | 0x6D         | 109                | SpongeBob's House     | -     | Dec 4, 2025      |                                                    |
+    | SP70     | 0x6F         | 111                | SpongeBob Kid's Rooms | -     | Dec 4, 2025      |                                                    |
+    | SP81     | 0x7A         | 122                | Prarie Dreams         | -     | Dec 11, 2025     |                                                    |
+
+## New assets
+All the new assets listed below are part of the Login Event.
+<Aside>All new assets part of the Login Event are listed under EV007.</Aside>
+
+#### Create-A-Sim
+
+    | **Name**                             |                                                                                |
+    | ------------------------------------ | ------------------------------------------------------------------------------ |
+    | yfTop_EV007Hoodie                    | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | ymTop_EV007Hoodie                    | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | yfTop_EV007ShirtHawaiian             | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | ymTop_EV007ShirtHawaiian             | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | ymShoes_EV007Boots                   | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | yuAcc_GlovesEV007WinterMittens       | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | yuHeadDeco_EV007EarMuffs             | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+    | acBody_EV007Hoodie                   | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+
+#### Build-Buy
+
+    | **Name**                                  | **String Name**                          |                                                                 |                                                                           |
+    | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------- |
+    | sculptTableMedium_EV007SPBphone           | Undersea Phone                           | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | playgroundSlideClosed3Tile_EV007EVR       | My Big Voidcritter Child Slide           | <abbr title="Login Event"><Icon name="comment" /></abbr> | <abbr title="Adventure Awaits EP"><Icon name="information" /></abbr>      |
+    | ticketMachineCounter_EV007EVR             | Serious Business Ticket Machine          | <abbr title="Login Event"><Icon name="comment" /></abbr> | <abbr title="Businesses & Hobbies EP"><Icon name="information" /></abbr>  |
+    | littleLibrary_EV007EVR                    | Littlest Neighborhood Library            | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | jungleGymSlideClimber_EV007EVR            | My Little Voidcritter Toddler Slide      | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnetDryEraseBoard_EV007EVR       | Naturescapes Magnet Board                | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set1  | Playful Dolphin Magnet                   | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | treeLot_EV007EVRpalmLights                | Festive Fronds Palm Tree                 | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set4  | Chilly Days Magnet                       | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set3  | Frosty Snowman Magnet                    | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set2  | Stellar Spaceship Magnet                 | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set5  | Cutest Kiwi Magnet                       | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectMagnet_EV007EVRdryEraseBoard_set6  | Pointiest Dino Magnet                    | <abbr title="Login Event"><Icon name="comment" /></abbr> |                                                                           |
+
+## New Recipes
+
+    | **Name**                             |                                                                                |
+    | ------------------------------------ | ------------------------------------------------------------------------------ |
+    | Krabby Patty                         | <abbr title="Login Event"><Icon name="comment" /></abbr> |
+
+## Technical Changes/Additions
+
+#### Objects
+A new inventory; **Type: LITTLELIBRARY** was added for the Littlest Neighborhood Library item.
+
+#### User Interface
+Maxis has shifted from using Adobe Flash to Adobe Animate. However this does not bring any code changes to structure, classes, language etc.
