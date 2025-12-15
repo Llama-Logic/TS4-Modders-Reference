@@ -1,0 +1,129 @@
+---
+title: Mod It Yourself Part 4 - Strings placeholders (tokens)
+description: A tutorial about tokens in strings.
+tableOfContents:
+  minHeadingLevel: 1
+  maxHeadingLevel: 4
+sidebar:
+  order: 50
+---
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Today I want to continue (and tomorrow finish) the topic for Strings in Sims 4 and it will be quite long one. Next tutorials will be shorter :) And also more interesting probably ;)
+
+Within, let's say, the normal text, you can find also some text placeholders (also called tokens) like “{0.SimFirstName}". I'll try to go through some of them today and explain to what they refer exactly. Some text placeholders are different in English package than in other languages, due to Customizable Pronouns in English package. I'll also cover this.
+
+Knowing this will allow you to effectively create your own strings for mods.
+
+## What is a text placeholder/token?
+
+It is a special marker in a sentence that gets replaced with real data when the game runs. Placeholders allow the game to insert dynamic information automatically.
+
+For example, instead of writing a different sentence for every Sims's name, the game uses {0.SimFirstName}, e.g. "Hello, {0.SimFirstName}!". Then when game runs, it is replaced with actual Sim's name, like "Hello, Bella!", "Hello, Don!" etc.
+
+In programming this concept might be called differently: tokens, string formatting, string interpolation, template strings, etc.
+
+## List of commonly used placeholders in Sims 4:
+
+<b>{0.SimFirstName}</b> - As I already explained this one inserts automatically name of a Sim that is doing an action.
+
+<b>{0.SimName}</b> - Full name (first + last) of active Sim
+
+<b>{0.SimLastName}</b> - Last name only of active Sim
+
+<b>{1.SimFirstName}</b> - When there's a second Sim who is a target of some interaction for example, this will represent this Sim first name. For example Bella start to perform the interaction towards Mortimer and they both get moodlets afterwards.
+
+For Bella's buff we'll write e.g. "{0.SimFirstName} is feeling confident today talking to {1.SimFirstName}" > "Bella is feeling confident today talking to Mortimer."
+
+And for Mortimer's buff: "{1.SimFirstName} is so happy {0.SimFirstName} talks to him." > "Mortimer is so happy Bella talks to him."
+
+---
+
+<b>{0.Number}</b> - It inserts a number passed from gameplay (follower count, levels, quantities, etc.).
+
+Example, it can be in the Objective in Aspiration: Achieve level {0.Number} fitness skill.
+
+<b>{0.Money}</b> - It inserts money amount.
+
+Example, if you earn or won money, the notification will contain this (the amount of money is indicated in the same file, this is how the game knows which number has to replace the placeholder): Your Sim earned today {0.Money} simoleons.
+
+---
+
+<b>{0.String}</b> - It inserts any text that the game passes for example the object names, or club names. For example if your Sim set up a new club, the notification might appear like this: {0.SimFirstName} just started a new club called {0.String}. I think the in game notification is different, but I want to show you how it works ;)
+
+---
+
+### GENDER SYSTEM
+
+<b>{F0.xxx}{M0.xxx}</b> - thanks to this, xxx will be replaced by word that matches the sim’s gender, F for female and M for Male. It is valid in all languages, apart from English. For example (I'll give examples in various languages, also in English, so you can see how it works):
+
+#### English
+
+{M0.he}{F0.she}
+
+{M0.his}{F0.her}
+
+{M0.actor}{F0.actress} OR (because it will also work THAT way): act{M0.or}{F0.ress} - I only put the endings in the brackets, the theme will stay the same but the ending will change accordingly to the gender.
+
+#### Spanish:
+
+{M0.guapo}{F0.guapa} e.g. {0.SimFirstName} es muy {M0.guapo}{F0.guapa}. OR {0.SimFirstName} es muy guap{M0.o}{F0.a}. Which will show for Bella: Bella es muy guapa. And for Mortimer: Mortimer es muy guapo.
+
+#### Polish:
+
+{M0.ładny}{F0.ładna} e.g..: {0.SimFirstName} jest bardzo {M0.ładny}{F0.ładna}. OR {0.SimFirstName} jest bardzo ładn{M0.y}{F0.a}. For Bella it will be: Bella jest bardzo ładna.
+
+#### French:
+
+{M0.Il}{F0.Elle} est {M0.beau}{F0.belle}. So for Bella it will be: Elle est belle. For Mortimer: Il est beau.
+
+I hope you get now how it works :)
+
+---
+
+#### English - Customizable Pronouns
+
+In English it looks often differenly because of customizable pronouns.
+
+<b>{0.SimPronounObjective}</b> e.g. I bought {0.SimPronounObjective} a house. > For Bella (she/her) -> I bought her a house.
+
+<b>{0.SimPronounPossessiveDependent}</b> e.g It is now {0.SimPronounPossessiveDependent} house.> It is now her house.
+
+<b>{0.SimPronounReflexive}</b> e.g. {0.SimFirstName} decorated it {0.SimPronounReflexive}. > Bella decorated it herself.
+
+I hope I didn't mix something up here :D I am not that familiarized with correct usage of these tokens. To be honest, I try to avoid using them, just not to make any mistake :D
+
+---
+
+### PLURAL/SINGULAR
+
+<b>{S.Noun}{P.Nouns}</b> - Here game chooses the correct form based on number identified earlier (usually by {0.Number}).
+
+Example: Craft {0.Number} {S.candle}{P.candles}. > Craft 1 candle or Craft 2 candles etc.
+
+------------------------------------------------------
+
+### OTHER
+
+There are more tokens, of course. I am also sure each language has its own tokens as well. For example, in Polish our grammar is so complicated because of various grammatical endings depending on gender, number or function in the sentence, we have more tokens and also different ones than usually used in English. I suspect the same works for German or French. But my goal is not today to cover all of this. I just want to show you how it works.
+
+## Final note and tips:
+
+1. <b>[Frank's site](https://stbl.sims4toolkit.com)</b> automatically changes the Customizable Pronouns placeholders to the ones from other languages. It is soooo helpful when writing strings for your own mod!!! But I higly recommend using Frank's site not only for creating your own strings, but also for translations. And it has a built-in Token assistant.
+
+2. <b>Lot 51 has a [String Search tool](https://tdesc.lot51.cc/tools/strings)</b> where you can find any text from the game in any language!
+
+3. Some sites says that if you encounter a token/placeholder while translating, you can't change them. It is not entirely true. While you should really not change the token itself (because if you write something not defined, it will stop working), you can simply delete it from your translation, as long as it's working in your language. Translation should always serve the people who will read and use your translation, here it's in the game. As long as the translation reflects what the original text says - it's ok. I'm not recommending it, but if you find it better in your own language to not use some tokens, and replace them with some general word, it's fine.
+
+   For example, in my Polish translations I sometimes replaced the {0.SimFirstName} with some general statement like "this Sim". I did that because Polish names also change their forms depending on their function in the sentence and sometimes the translation with name placeholder was simply not possible, or sounded very awkward.
+
+   Of course, you should always make sure if your translation is really serving well the original purpose of the text.
+
+THANK YOU!
+
+---
+
+Originally posted on ilkavelle's Patreon as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986).

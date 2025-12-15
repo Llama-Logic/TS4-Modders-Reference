@@ -1,0 +1,152 @@
+---
+title: Mod It Yourself Part 3 - Objectives (career level, skill level, timed tasks)
+description: A tutorial for changing objectives.
+sidebar:
+  order: 50
+---
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+This time I'll again present how to modify easily some objectives in the aspirations or in the careers. As you are now a bit more familiar with the process, the presentation will be quicker and more areas will be covered, but at the end of this article (and each next) I will list all tutorials published so far, so you can quickly jump to previous ones, if you forget anything.
+
+Open Sims4Studio and find Objectives tuning. For this tutorial I'll first show example on my Simternet Conqueror Aspiration.
+
+![The package file for Simternet Conqueror Aspiration open in Sims 4 Studio, sorted by Type, with the Objective Tunings outlined in red.](~/assets/MIY-simternet-conqueror-file-list-ilkavelle.PNG)
+
+## 1. Career level
+
+Click on the Objective `ilkavelle:CareerSocialMedia_10lvl`
+
+![A small section of the files in Simternet Conqueror Aspiration, with `ilkavelle:CareerSocialMedia_10lvl` highlighted.](~/assets/MIY-CareerSocialMedia_10lvl-ilkavelle.PNG)
+
+You'll see on the right (in the XML tab) how this objective is structured. There is the career_test that indicates that the Sim must reach at least 10th level of the specific_career, to complete the task.
+
+![The XML of `ilkavelle:CareerSocialMedia_10lvl`, with the user_level part of the career_test shown in red and the number 10 highlighted in yellow.](~/assets/MIY-CareerSocialMedia_10lvl-XML-ilkavelle.PNG)
+
+Here the specific career = Social media career and it is represented by the reference number 135363, but I will not explain how we know this today. There will be separate post focused only on this topic.
+
+![The XML of `ilkavelle:CareerSocialMedia_10lvl`, with the career shown in red and the number representing the specific_career highlighted in yellow.](~/assets/MIY-CareerSocialMedia_10lvl-career-ilkavelle.PNG)
+
+Let's change the career level to 8. Save, close the mod and open the game.
+
+![The XML of `ilkavelle:CareerSocialMedia_10lvl`, with the user_level's lower_bound changed to 8, which is highlighted in yellow.](~/assets/MIY-CareerSocialMedia_10lvl-career-8-ilkavelle.PNG)
+
+As you can see now this objective shows 8.
+
+![The #Simternet Conqueror aspiration shown in game, with the goal Reach the Top of Social Media Career showing 0/8, which is outlined in red.](~/assets/MIY-Simternet-Conq-ilkavelle.jpg)
+
+### Strings (text) adjustment
+
+We still however see the text saying "Reach the Top of Social Media Career". We changed the value in Objective Tuning, but we still need to change the text to appear correctly.
+
+Let's open this mod again. And open again this objective:
+
+![A small section of the files in Simternet Conqueror Aspiration, with `ilkavelle:CareerSocialMedia_10lvl` highlighted.](~/assets/MIY-CareerSocialMedia_10lvl-ilkavelle.PNG)
+
+I want to show you now how we can say which text is assigned to this objective. I marked the section with red pen and the key reference with yellow : 0xD7AC93E8. String reference always starts with "0x" and then there is the value associated with the text.
+
+![The XML of `ilkavelle:CareerSocialMedia_10lvl`, with the display_name_text highlighted.](~/assets/MIY-CareerSocialMedia_10lvl-display-name-orig-ilkavelle.PNG)
+
+Let's go now to String Table of the language you want to change (the language of your game). I was presenting this in details in this tutorial [Text (Strings)](/tutorials/miy-2-text-strings), so here it will be a quick catch-up.
+
+In the Data tab click "Edit Items" and the list with all strings will open.
+
+I found on the list the text that we want to change. And you can see the reference visible in the Objective tuning: "D7AC93E8". This is how you can recognize which text was used in the specific tuning, if you have doubts.
+
+![The string table of Simternet Conqueror Aspiration, with Reach the Top of Social Media Career selected.](~/assets/MIY-simternet-conqueror-strings-ilkavelle.PNG)
+
+Now you can modify the text and save it. When you open the game, it should show the changed text.<br /><br />
+
+Another example of the career level objective from this mod is objective 'ilkavelle:objective_JoinSocialMediaCareer'.
+
+![A small section of the files in Simternet Conqueror Aspiration, with `ilkavelle:objective_JoinSocialMediaCareer` highlighted.](~/assets/MIY-objective_JoinSocialMediaCareer-ilkavelle.PNG)
+
+The task says only about starting the specific career, so here we see that only level 1 of this career is required.
+
+![The XML of `ilkavelle:objective_JoinSocialMediaCareer`, showing that the user_level's lower_bound is 1.](~/assets/MIY-objective_JoinSocialMediaCareer-XML-ilkavelle.PNG)
+
+## 2. Skill level
+
+In the same mod, go to objective `ilkavelle:objective_Skill_MediaProduction_Level05`
+
+Media production skill is represented by reference number 192655 (stat).
+
+And below we can see the value 5 - so to complete this task Sim must reach level 5 of Media production skill.
+
+![The XML of `ilkavelle:objective_Skill_MediaProduction_Level05`, with 5 highlighted.](~/assets/MIY-objective_Skill_MediaProduction_Level05-ilkavelle.PNG)
+
+Let's change the skill level to 4. Save, close the mod and open the game. This is what you should see in the game after the modification. Again, we just changed the objective tuning, so the text still says about level 5.
+
+![The #Simternet Conqueror aspiration shown in game, with the goal Achieve Level 5 Media Production Skill showing 0/4, which is outlined in red.](~/assets/MIY-Simternet-Conq-skill-ilkavelle.jpg)
+
+## 3. Timed objectives
+
+For these objectives let's check my Music Producer Aspiration.
+
+### a) Total time passed on doing certain activity
+
+There are objectives where it says to do some activities for total amount of time, e.g. to play instrument for 75H, or other. I'll show you how these are built and how to change the time.
+
+In my my Music Producer Aspiration, find the objective called `ilkavelle:objective_Asp_MusicProducer_DJMixingHours`
+
+![A small section of the files in Music Producer Aspiration, with `ilkavelle:objective_Asp_MusicProducer_DJMixingHours` highlighted.](~/assets/MIY-objective_Asp_MusicProducer_DJMixingHours-ilkavelle.PNG)
+
+You can see that in this objective there is this "length_of_time" and it equals 4500. This are Sim minutes and equals 75 hours (4500 / 60 = 75 ;) )
+
+![The XML of `ilkavelle:objective_Asp_MusicProducer_DJMixingHours`, with 4500 highlighted in yellow.](~/assets/MIY-objective_Asp_MusicProducer_DJMixingHours-4500-ilkavelle.PNG)
+
+If you want to change it, for example to 20 hours, you need to write it in minutes, so 1200. I changed the value from 4500 to 1200 and saved the mod. After opening the game this objective looks now like this:
+
+![The Music Producer aspiration shown in game, with the goal Play DJ Tracks in Clubs for 75H showing 0/20, which is outlined in red.](~/assets/MIY-Music-Producer.jpg)
+
+Again, text requires changing as well.
+
+### b) Time passed at one time straight
+
+These are the objectives for which you need to spend on an activity a certain amount of time straight, e.g. watch TV 1h straight.
+
+To see, how these are built and how to change the time, find the objective called `ilkavelle:objective_Asp_MusicProducer_ProduceFirstSong`
+
+![A small section of the files in Music Producer Aspiration, with `ilkavelle:objective_Asp_MusicProducer_ProduceFirstSong` highlighted.](~/assets/MIY-objective_Asp_MusicProducer_ProduceFirstSong-ilkavelle.PNG)
+
+I marked with red pen the section where the time value is set, it is called "running_time" and here it's 120 minutes, so 2 H (Sim hours of course).
+
+Above this section there is the list of so called "affordances" - affordance is a word for interaction, so you have here list of interactions that will complete this task, if done 2h straight.
+
+![The XML of `ilkavelle:objective_Asp_MusicProducer_ProduceFirstSong` with the running time of 120 highlighted.](~/assets/MIY-objective_Asp_MusicProducer_ProduceFirstSong-120-ilkavelle.PNG)
+
+I changed the running_time value to 60. Now this objective will complete only after 60 Sim minutes of producing a song on the Music production station. However we'll not really see this change in the game, because this type of objective will always show 0/1:
+
+![The Music Producer aspiration shown in game, with the goal Produce a Track for 2H showing 0/1, which is outlined in red.](~/assets/MIY-Music-Producer-running-time.jpg)
+
+As you can see, we changed the value from 120 to 60. The game still shows 0/1 (as previously) and the text was left unchanged, so it still shows Produce Track for 2H. You will only see the difference when completing this task.
+
+### c) Other
+
+There might be other objectives that seem to be time based, but in the code they are not. The validation is checked differently, for example with the buff that appears in the game after some time. Good example of this would be making a 24H Charity Stream (Simternet Conqueror Aspiration). We could think that the objective is checking time here, but in the reality, it checks for a buff that appears when this 24H stream is completed successfully:
+
+![An objective selected on the left, with the XML on the right showing a test for a buff.](~/assets/MIY-objective_buff-ilkavelle.PNG)
+
+Why do I show this to you? Because sometimes you might get confused why the task mentions time, but there is no time evaluation in the code. Or why the task mentions a skill, but in the objective there is some code structure that doesn't look like the one I showed above. I tried to show here the most common types of objectives, but to be frank - there is a lot more to discover. You can check on your own different objectives in various aspirations mods, what is the task and how it is represented in the code. Observing and comparing is one of the way of learning.
+
+---
+
+## Last Notes
+
+This is all for today :) I sped up a bit, so you don't get bored. But still I don't want to show too much at once, to not make you feel overwhelmed.
+
+Unfortunately, in terms of changing the mods, you need to remember that if there is a patch and I update the mod for the patch, and you will redownload it, the changes you made will not show up in the mod that you redownload. You will need to make them again.
+
+With a time, I will show you how to keep the mod updated after the patch, how to check if it's still working. But for now you need to remember this and please do not feel discouraged when a patch destroy your work.
+
+### List of all tutorials:
+
+[Iterations in Objectives](/tutorials/miy-1-iterations-in-objectives)
+
+[Text (Strings)](/tutorials/miy-2-text-strings)
+
+---
+
+Originally posted on ilkavelle's Patreon as part of the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986).
