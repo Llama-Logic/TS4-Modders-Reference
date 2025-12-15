@@ -172,7 +172,7 @@ Once the WinPort version of Blender has been put in an appropriate home, you'll 
 
 Once Blender is set up, give Studio the filepath to the installation as you normally would.
 
-To open your .blend files when clicking on them, you will want to install the Linux native version of Blender. You can do that from the software manager, or directly from Blender if you want a newer version. It's fine to make edits in a newer version of Blender than the one you use for exporting from Studio.
+To open your .blend files when clicking on them, you will want to install the Linux native version of Blender. You can do that from the software manager, or directly from Blender if you want a newer version. It's fine to make edits in a newer version of Blender than the one you use for exporting from Studio. Note that the reverse might not be true! Also, use a version that Studio supports (currently up to v5.0).
 
 Many CC users will also use PhotoShop for a number of steps and processes. PhotoShop does not work on Linux, and generally people who want to use Linux will migrate to GIMP or Krita instead, with GIMP the most common destination.
 
