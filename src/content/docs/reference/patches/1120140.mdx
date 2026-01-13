@@ -1,0 +1,96 @@
+---
+title: Patch 1.120.140
+description: Changes between last patch and the current patch
+tableOfContents: false
+sidebar:
+  hidden: true
+---
+import { LinkButton } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+
+**Update: Jan 13, 2026** \
+\
+**Version: PC: 1.120.140.1020 / Mac: 1.120.140.1220**
+
+XML Comparison Included
+
+This patch brings a batch of bug fixes, including multiple ones for photos going black and tagging fixes to various items in CAS/BB.
+
+A collaboration with the clothing brand Coach is coming for free with this patch bringing both CAS and BB items. (See new assets listed below.)
+
+<Aside>Both this patch and the previous have the 1.120 prefix.</Aside>
+
+---
+<LinkButton href="/pages/1120140_report.html" icon="document" iconPlacement="start">XML Comparison</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/update-1-13-2026" variant="secondary" icon="external" iconPlacement="start">Patch Notes</LinkButton>
+
+## Modders Patch Notes
+As part of the patch notes for this update, Maxis introduced a new changelog section aimed at modders.
+
+    | **Fixed Issue**                      | **Changelog**                                                                  |
+    | ------------------------------------ | ------------------------------------------------------------------------------ |
+    | Updated sorting tags for 47 CAS and Build Buy assets. | Updated sorting tags for 47 CAS and Build Buy assets. |
+    | We fixed an issue where Memorial Portraits and Graduation Photos would no longer display a Sim's image and appear blank. This fix does not address Portraits and Photos that were already broken, but will work on old saves for future gameplay with these objects. | Updated texture compositing method to match DX11 performance optimization. |
+    | In our 12/2/25 Update, we fixed an issue where Child, Teen, Young Adult, Adult, and Elder Sims no longer had clothing visible under their privacy mosaic. We are now addressing this issue for the remaining age groups, fully resolving the issue. | Added OutfitCategory_Bathing tag to iuBottom_Nude and puBottom_Nude and removed the tag from iuBottom_Diaper and puBottom_Diaper |
+    | Photos captured with Phone/Camera will no longer turn black once they've been mounted on a wall and the game is relaunched. This fix is not retroactive and will not address instances where photos were already missing data, but the fix will prevent this from happening in the future (even in old saves). | Saved photo texture with camera filters upon saving the game. |
+    | Photos captured with Phone/Camera will no longer turn black once they've been put in Sim's Inventory or placed in storage chests and the game is relaunched. This fix is not retroactive and will not address instances where photos were already missing data, but the fix will prevent this from happening in the future (even in old saves). | Saved photo texture inside of storage chest upon saving the game. |
+    | Paint by Reference Paintings will no longer turn white after they've been put in a Sim's inventory and the game has been relaunched. This fix is retroactive and should be fixed in previous saves where it occurred. | Force update painting textures when the painting object is moved from inventory to the lot. |
+    | Celebrity Autographs will no longer appear blank after they've been hung on a wall and the game is relaunched. This fix is not retroactive and will not address instances where photos were already missing data, but the fix will prevent this from happening in the future (even in old saves). | Updated texture compositing method to match DX11 performance optimization. |
+    | The “Create Copy” interaction on a painting no longer will result in a blank, white painting canvas when placed on the wall. This fix is retroactive and should be fixed in previous saves where it occurred. | Updated texture compositing method to match DX11 performance optimization. |
+    | We fixed an issue where Werewolf offspring of Werewolves had black textures and no pelts upon aging to Teen. Our fix should apply a texture to any Werewolf Sim who is lacking one upon entering CAS and should address old instances of this occurring. | Generate werewolf pelt preset for a teen or older werewolf when entering CAS if they don't have one initially. |
+    | Progress towards a fix to address Eyelids not closing completely | Rebuilt base game animation assets. |
+    | We addressed the top reported issue: Server Error while Uploading to Gallery/Library. This was primarily a Console issue but could occur with PC. | Updated ActionScript code to require all thumbnails to be loaded before unlocking the Gallery Panel. |
+    | We fixed a notable instance of Sims standing around and not caring for their infants. While holding Infants, Sims were playing an idle animation that delayed responsiveness to queued interactions. This idle was removed. We hope to further address additional Infant issues in future updates. | Removing an idle mixer from playing while holding an Infant. |
+    | We addressed a rather significant issue where Away Actions at work were causing Sims to never receive Need gains while at work or school due to a change that was made during Adventure Awaits to how Away Actions at work function. | Adding new periodic motive loots while at school. This is part of a CareerTone folder refactor. |
+    | We addressed an issue where the “Fight” interaction was available on all Sims, even if they had a positive relationship. Now, it should only appear if the Sims have a negative relationship. | Fixing a test on the general fight availability test set reference. |
+    | We've addressed an issue where it was difficult to unlock the Pull to Stand Milestone. The problem is that Infants need to be near certain specific objects to pull themselves up for the first time, but this is never indicated to the player and sometimes infants aren't located near these objects. They can still unlock this Milestone as they could previously, but to address the concerns with this not being obvious in many cases, we've added a greyed out interaction and hovertip that directs the player to place the Infant in the Crib. While in the crib, the Infant can pull themselves to a stand, and (as an additional option) we've added a new interaction to Infant Sims in the crib to pull themselves up once they are ready to unlock the Milestone. This interaction is available on the Infant Sim when the Infant is the Active Sim. | Adding a fallback interaction for Pull to Stand incase it didn't happen autonomously. This interaction is available on cribs for Infants to manually Pull to Stand. Also preventing the ability to endlessly Practice Pull to Stand by adding a tooltip. |
+    | Lump of Clay now sorts as a Kids Activity and also sorts in the Creative Skills Section. It has also been updated to provide Creativity Skill gain for Children Sims. PenguinVision Children's Television Set now sorts as a Kids Activity. The Stack 'o Books object now sorts as a bookshelf, and it is also now functional as a bookshelf. | Child Creativity is now provided by playing with Lump of Clay, plus additional BB Sorting tagging is done on Lump of Clay and PenguinVision Children's Television Set. |
+    | Maids and Butlers will now once again try to mop puddles instead of vacuuming them fruitlessly for hours. We assure you they were trying their best, and we appreciate your patience with them. | Adding a test to prevent Sims from vacuuming puddles to New_VacuumCleaner_Start_Object |
+    | In a previous patch we addressed an issue where sand sculptures were auto-generating on beaches when it rained a lot. We're submitting the remaining portions of this fix to ensure it's now fully fixed in all cases. | Fixing an issue where rain caused unfinished sand castles to change into a deteriorated state, instead of simply destroying itself. Changing loot_SandActivities_SandSculpture_Rain |
+    | We addressed a rather significant issue where Away Actions at work were causing Sims to never receive Need gains while at work or school due to a change that was made during Adventure Awaits to how Away Actions at work function. | Adding new periodic motive loots while at daycare. This is part of a CareerTone folder refactor. Any instance with the name CareerTone has these changes. |
+    | (yfHair_EP20DoubleDutchBraid_LightBrown) now properly appears brown, rather than being an exact copy of the Light Blonde variant. | Hair color texture Blond was incorrectly saved over as LightBrown, fixed with the correct color. |
+    | (yfTop_EP20VNeckTee) no longer has a visible seam on the shoulder when worn by Sims downloaded from the Gallery. | Moved the yfTop_EP20VNeckTee asset's shoulder textures so there is no conflict with some fingernail accessory texture space |
+    | We fixed all reports of the camera being obstructed by trees in Gallery preview views of lots. | Hindquarter Hideaway: Scaled down the the trees that were blocking the lot camera. Dachshund Creek: Scaled down the the trees that were blocking the lot camera. Tails End lot: Deleted the 3 talls trees & the light ( sitting on top of the wall) that were blocking the lot camera. Bedlington Boathouse lot : Scaled down the the trees that were blocking the lot camera. |
+    | We fixed an issue where open street objects were being shelved and never removed when traveling to an apartment building. | Objects on the open street should no longer be "shelved" (and subsequently un-shelved) by the plex system. |
+    | Save File Integrity work. | For some users, the scratch folder will move from the Documents folder to AppData. This change will be rolled out in the months following the patch release. |
+    | The (cuBody_EP20RashGuard_LogoNavy) variant is no longer missing. | Changed applicable body type for cuBody_EP20RashGuard_LogoNavy outfit from Teen, Young Adult, Adult, Elder Sims to Child Sims like it was for the other variants. |
+    | The (EP14BangsMedium) hair (and all variants) are now also available for Child Sims. | Updated tagging for EP14BangsMedium so that it properly appears for players in CAS Catalog. |
+    | The Stack 'o Books object now sorts as a bookshelf, and it is also now functional as a bookshelf. | Updated sorting tags for "Stack 'o Books" and added tags to provide bookshelf functionality to asset. |
+    | While investigating an issue with the Toddler Makeup category, we discovered the (puMakeupFacepaint_EP19Floral) asset was hidden, and we have unlocked it for your use. | Tagged puMakeupFacepaint_EP19Floral to appear in game as visible and had thumbnails regenerated. |
+    | The (cuBody_EP20RashGuard_LogoNavy) variant is no longer missing. | Marked cuBody_EP20RashGuard_LogoNavy Asset to have thumbnails regenerated with build. |
+    | Imaginary Friends will no longer reset and disappear from the Relationship Panel after returning from another lot. | Whenever a child Sim travels back home alone, the Imaginary Friend is not destructed if it is inside child's inventory. |
+    | We fixed an issue where Small Business Employees were leaving early (only 2-3 hours after opening) if a business was 5-Star and selected customer criteria was supervised customer only. Now, all hired employees should stay on a small business lot while it is open. | Decreased the "importance level" of small business customers to be lower than employees, so that in cases where the number of sims on a lot gets too large, customers will leave first (and employees will now always stay at the business for the entire duration it is open). |
+    | Custom Venues will now save Roles and Schedules with a custom role containing a Romantic Orientation criteria. This issue was resulting in a case of Save Corruption as well that was addressed and is noted above in that section. | Fixed a typo in the python code for saving the Romantic Orientation role in custom venue schedules. |
+    | We fixed a case of Save Corruption where the player could become stuck in an endless load or be returned to Manage World after setting a custom venue's schedule to include a Romantic Orientation Role criteria. | Fixed a typo in the python code for saving the Romantic Orientation role in custom venue schedules. |
+
+
+## New assets
+<Aside>All new assets part of the Coach collab can be found under SDX40CC.</Aside>
+
+#### Create-A-Sim
+
+    | **Name**                             |                                                                                |
+    | ------------------------------------ | ------------------------------------------------------------------------------ |
+    | yfTop_SDX040CCHJacketVarsity                   | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | ymTop_SDX040CCHShirtRelaxed | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | yfTop_SDX040CCHBlousonCropped | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | ymTop_SDX040CCHJacketVarsity | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | yfTop_SDX040CCHShirtRelaxed | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | ymBottom_SDX040CCHJeansRave | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | yfBottom_SDX040CCHJeansRave | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | yfBottom_SDX040CCHSkirtPleated | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | ymShoes_SDX040CCHSneaker | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+    | ymShoes_SDX040CCHSneaker | <abbr title="Coach collab"><Icon name="comment" /></abbr> |
+
+#### Build-Buy
+
+    | **Name**                                  | **String Name**                          |                                                                 |
+    | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- |
+    | boxCostume_SDX040CCHtrunk | The Coach Trava Trunk | <abbr title="Coach Collab"><Icon name="comment" /></abbr> |
+    | sculptTableMedium_SDX040CCHbrooklyn | The Coach Brooklyn Bag | <abbr title="Coach Collab"><Icon name="comment" /></abbr> |
+    | sculptTableMedium_SDX040CCHtabby | The Coach Tabby Bag | <abbr title="Coach Collab"><Icon name="comment" /></abbr> |
+
+## Other Changes
+
+- The *Afro* textured hair tag was temporarily renamed to *Curly*, with the next patch implementing both.

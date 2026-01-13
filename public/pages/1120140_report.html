@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="/favicon.png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>XML Comparison Version 1.120.140</title>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+			font-size: .875rem;
+			background-color: rgb(23, 24, 28);
+			color: rgb(168, 168, 168);
+			overflow-y: scroll;
+		}
+		h2 {
+			font-size: 2.1875rem;
+			text-align: center;
+			color: white;
+		}
+		header {
+			display: flex;
+			justify-content: center;
+			margin: auto;
+			margin-bottom: 20px;
+			width: 75%;
+		}
+		input {
+			padding: 8px;
+			border-radius: 15px;
+			border: 0;
+			font-size: .875rem;
+			width: 400px;
+			margin-left: 25%;
+			margin-right: 25%;
+			flex-grow: 1;
+		}
+		a {
+			background-color: rgb(23, 24, 28);
+			border: 1px;
+			border-color: white;
+			border-style: solid;
+			border-radius: 15px;
+			width: 100px;
+			padding: 8px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+		}
+		table {
+			border-collapse: collapse;
+			border: 1px solid gray;
+			color: black;
+			margin: auto;
+			width: 75%
+		}
+		th,td {
+			padding: 5px;
+			text-align: left;
+			vertical-align: middle;
+			border: 1px solid gray;
+		}
+		th {
+			color: rgb(23, 38, 79);
+			padding: 8px 8px;
+			background: rgb(179, 199, 255);
+			position: sticky; top: 0;
+		}
+		p {
+			text-align: center;
+		}
+		.download {
+			background-color: rgb(179, 199, 255);
+			color: rgb(23, 24, 28);
+			border-color: rgb(179, 199, 255);
+		}
+		.icon0 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%234e2232' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%234e2232' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23304e22' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3Cline x1='12' y1='3' x2='12' y2='21' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon10 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEgSURBVDhPY2CgFmhgYPiPjY0OsMqBBGES6DS6OlxyGJLYFOGTw5DEpgifHIYkNkX45FAEsSqAApxyt9rb/4Pw2bi4/9daWsBsdDU4wctZs/4/crb5/yrA6//Xo0f+33R3/H/K0ug/SBwkj24rCv9khjtY80cvl/+/z5z5//fvX7Ahl6xM/h8y1sEwBERjGPDSzQFswJ9LlyAGnD0LN+B8bQyGK1AM2OusDXYBCCO7AOQFkAG7vEzwG3Ao2en/TWtTMH7g4wY24LKTDVjzbm3V/2dKQvAbsLSoCKz4jInu/7vV5WDng2iQ5rWKUv83VJmi+hndABBY4On5f7uyMjjAQC4A0culpP7XWligKsQHQC5Zbmv7f76sLJgG8dHVYAMAy53y+q6o1NoAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon11 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEqSURBVDhPY2AYNODMTOP/p2cY/T85zeD/8Sl6/xkYGFQYGBh40NVhBSDN6OBQvybIEBuChiA0z0TD///v7VL5v6td8f/2FjncLgI5+//3if//f+nDxEhgT6cydheB/Pz/dev//88a/h+dpIMVH+hVhxlQAXUJAoAC7P+DKrBCXAAkx8DAsAWrAWCNV/L+Q8ICPRxmImtuweoFUGj/P5MGjkKwJlB4QDFBzSAA8h/IAIgXZkLCAwlDDUlgYGCQQNcLBqCoAhmwv0cNYsCDKgwMNQS7C0DxDDJgR6s8xIAreRh4QS47GOMyRGVrk8z/zQ1S/zfUiv9fVy36f3WF0P8Vpfz/lxbx/F9cwAXTvAKXV0AmgkwGRdEEPBgkj9UFIAASBMWvAR6MNSkDAARxWN8RVHnBAAAAAElFTkSuQmCC'); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon13 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD/SURBVDhPY2AYBTjB0Uk6//d2qfzf1a74f3uL3P+tTTL/NzdI/d9QK/6fgYFBhYGBgQddDwoAGYANrKsWBRmQAzUENwAZAMMHetX/7+lU/r+jVf7/lkZpsEtAmJAhKlhd8awBTC0u4IK5BCcA+dEGYshMOP5xNB5ML8hlBxkwAV0TOkAY8n0iGL/fEwY2YF42K1EGQALzdSscP9vsCzZgTiYzYQPAmh9UoeA7K53BBsxKZ8RvwNIinv8g/P9KHgq+vMAKbMDMNAb8BjAwMEiADACFNijAQH4GORtkM1TzFgYGhgp0TcgAHIBQRSCb0DFIHCSPF4AMASUWAywYnJwB0dTkHazHTDAAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon26 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cpath d='M22,6H4A2,2,0,0,0,2,8v4' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpath d='M2,18H20a2,2,0,0,0,2-2V12' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpolyline points='18 10 22 6 18 2' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3Cpolyline points='6 14 2 18 6 22' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.indent0 { padding-left: 20px; background-position: 2px center; }
+	</style>
+</head>
+<body>
+<h2>XML Comparison Version 1.120.140</h2>
+<p>Made with WinMerge</p>
+<header>
+	<a href="../reference/patches/1120140">Back</a>
+	<input type="text" id="search" placeholder="Search" autocomplete="off">
+	<a href="/pages/1120140_report.html" download="1120140_report.html" class="download">Download</a>
+</header>
+<table id="table">
+<tr>
+<th>Comparison Result</th><th>Folder</th><th>Filename</th><th>Differences</th></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>0c772e27!00000000!0000000000078d0a.loot_Commodity_Motive_Bladder_CareerTone_FixUp.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>0c772e27!00000000!0000000000078d0b.loot_Commodity_Motive_Hunger_CareerTone_FixUp.action.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\action</td><td>0c772e27!00000000!000000000007a405.loot_CoreWeather_ResetBodyTemperatureToNeutral.action.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bac.CareerTone_Social_MakeConnections.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bad.CareerTone_WorkHard.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bc8.CareerTone_Astronaut_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bd7.CareerTone_TakeItEasy.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bd8.CareerTone_Social_MakeFriends.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bda.CareerTone_Social_SocializeWithCoworkers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012be8.CareerTone_Astronaut_Ranger.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bf7.CareerTone_Astronaut_Smuggler.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012bff.CareerTone_Criminal_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c0c.CareerTone_Criminal_Boss.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c0f.CareerTone_Criminal_Oracle.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c16.CareerTone_Culinary_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c17.CareerTone_Culinary_Chef.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c1f.CareerTone_Culinary_Bartender.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c29.CareerTone_Entertainer_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c2b.CareerTone_Entertainer_Music.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c2e.CareerTone_Entertainer_Comedy.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c31.CareerTone_Painter_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c33.CareerTone_Painter_Artist.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c3b.CareerTone_Painter_Critic.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c3e.CareerTone_Agent_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c41.CareerTone_Agent_Agent.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c45.CareerTone_Tech_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c48.CareerTone_Tech_Gaming.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c4a.CareerTone_Tech_Startup.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c4d.CareerTone_Writer_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c50.CareerTone_Writer_Author.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000012c51.CareerTone_Writer_Journalist.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000018588.CareerTone_Embarrassed.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000001858c.CareerTone_Confident.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000001858d.CareerTone_Playful.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!0000000000018593.CareerTone_Angry.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000001859b.CareerTone_Flirty.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000001859f.CareerTone_Bored.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!00000000000185a2.CareerTone_Sad.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!00000000000188bd.CareerTone_School_SlackOff.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!00000000000188be.CareerTone_School_StudyHard.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f344.careerTone_StyleInfluencer_Main_Research.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f345.careerTone_StyleInfluencer_Main_Doodle.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f349.careerTone_StyleInfluencer_Stylist_Pamper.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f34a.careerTone_StyleInfluencer_Stylist_Network.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f34c.careerTone_StyleInfluencer_TrendSetter_PromoteBrand.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!000000000002f34d.careerTone_StyleInfluencer_TrendSetter_Shop.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\away_action</td><td>afadac48!00000000!00000000000454ae.careerTone_FearConfrontation_PerformanceReview.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>6017e896!00000000!0000000000078133.buff_CostumeBox_Costume_Coach_Playful.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>6017e896!00000000!0000000000078134.buff_CostumeBox_Costume_Coach_Flirty.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\buff</td><td>6017e896!00000000!0000000000078135.buff_CostumeBox_Costume_Coach_Confident.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\camera</td><td>12496650!00000000!82ab77028e1d3878.puCASPart_Facepaint.camera.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000003367.ClayBlob_Mold.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000000661a.mixer_social_Fight_targeted_mean.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!00000000000432be.Generic_OnObject_LayOnBackOnObject.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000004335d.Generic_OnObject_LayOnStomachOnObject.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000004335e.Generic_OnObject_SitOnObject.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000043c3c.mixer_social_Fight_targeted_mean_Ghost.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!00000000000450fc.socialSuperInteraction_CarryPickUp_Infant_CradleHold.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000046901.generic_CribSleep.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000004697a.generic_GoToDaycare.interaction.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000066fc6.mixer_social_Fight_targeted_mean_PoliceToBurglar.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000066fd3.mixer_social_Fight_targeted_mean_SimToBurglar.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000078130.costumeBox_WearCostume_Playful_Coach.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000078131.costumeBox_WearCostume_Flirty_Coach.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000078132.costumeBox_WearCostume_Confident_Coach.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!000000000007a6f1.atWorkActions_Daycare_Default.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!000000000007a6f2.atWorkActions_Daycare_EatMeal.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!000000000007a6f3.atWorkActions_Daycare_Nap.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!000000000007a6f4.atWorkActions_Daycare_Socialize.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\interaction</td><td>e882d22f!00000000!000000000007a6f5.atWorkActions_Daycare_Bladder.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>BG\object</td><td>b61de6b4!00000000!000000000007812f.object_CostumeBox_Coach.object.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>7df2169c!00000000!000000000001f43c.testSet_FightAvailability.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>7df2169c!00000000!0000000000058a0d.affordanceList_CostumeBox_Wear.snippet.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tagsmetadata</td><td>9db989fd!00000000!df407af75180173f.Client_TagsMetadata.tagsmetadata.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>03b33ddf!00000000!78e209cfd4410e5e.ui.ui_tuning..xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>03b33ddf!00000000!d89cb9186b79acb7.tag..xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>03b33ddf!00000000!e9d74e99cc6704c2.objects.components.buff_component..xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!00000000000214e4.careerTone_SocialMedia_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!00000000000214e5.careerTone_SocialMedia_InternetPersonality.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!00000000000214e6.careerTone_SocialMedia_PublicRelations.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002184d.careerTone_Activist_Main.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002184e.careerTone_Activist_Charity.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002184f.careerTone_Activist_Politics.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002570b.careerTone_Social_MakeConnections.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002570c.careerTone_SurfTheWeb.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!000000000002570f.careerTone_Critic_WriteReviews.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!0000000000025711.careerTone_Critic_EatAtRestaurants.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\away_action</td><td>afadac48!00000018!0000000000025712.careerTone_Critic_VisitMuseums.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP03\interaction</td><td>e882d22f!00000018!0000000000022614.mixer_social_Fight_targeted_ApartmentNeighborSituation_LoudNoises.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da8a.careerTone_Gardener_0_Main_digDirt.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da8b.careerTone_Gardener_1_Botanist_analyzePlant.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da8c.careerTone_Gardener_2_Florist_attendClass.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da8e.careerTone_Gardener_1_Botanist_colleagueConverse.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da91.careerTone_Gardener_0_Main_smellFlowers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\away_action</td><td>afadac48!0000001a!000000000002da92.careerTone_Gardener_2_Florist_promoteSale.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\interaction</td><td>e882d22f!0000001a!000000000002c9ec.mixer_social_Fight_targeted_SurpriseHoliday_BattleRoyale.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\interaction</td><td>e882d22f!0000001a!000000000002d37f.mixer_social_Fight_targeted_SurpriseHoliday_BattleRoyale_Transition.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\interaction</td><td>e882d22f!0000001a!000000000002dae9.mixer_social_Fight_targeted_mean_FatherWinter.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP05\interaction</td><td>e882d22f!0000001a!000000000002e690.mixer_social_Fight_targeted_mean_FlowerBunny.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\away_action</td><td>afadac48!0000001b!0000000000030b4f.careerTone_DramaClub_FocusOnActing.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\away_action</td><td>afadac48!0000001b!0000000000031aa7.careerTone_WorkHard_actor.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\away_action</td><td>afadac48!0000001b!0000000000031aa9.careerTone_TakeItEasy_actor.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP06\interaction</td><td>e882d22f!0000001b!000000000002ff27.mixer_social_Fight_targeted_mean_Paparazzi.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\action</td><td>0c772e27!0000001c!0000000000033cb4.loot_SandActivities_SandSculpture_Rain.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!000000000003202e.careerTone_Conservationist_0_StudyResearchData.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000032030.careerTone_Conservationist_0_GatherFieldSamples.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000032031.careerTone_Conservationist_1_Network.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000032032.careerTone_Conservationist_1_TeachConservationClass.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!000000000003203b.careerTone_Conservationist_2_PlayWithFish.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!000000000003203c.careerTone_Conservationist_2_OrganizeDataFiles.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!000000000003305d.careerTone_AdultPartTime_Lifeguard_ImpressSwimmers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!000000000003305e.careerTone_AdultPartTime_Lifeguard_StrictlyEnforceRules.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000033064.careerTone_AdultPartTime_Diver_ChaseFish.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000033065.careerTone_AdultPartTime_Diver_RecordUnderwaterFootage.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000033067.careerTone_AdultPartTime_Fisherman_CatchDangerously.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\away_action</td><td>afadac48!0000001c!0000000000033068.careerTone_AdultPartTime_Fisherman_WatchForEndangeredFish.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\interaction</td><td>e882d22f!0000001c!0000000000033873.sandActivities_SandSculpture_CreateObjectSelf.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003386a.careerTone_University_Sleep_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003386c.careerTone_University_ActivelyListen_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003386d.careerTone_University_ChatWithStudents_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036231.careerTone_SoccerTeam_Practice_Normal.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036232.careerTone_SoccerTeam_Practice_Hard.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036233.careerTone_SoccerTeam_Practice_Relax.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036234.careerTone_SoccerTeam_Practice_Passing.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036235.careerTone_SoccerTeam_Practice_KickingDrills.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000362c9.careerTone_SoccerTeam_Game_Play_Normal.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000362ca.careerTone_SoccerTeam_Game_Play_Strategically.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000362cb.careerTone_SoccerTeam_Game_Play_Energetically.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000362cc.careerTone_SoccerTeam_Game_Relax.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003697b.careerTone_University_Cheat_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003697c.careerTone_University_Normal_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003697e.careerTone_University_Cheat_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003697f.careerTone_University_Cheat_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036980.careerTone_University_Cheat_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036992.careerTone_University_Normal_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036993.careerTone_University_Normal_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036994.careerTone_University_Normal_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036997.careerTone_University_ActivelyListen_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036998.careerTone_University_ActivelyListen_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!0000000000036999.careerTone_University_ActivelyListen_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003699d.careerTone_University_ChatWithStudents_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003699e.careerTone_University_ChatWithStudents_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!000000000003699f.careerTone_University_ChatWithStudents_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369a2.careerTone_University_TakeNotes_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369a3.careerTone_University_TakeNotes_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369a4.careerTone_University_TakeNotes_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369a5.careerTone_University_TakeNotes_D.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369ab.careerTone_University_Sleep_C.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369ac.careerTone_University_Sleep_A.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\away_action</td><td>afadac48!0000001d!00000000000369ad.careerTone_University_Sleep_B.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\interaction</td><td>e882d22f!0000001d!0000000000036e0f.mixer_social_Fight_targeted_mean_Mascot.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\interaction</td><td>e882d22f!0000001e!000000000003943e.mixer_social_Fight_targeted_mean_CommunityCloseness.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\interaction</td><td>e882d22f!0000001e!000000000003a382.mixer_social_Fight_targeted_CivicPolicy_Aggression.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP09\interaction</td><td>e882d22f!0000001e!000000000003a38c.mixer_social_Fight_targeted_CivicPolicy_Aggression_Transition.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\away_action</td><td>afadac48!0000001f!000000000003cc2a.careerTone_CorporateWorker_0&amp;2_SocializeWithCoworkers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\away_action</td><td>afadac48!0000001f!000000000003cc2b.careerTone_CorporateWorker_0_BrainstormWithTeam.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\away_action</td><td>afadac48!0000001f!000000000003cc2c.careerTone_CorporateWorker_1_DevelopDataMiningTechniques.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\away_action</td><td>afadac48!0000001f!000000000003cc2e.careerTone_CorporateWorker_1_MentorTeamMember.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\away_action</td><td>afadac48!0000001f!000000000003cc2f.careerTone_CorporateWorker_2_RunTeamMeeting.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\interaction</td><td>e882d22f!0000001f!000000000003ceea.mixer_social_Fight_targeted_mean_Lifestyles_AdrenalineSeeker.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!0000000000043768.careerTone_StreamerSideHustle_StreamCollaboratively.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!0000000000044157.careerTone_SimsfluencerSideHustle_RecordHighQualityVideo.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446b5.careerTone_HSTeam_BeAggressive.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446c8.careerTone_HSTeam_BeDefensive.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446c9.careerTone_HSTeam_BeTricky.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446ca.careerTone_HSTeam_GoofOff.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446cb.careerTone_HSTeam_MakeFriends.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\away_action</td><td>afadac48!00000035!00000000000446d1.careerTone_HSTeam_PracticeHard.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP12\interaction</td><td>e882d22f!00000035!0000000000045105.mixer_Social_Fight_HighSchool_Active_SchoolFight.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\away_action</td><td>afadac48!00000036!000000000004b58c.careerTone_WorkRival_Befriend.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\away_action</td><td>afadac48!00000036!000000000004b58d.careerTone_WorkRival_Sabotage.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP13\buff</td><td>6017e896!00000036!0000000000079de6.buff_Infant_PullToStandAuto.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\interaction</td><td>e882d22f!00000036!000000000004dc21.infantMilestone_JoinTummyTime_Kneel.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\interaction</td><td>e882d22f!00000036!000000000004dc23.infantMilestone_JoinTummyTime_Stand.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\interaction</td><td>e882d22f!00000036!000000000004e194.mixer_social_Fight_targeted_TemporaryStay.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP13\interaction</td><td>e882d22f!00000036!0000000000051596.social_Infant_Interim_PracticeStanding.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP13\interaction</td><td>e882d22f!00000036!0000000000079de4.immediate_Infant_Anticipation_Crib_PullToStand_Self.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP13\interaction</td><td>e882d22f!00000036!0000000000079de5.infantMilestone_Mixers_PullToStandAuto.interaction.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP15\away_action</td><td>afadac48!00000038!00000000000565b3.careerTone_AdultPartTime_Handyperson.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP15\interaction</td><td>e882d22f!00000038!000000000005489e.mixer_social_Fight_targeted_mean_Snooping_BreakInReturn.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP16\away_action</td><td>afadac48!00000039!0000000000059f72.careerTone_Social_EnchantCoworkers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\away_action</td><td>afadac48!0000003a!000000000005cb17.careerTone_Mortician_Social.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\away_action</td><td>afadac48!0000003a!000000000005cb18.careerTone_Mortician_Director_Console.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\away_action</td><td>afadac48!0000003a!0000000000060571.careerTone_ReaperCareer_Socialize.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\away_action</td><td>afadac48!0000003a!0000000000060572.careerTone_ReaperCareer_Souls.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\interaction</td><td>e882d22f!0000003a!000000000005faf1.mixer_social_Fight_targeted_mean_LevitateSim.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP18\situation</td><td>fbc3aeeb!0000003b!0000000000061732.SmallBusinessEmployeeSituation_Default.situation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP19\away_action</td><td>afadac48!0000003c!000000000006a7c5.careerTone_Naturopathic_HerbalMedicine.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006e97d.careerTone_ParkWorker_ChatWithCampers.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006e97e.careerTone_ParkWorker_StudyParkLore.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006e97f.careerTone_ParkWorker_ParkCounselor.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006fe5a.careerTone_ParkWorker_TakeBreak.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006fe5b.careerTone_ParkWorker_ChaseAnimal.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006fe5c.careerTone_ParkWorker_TakeShower.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006fe5d.careerTone_ParkWorker_Sleep.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!000000000006fe5e.careerTone_ParkWorker_PracticeCampActivity.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!00000000000708e7.careerTone_Competitive_BlicBlockPVP.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!00000000000708e8.careerTone_Competitive_Inspire.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\away_action</td><td>afadac48!0000003d!0000000000072945.careerTone_ParkWorker_Expedition.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\buff</td><td>6017e896!0000003d!0000000000077afd.buff_Temperature_Immune_To_Temperature_InEP20World.buff.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP01\interaction</td><td>e882d22f!00000002!000000000001a64a.mixer_social_Fight_targeted_mean_bear.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024cee.mixer_social_Fight_targeted_mean_SimAndVampire_Duel_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024cef.mixer_social_Fight_targeted_mean_SimAndVampire_Duel_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024cf0.mixer_social_Fight_targeted_mean_VampireAndSim_Duel_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024cf1.mixer_social_Fight_targeted_mean_VampireAndSim_Duel_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024e65.mixer_social_Fight_targeted_mean_SimAndVampire_Slay_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000024e67.mixer_social_Fight_targeted_mean_SimAndVampire_Slay_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000025464.mixer_social_Fight_targeted_mean_VampireAndSim_Duel_DarkForm_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000025466.mixer_social_Fight_targeted_mean_VampireAndSim_Duel_DarkForm_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!000000000002546a.mixer_social_Fight_targeted_mean_SimAndVampire_Duel_DarkForm_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!000000000002546c.mixer_social_Fight_targeted_mean_SimAndVampire_Slay_DarkForm_WithGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000025470.mixer_social_Fight_targeted_mean_SimAndVampire_Duel_DarkForm_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\interaction</td><td>e882d22f!00000011!0000000000025473.mixer_social_Fight_targeted_mean_SimAndVampire_Slay_DarkForm_WithoutGarlic.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP07\away_action</td><td>afadac48!00000014!0000000000031f92.careerTone_Military_RunDrills.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP07\away_action</td><td>afadac48!00000014!0000000000031f93.careerTone_Military_PoreOverCaseFiles.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP07\interaction</td><td>e882d22f!00000014!0000000000031b48.mixer_Social_Investigation_Act2_FightForScanner.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\interaction</td><td>e882d22f!00000015!00000000000348fd.mixer_social_Fight_targeted_mean_PunchableFace.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP08\interaction</td><td>e882d22f!00000015!0000000000034a7c.mixer_social_Fight_targeted_SummonGhost_Fail.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003ab99.mixer_social_Fight_targeted_Intimidate_For_Info.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003ae95.mixer_social_Fight_targeted_CheckID_CriminalFight.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003b080.mixer_social_Fight_targeted_mean_SabaccCheater.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003b430.mixer_social_Fight_Batuu_Inspection_ActorIsFO.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003b746.mixer_social_Batuu_Mission_RS7_Fight_For_FirstOrder_Uniform.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003b9b3.mixer_social_Batuu_Mission_SS17_Fight_For_Valuable_Information.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003b9e2.mixer_social_Fight_targeted_Rich_Scoundrel_Valuable.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003bd9d.mixer_social_Fight_targeted_mean_RecruitToFO_ResistanceTarget_FR3.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003bf52.mixer_social_Fight_targeted_mean_FS6_IntimidateFight.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP09\interaction</td><td>e882d22f!00000016!000000000003bffc.mixer_social_Fight_targeted_mean_FS4_ThreatenArrest.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP10\away_action</td><td>afadac48!00000017!000000000004167f.careerTone_Social_SocializeWithClients.away_action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\interaction</td><td>e882d22f!0000003f!0000000000046413.mixer_social_Fight_targeted_mean_WerewolfToSim.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\interaction</td><td>e882d22f!0000003f!0000000000046414.mixer_social_Fight_targeted_mean_SimToWerewolf.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP22\interaction</td><td>e882d22f!0000002b!000000000003ede4.new_VacuumCleaner_Start_Object_Standing.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP22\interaction</td><td>e882d22f!0000002b!000000000003ede5.new_VacuumCleaner_Start_Object_Handheld.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>SP22\interaction</td><td>e882d22f!0000002b!000000000003ee1e.new_VacuumCleaner_Start_Object_Handheld_ChildOnly.interaction.xml</td><td>1</td></tr>
+</table>
+<script>
+var $rows = $('#table tr').not(':first');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
+</body>
+</html>
