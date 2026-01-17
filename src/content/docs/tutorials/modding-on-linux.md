@@ -164,15 +164,15 @@ I've added symbolic links to my Desktop and Documents folder, targeting my Downl
 
 ## **Step 6: Blender and GIMP**
 
-Setting up Blender is a slightly more complicated process.
+Setting up Blender is a more complicated process.
 
 You need to download the Windows Portable version from the Blender site (the one that comes in a zip file) and *not* the Linux version (Studio doesn't know what to do with it) or the installer (that is a .msi and won't actually install.) I put mine in my "Applications" folder alongside XML Extractor and Finder and my other random applications.
 
-Once the WinPort version of Blender has been put in an appropriate home, you'll need to manually install several files into the 4.5 folder (or whatever your version of Blender is). The files and instructions can be found here on the official Sims 4 Studio site: https://sims4studio.com/thread/38676/blender-install-add-ons-solved
+Once the WinPort version of Blender has been put in an appropriate home, you'll need to manually install several files into the 3.6 folder (I'd recommend using v3.6 at least for exporting files as that tends to have fewer potential bugs, especially for CAS creators). The files and instructions can be found here on the official Sims 4 Studio site: https://sims4studio.com/thread/38676/blender-install-add-ons-solved
 
 Once Blender is set up, give Studio the filepath to the installation as you normally would.
 
-To open your .blend files when clicking on them, you will want to install the Linux native version of Blender. You can do that from the software manager, or directly from Blender if you want a newer version.
+To open your .blend files when clicking on them, you will want to install the Linux native version of Blender. You can do that from the software manager, or directly from Blender if you want a newer version. It's fine to make edits in a newer version of Blender than the one you use for exporting from Studio. Note that the reverse might not be true! Also, use a version that Studio supports (currently up to v5.0).
 
 Many CC users will also use PhotoShop for a number of steps and processes. PhotoShop does not work on Linux, and generally people who want to use Linux will migrate to GIMP or Krita instead, with GIMP the most common destination.
 
@@ -182,7 +182,7 @@ However, PhotoShop users may experience some challenges adjusting to the GIMP UX
 
 If you have a high display resolution monitor, you may have encountered teeny-tiny text when launching a program through Wine. To fix this, you'll need to go into your wineprefix using WineTricks, run wineconfig and then go to the "Graphics" tab and set your DPI scaling to 192 (for 200% scaling). This works great for Sims 4 Studio and the WinPort version of Blender, as well as most programs you'll launch via Wine.
 
-*However,* some programs built using older methods experience large performance hits and screen tearing once you start using DPI scaling. XML Finder + Extractor, Tray Importer, and Denton47's Premade Household Tool are among them. I'd recommend creating a new wineprefix (WineTricks -> Create new wineprefix -> 64bit architecture) for those and keeping DPI scaling at 96 to ensure an acceptable level of performance. Remember to install allfonts!
+*However,* some programs built using older methods experience large performance hits once you start using DPI scaling. XML Finder + Extractor, Tray Importer, and Denton47's Premade Household Tool are among them. I'd recommend creating a new wineprefix (WineTricks -> Create new wineprefix -> 64bit architecture) for those and keeping DPI scaling at 96 to ensure an acceptable level of performance. Remember to install allfonts!
 
 You can instruct the programs to launch in the new wineprefix by adding the additional 'env WINEPREFIX="path to prefix"' to their launchers:
 
