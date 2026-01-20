@@ -1,15 +1,17 @@
 ---
-title: Mod It Yourself Part 3 - Objectives (career level, skill level, timed tasks)
+title: Part 3 - Objectives (career level, skill level, timed tasks)
 description: A tutorial for changing objectives.
 sidebar:
-  order: 50
+  hidden: true
 ---
 
 <sup><sub>A tutorial by ilkavelle</sub></sup>
 
+import { LinkButton } from '@astrojs/starlight/components';
+
 ![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
 
-This time I'll again present how to modify easily some objectives in the aspirations or in the careers. As you are now a bit more familiar with the process, the presentation will be quicker and more areas will be covered, but at the end of this article (and each next) I will list all tutorials published so far, so you can quickly jump to previous ones, if you forget anything.
+This time I'll again present how to modify easily some objectives in the aspirations or in the careers. As you are now a bit more familiar with the process, the presentation will be quicker and more areas will be covered.
 
 Open Sims4Studio and find Objectives tuning. For this tutorial I'll first show example on my Simternet Conqueror Aspiration.
 
@@ -45,11 +47,11 @@ Let's open this mod again. And open again this objective:
 
 ![A small section of the files in Simternet Conqueror Aspiration, with `ilkavelle:CareerSocialMedia_10lvl` highlighted.](~/assets/MIY-CareerSocialMedia_10lvl-ilkavelle.PNG)
 
-I want to show you now how we can say which text is assigned to this objective. I marked the section with red pen and the key reference with yellow : 0xD7AC93E8. String reference always starts with "0x" and then there is the value associated with the text.
+I want to show you now how we can say which text is assigned to this objective. I marked the section with red pen and the key reference with yellow: 0xD7AC93E8. String reference always starts with "0x" and then there is the value associated with the text.
 
 ![The XML of `ilkavelle:CareerSocialMedia_10lvl`, with the display_name_text highlighted.](~/assets/MIY-CareerSocialMedia_10lvl-display-name-orig-ilkavelle.PNG)
 
-Let's go now to String Table of the language you want to change (the language of your game). I was presenting this in details in this tutorial [Text (Strings)](/tutorials/miy-2-text-strings), so here it will be a quick catch-up.
+Let's go now to String Table of the language you want to change (the language of your game). I was presenting this in details in this tutorial [Text (Strings)](../miy-aspirations/miy-2-text-strings), so here it will be a quick catch-up.
 
 In the Data tab click "Edit Items" and the list with all strings will open.
 
@@ -89,11 +91,11 @@ For these objectives let's check my Music Producer Aspiration.
 
 There are objectives where it says to do some activities for total amount of time, e.g. to play instrument for 75H, or other. I'll show you how these are built and how to change the time.
 
-In my my Music Producer Aspiration, find the objective called `ilkavelle:objective_Asp_MusicProducer_DJMixingHours`
+In my My Music Producer Aspiration, find the objective called `ilkavelle:objective_Asp_MusicProducer_DJMixingHours`
 
 ![A small section of the files in Music Producer Aspiration, with `ilkavelle:objective_Asp_MusicProducer_DJMixingHours` highlighted.](~/assets/MIY-objective_Asp_MusicProducer_DJMixingHours-ilkavelle.PNG)
 
-You can see that in this objective there is this "length_of_time" and it equals 4500. This are Sim minutes and equals 75 hours (4500 / 60 = 75 ;) )
+You can see that in this objective there is this "length_of_time" and it equals 4500. This is Sim minutes and equals 75 hours (4500 / 60 = 75 ;) )
 
 ![The XML of `ilkavelle:objective_Asp_MusicProducer_DJMixingHours`, with 4500 highlighted in yellow.](~/assets/MIY-objective_Asp_MusicProducer_DJMixingHours-4500-ilkavelle.PNG)
 
@@ -129,7 +131,7 @@ There might be other objectives that seem to be time based, but in the code they
 
 ![An objective selected on the left, with the XML on the right showing a test for a buff.](~/assets/MIY-objective_buff-ilkavelle.PNG)
 
-Why do I show this to you? Because sometimes you might get confused why the task mentions time, but there is no time evaluation in the code. Or why the task mentions a skill, but in the objective there is some code structure that doesn't look like the one I showed above. I tried to show here the most common types of objectives, but to be frank - there is a lot more to discover. You can check on your own different objectives in various aspirations mods, what is the task and how it is represented in the code. Observing and comparing is one of the way of learning.
+Why do I show this to you? Because sometimes you might get confused why the task mentions time, but there is no time evaluation in the code. Or why the task mentions a skill, but in the objective there is some code structure that doesn't look like the one I showed above. I tried to show here the most common types of objectives, but to be frank - there is a lot more to discover. You can check on your own different objectives in various aspirations mods, what is the task and how it is represented in the code. Observing and comparing is one of the ways of learning.
 
 ---
 
@@ -141,12 +143,14 @@ Unfortunately, in terms of changing the mods, you need to remember that if there
 
 With a time, I will show you how to keep the mod updated after the patch, how to check if it's still working. But for now you need to remember this and please do not feel discouraged when a patch destroy your work.
 
-### List of all tutorials:
+---
 
-[Iterations in Objectives](/tutorials/miy-1-iterations-in-objectives)
+<LinkButton href="../miy-aspirations/miy-2-text-strings" icon="left-caret" iconPlacement="start">Back to Part 2</LinkButton>
 
-[Text (Strings)](/tutorials/miy-2-text-strings)
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-4-tokens" icon="right-caret" iconPlacement="start">On to Part 4</LinkButton>
 
 ---
 
-Originally posted on ilkavelle's Patreon as part of the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986).
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/117249192) as part of the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.

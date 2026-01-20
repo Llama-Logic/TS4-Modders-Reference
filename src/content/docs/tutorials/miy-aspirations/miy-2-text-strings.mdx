@@ -1,0 +1,119 @@
+---
+title: Part 2 - Text (Strings)
+description: A tutorial for changing strings/text in mods.
+sidebar:
+  hidden: true
+  badge:
+    text: UPDATED
+    variant: tip
+---
+
+import { Aside, LinkButton, Steps } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Today I will show you how to change the text appearing in mod. It's very easy, and some of you probably already know this from translating. But also text plays a very important role in mods, so I need to show it.
+
+Text in programming is called String. And more precisely, String is a data type used to represent text. To change it in mods, we will look for the files called String Tables.
+
+This tutorial will work for any changes in the text, but also for translating the mod to other language.
+
+Let's start :)
+
+<Steps>
+
+1. ### Open the mod you want to modify
+
+   Let's practice on my Buy Explorer Supplies mod, which has almost only string tables in it.
+
+   ![The list of files in the Buy Explorer Supplies mod.](~/assets/MIY-buy-explorer-supplies-file-list-ilkavelle.PNG)
+
+   As you can see, there are String Tables for each language (sorry, names are in Polish, but you can see the flags. You always see them in a language chosen in your S4S settings).
+
+   When I create a mod, I write a text in English and then copy it to all other languages.
+
+   *For anyone curious, how to do it - there is this quick option in S4S to copy string tables to all languages:
+
+   ![The path to 'Copy string table to all languages' in Sims 4 Studio.](~/assets/MIY-copy-string-tables-ilkavelle.jpg)
+
+   Then text can be translated to other languages. The game will show only the text from the String Table for the language that you have set in your game. If you play in German, it will show the text from German String Table.
+
+2. ### Find and click the String Tables you want to change
+
+   If you change the text for your own purposes only, it is enough then to change only the strings for your language. I have a game in Polish, but for the tutorial purposes I will change the English strings.
+
+   ![The English, or angielski in Polish, string table selected.](~/assets/MIY-englisg-strings-selected-ilkavelle.PNG)
+
+   On the right side, you'll see the text under the tab Text (marked with yellow):
+
+   ![The text tab of he English string table, with one string.](~/assets/MIY-string-table-text-ilkavelle.PNG)
+
+   In this mod, there is just one text - the name for the interaction "Purchase Explorer Supplies" :) But of course in other mods there is more text.
+
+3. ### Go to Data tab
+
+   Now change the tab and go to Data tab (marked with yellow below) and then click Edit Items (pointed with red arrow below):
+
+   ![The data tab of a string table.](~/assets/MIY-string-table-data-ilkavelle.PNG)
+
+4. ### Change the text you want
+
+   After clicking Edit Items, you'll see this view:
+
+   ![A single entry in a string table.](~/assets/MIY-string-table-entry-ilkavelle.PNG)
+
+   On the left side there is a list of all strings in this String Table. Here only 1, but usually there is more.
+
+   On the right side you can change the details of this string. To change the text, edit text in Value space (marked with yellow above).
+
+   <Aside type="caution">Important! Never change Key number - this is a reference number put into other files to recognize which text to show when. In this case this key number (E09F61C3) is put in the interaction file - so the game knows to show the text "Purchase Explorer Supplies" and not just blank space, when showing this interaction.</Aside>
+
+   Now change the text.
+
+   I entered this new text in the Value space ;)
+
+   ![The text of the  string changed to 'We just changed the text for this interaction! Yay!! But only for one language :)'.](~/assets/MIY-string-table-entry-changed-ilkavelle.PNG)
+
+5. ### Save everything
+
+   First, save the string change, by clicking on Save button in the right down corner of the window:
+
+   ![The data tab of a string table with the save button circled in red with an arrow pointing to it.](~/assets/MIY-string-table-save-ilkavelle.PNG)
+
+   Then remember to save entire mod:
+
+   ![The mod open in Sims 4 Studio, with the English string table open to the text tab and the save button circled in red with an arrow pointing to it.](~/assets/MIY-buy-explorer-supplies-save-ilkavelle.PNG)
+
+   You can see here also, that the text within Text tab now also changed.
+
+   After saving, you can close the mod.
+
+6. ### Check your changes in the game 
+
+   And here it is, the interaction for which we changed the name ;) It works in the same way as before, only the text appearing for it changed.
+
+   ![The string that was changed above showing up as an option in a pie menu after clicking on a computer in game.](~/assets/MIY-string-change-in-game.png)
+
+</Steps>
+
+## Last note
+
+You can use this method for making translations. In this case you need to open a String Table for a language to which you are translating, and in the Value space put translated text.
+
+That's all for today :)
+
+Let me know if there is any specific topic that you would like me to cover!
+
+---
+
+<LinkButton href="../miy-aspirations/miy-1-iterations-in-objectives" icon="left-caret" iconPlacement="start">Back to Part 1</LinkButton>
+
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-3-objectives" icon="right-caret" iconPlacement="start">On to Part 3</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/116426601) as part of the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.

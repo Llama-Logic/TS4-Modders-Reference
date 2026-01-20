@@ -1,0 +1,47 @@
+---
+title: Mod It Yourself Part 17 - Reward Tuning
+description: A tutorial about Reward Tuning.
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+In Reward Tuning you need to define:
+
+1. Icon
+2. Name (of the reward)
+3. Reward description
+4. Reward itself - it can be actually various things. In aspiration, traits are commonly used as rewards, but it doesn't need to be trait. It can be some object. Something from CAS unlocked. It can be just money. I will show few examples in the next tutorial.
+
+What I noticed about the aspirations from the game - in their Reward Tuning the icon, name and description is the same that icon, name and description of the trait that will be given. I didn't always follow this pattern, so it's not mandatory.
+
+![Reward Tuning, with the defined rewards in a red box](~/assets/miy-rewards-ilkavelle.jpg)
+
+### SimData structure
+
+Here you only define the icon, name and description of the reward:
+
+![The SimData of a Reward, with the icon, name and description highlighted](~/assets/miy-reward-simdata-ilkavelle.jpg)
+
+## Creating your own Reward Tuning
+
+For this first aspiration I propose to define as reward something already existing in the game. It can be a trait from Reward Store, or a trait that is a reward for other aspiration. I would love to explain to you how to make your own trait, but our Simsmas Modvent Calendar time is running out, so maybe next time :)
+
+Once you create your own Reward Tuning and its corresponding SimData - don't forget to put its TuningId in Aspiration Track Tuning (and its SimData). If you don't remember where - go back to [tutorial about Aspiration Track Tuning](/tutorials/miy-8-aspiration-track-tuning).
+
+---
+
+<LinkButton href="../miy-aspirations/miy-1-iteerations-in-objectives" icon="left-caret" iconPlacement="start">Back to Part 1</LinkButton>
+
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-3-objectives" icon="right-caret" iconPlacement="start">On to Part 3</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/145069035) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.

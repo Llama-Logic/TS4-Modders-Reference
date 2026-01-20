@@ -1,0 +1,78 @@
+---
+title: Mod It Yourself Part 11 - Screen Slam (Snippet Tuning)
+description: A tutorial about Screen Slams.
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Once again, just to remind what we are talking about :D this is screen slam in the game, this popping icon with text underneath:
+
+![What you see when you complete a level of an aspiration, in Polish](~/assets/miy-screen-slam-horse-ilkavelle.png)
+
+In game tuning of Screen Slam is done with Snippet Tuning. This one does not have SimData, just tuning file.
+
+For aspirations we use Screen slam for:
+
+* Milestone Completion (so aspiration level completion)
+* Entire Aspiration Track Completion - so at the very end, and the only difference is this one is bigger and has different text below, informing about completing the entire aspiration.
+
+You can just duplicate the screen slam code, taking examplary TuningID from the Aspiration Tuning.
+
+## Tuning file structure
+
+![The tuning of a screen slam, with the size and icon instance highlighted](~/assets/miy-screen-slam-tuning-ilkavelle.png)
+
+1. Audio - this is an audio sound. Personally, I never change that, because I don't create audio sounds.
+
+2. Display type - size
+
+   1. Milestone complete uses Medium
+
+   2. Track complete uses Large
+
+3. Icon - I copied here again the Instance of our new aspiration icon, the same one I used in the Aspiration Track Tuning.
+
+4. Text - I also don't change it here. I just make sure the correct strings is for Milestone Completion and for Track Completion.
+
+For the comparison, below picture of the Track Complete:
+
+![The screen slam tuning for the completion of an aspiration](~/assets/miy-screen-slam-aspiration-comp-ilkavelle.png)
+
+## Creating your own aspiration
+
+I created 2x Snippet Tunings:
+
+* 1st for Milestone Completion
+* 2nd for Track Completion
+
+![Two Snippet Tunings for two screen slams](~/assets/miy-two-screenslams-ilkavelle.png)
+
+Now go to Aspiration Tunings. Within each Aspiration Tuning copy the TuningId of created Snippet tunings.
+
+For levels 1-3 it should be Milestone Complete.
+
+For level 4th, or simply the last one, it should be Track Complete.
+
+![The tuning of an aspiration, with Local Tunings expanded at the bottom. The milestone complete screen slam instance is hignlighted in both places](~/assets/miy-ref-screenslam-ilkavelle.png)
+
+This change is done only in the Tuning file, so you don't need to make any changes within SimData this time.
+
+Thank you for learning with me :)
+
+---
+
+<LinkButton href="../miy-aspirations/miy-1-iteerations-in-objectives" icon="left-caret" iconPlacement="start">Back to Part 1</LinkButton>
+
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-3-objectives" icon="right-caret" iconPlacement="start">On to Part 3</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/144979182) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.

@@ -1,0 +1,73 @@
+---
+title: Mod It Yourself Part 18 - Reward Tuning (Types)
+description: A tutorial about different types of Reward Tuning.
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+As I mentioned in the previous tutorial, you can define various things as rewards. Also you can define if the reward is always the same or if it changes randomly. And this is the topic I'll start with today.
+
+## Specific reward
+
+You can specify many specific rewards. If you do, Sim will get everything upon completing an aspiration. So looking at the below example, a Sim will get both, the buff and the trait.
+
+![Reward Tuning that gives two specific rewards, a buff and a trait](~/assets/miy-specific-rewards-ilkavelle.jpg)
+
+## Random reward
+
+But you can also specify that a Sim gets a random reward. I did that in one of my aspiration - Ultimate Stan. As a reward you can get there actually 1 out of 2 traits, and in the code it looks like this:
+
+![Reward Tuning that gives one specific reward buff and one of two random trait rewards](~/assets/miy-random-rewards-ilkavelle.jpg)
+
+The reward is random here. You don't know which trait a Sim will get in the end. You can do such random reward for other things too, like reward BB objects or CAS.
+
+## Types of Rewards
+
+Now I'll show shortly few types of the rewards.
+
+### Buff and Trait
+
+Looking again at the first pic from today tutorial, here's the most common example for aspirations:
+
+* Buff, the one we can see in the picture, is a buff that a Sim always receives when completing an aspiration (this buff is actually used for one of the scenarios to complete).
+* Trait
+
+### Money
+
+You can set up simply amount of money that you Sim receives :D This is especially used in careers.
+
+![A reward that gives money](~/assets/miy-money-reward-ilkavelle.jpg)
+
+### Objects
+
+Also often used in careers. You need to provide specific TuningId of the object that will be rewarded.
+
+![A reward that gives an object](~/assets/miy-object-reward-ilkavelle.jpg)
+
+### Points
+
+You can define as a reward all various types of points - I mean here: satisfaction points, club points, store points, vet points, vampire powers points, fame points etc. Below few examples:
+
+![A reward that gives different kinds of points](~/assets/miy-points-reward-ilkavelle.jpg)
+
+I think this is all I wanted to show you regarding Reward tuning :)
+
+We are now almost at the end ;) See you at the next tutorial ;)
+
+---
+
+<LinkButton href="../miy-aspirations/miy-1-iteerations-in-objectives" icon="left-caret" iconPlacement="start">Back to Part 1</LinkButton>
+
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-3-objectives" icon="right-caret" iconPlacement="start">On to Part 3</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/145509510) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.

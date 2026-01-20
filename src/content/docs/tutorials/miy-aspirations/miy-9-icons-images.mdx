@@ -1,0 +1,52 @@
+---
+title: Mod It Yourself Part 9 - Icons & Images
+description: A tutorial about icons and other images in packages.
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+For aspirations we will create icons, but some other mods, for example careers, require adding images. This tutorial will work for both.
+
+Icons are quite important part of each aspiration, but also very easy :D I will not show you how to create an icon or an image, but how to create a package file that will be read as icon in the game.
+
+Also, usually I just use icons existing in the game and I just recolor them ;) I don't have skills to create nice icon on my own. I am also too lazy to search for icons in the game files. I use the ones exported here <https://luniversims.fr/files/category/47-sims-4-pack-dicones/>. There are icons from all packs. Huge credit to all people that do it!
+
+Once you have your icon ready for upload to package, Add Resource within your package and choose DST Image. Make sure Instance is unique. This Instance will be later used as reference in your package in other tunings.
+
+![The Add Resource... window, with DST Image selected as the Type](~/assets/MIY-add-resource-image-ilkavelle.jpg)
+
+You can generate a unique Instance using Hash generator within Sims 4 Studio (Tools > Hash generator). Write the text and it will convert it:
+
+![The Hash Generator window, with a red arrow pointing to the text field, which has `ilkavelle:Aspiration_Learning_Icon' entered](~/assets/MIY-hash-generator-ilkavelle.png)
+
+Then Import the image for icon.
+
+![An empty image added to a file, Test.package, with the Import button circled](~/assets/MIY-empty-image-ilkavelle.png)
+
+Once it's ready, you can now put the Icon Instance where necessary. For now we can only use it in Aspiration Track Tuning (and SimData! don't forget about it!):
+
+![Aspiration Track Tuning with an instance highlighted in yellow, with a DST Image with the same instance at the bottom. A red arrow points from the image to the highlighted instance](~/assets/miy-referenced-image-ilkavelle.png)
+
+Ok, that's all about Icons, I think :D
+
+As always, drop any question in the comments, I'll try to answer :)
+
+Thank you!
+
+---
+
+<LinkButton href="../miy-aspirations/miy-1-iteerations-in-objectives" icon="left-caret" iconPlacement="start">Back to Part 1</LinkButton>
+
+<LinkButton href="../miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-aspirations/miy-3-objectives" icon="right-caret" iconPlacement="start">On to Part 3</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/144978015) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/posts/116318038?collection=1867986), where you can ask questions in the comments.
