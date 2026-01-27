@@ -107,7 +107,7 @@ At the bottom, there are four check boxes and two buttons.
 
 *__Use Subfolders__*: Again, this only affects files if you extract them instead of adding them to a package. Having this on will put the extracted files in subfolders based on type. SimData will go in one folder, Account Reward Tuning will go in another, Achievement Tuning will go in another, etc. Except for SimData, this is based on the first part of the file name in the list: achievement/EP_05_PolarBearClub will get one file in a folder called Achievement Tuning, and account_reward/accountReward_DecemberEvent_02 will get one file in a folder called Account Reward Tuning and a second in a folder called SimData. Whether you have this checked is a matter of preference.
 
-*__Extract All__*: This will extract all tuning and SimData files. This is an alternative to using the [XML Extractor](../../tutorials/xml-extractor/) to extract tuning. This will take *a while*.
+*__Extract All__*: This will extract all tuning and SimData files. This is an alternative to using the [XML Extractor](../../tutorials/scumbumbo-xml-extractor/) to extract tuning. This will take *a while*.
 
 *__Include Class Names__*: This will toggle including class names in the comments (`<!--posture_StandExclusive--></T>` vs `<!--Posture: posture_StandExclusive--></T>`). It's purely a matter of preference, but if you intend to compare a file from different patch levels, then it would be best to be consistent.
 

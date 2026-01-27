@@ -15,7 +15,7 @@ But you'll also be able to see every single piece of tuning that references the 
 
 This can be very complicated to parse through, but very powerful for understanding how the game works to make your own mods or change how EA tuning works. 
 
-To use the XML File Finder, you'll need to first use XML Extractor (found in the same download), which you can find a tutorial for ***[here](../xml-extractor/).***
+To use the XML File Finder, you'll need to first use XML Extractor (found in the same download), which you can find a tutorial for ***[here](../scumbumbo-xml-extractor/).***
 
 Unfortunately, it's not very useful for finding things inside of tunings that aren't references to other tunings...if you want to find which tunings reference things like tags, icons, or even just lines of tuning, you'll want to use [Lumpinou's Tuning Game Example Finder!](https://app.ts4modhound.com/tools/game_example_search)
 
