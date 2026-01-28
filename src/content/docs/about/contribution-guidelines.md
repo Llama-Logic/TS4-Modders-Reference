@@ -71,7 +71,7 @@ Let's say you're writing a tutorial inside the tutorials folder, and you want to
 You need to do it like this:
 
 ```markdown
-**[Scumbumbo's XML Extractor](../tutorials/xml-extractor.md)**
+**[Scumbumbo's XML Extractor](../tutorials/scumbumbo-xml-extractor.md)**
 ```
 The text inside the brackets is the name of the page, and the text inside the parenthesis is the relative link itself.
 
@@ -80,11 +80,11 @@ The text inside the brackets is the name of the page, and the text inside the pa
 Let's say you're writing contribution-guidelines.md inside the `About` folder, and you need to link to XML Scumbumbo's XML Extractor. To link these succesfully, you need to link it like so:
 
 ```markdown
-**[Scumbumbo's XML Extractor](../../tutorials/xml-extractor.md)**
+**[Scumbumbo's XML Extractor](../../tutorials/scumbumbo-xml-extractor.md)**
 ```
 And the link will look like the example below.
 
-**[Scumbumbo's XML Extractor](../../tutorials/xml-extractor)**
+**[Scumbumbo's XML Extractor](../../tutorials/scumbumbo-xml-extractor)**
 
 ### Resources outside this website
 
