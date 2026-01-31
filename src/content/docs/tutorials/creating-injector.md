@@ -49,7 +49,7 @@ You can name your python files whatever you want, but the file name + class name
 
 First thing our script file needs is the class definition:
 
-```
+```python
 from sims4.tuning.instances import HashedTunedInstanceMetaclass
 
 class CareerEntitlementInjector(metaclass=HashedTunedInstanceMetaclass,
@@ -60,7 +60,7 @@ CareerEntitlementInjector is the name of the class (again, you can use any name 
 
 Next, we need to define our instance tunables, meaning we have to define the structure of our XML snippet. We're going to make the structure identical to `TRAIT_BASED_CAREER_LEVEL_ENTITLEMENTS` in `16051256355318702971<!--careers.career_tuning-->`, which is shown in the example above.
 
-Looking at the snippet, you'll see a `<U>` tag. Inside the tag are two `<T>` tags and one `<L>` tag containing a `<T>`. Dominic M has written a thorough article explaining what each of these tags means and how they work. You can read it if you're interested in more technical details. [Link to the article](https://leroidetout.medium.com/sims-4-tuning-101-a-deep-dive-into-how-tuning-is-generated-from-python-part-2-1a1f5f147c30). For this tutorial, you only need to know that for each of these tags there's a class in python and we need those when defining the snippet structure.
+Looking at the snippet, you'll see a `<U>` tag. Inside the tag are two `<T>` tags and one `<L>` tag containing a `<T>`. Leroidetout (Dominic M) has written a thorough article explaining what each of these tags means and how they work. You can read it if you're interested in more technical details. [Link to the article](https://leroidetout.medium.com/sims-4-tuning-101-a-deep-dive-into-how-tuning-is-generated-from-python-part-2-1a1f5f147c30). For this tutorial, you only need to know that for each of these tags there's a class in python and we need those when defining the snippet structure.
 
 This may seem intimidating and overwhelming at first, but you don't really need to understand the different data types to create mods. Here's a quick explanation:
 
@@ -70,7 +70,7 @@ This may seem intimidating and overwhelming at first, but you don't really need 
 
 The structure of our snippet is going to look like this, with example values to make it easier to understand:
 
-```
+```xml
   <L n="trait_based_career_entitlements">
     <U>
       <T n="benefits_description">0x7836EE61</T>
@@ -88,7 +88,7 @@ The structure of our snippet is going to look like this, with example values to 
 
 In python, it looks like this:
 
-```
+```python
     INSTANCE_TUNABLES = {'trait_based_career_entitlements': TunableList(
         tunable=TunableTuple(benefits_description=TunableLocalizedString(
             description='A localized string for entitlement reason'),
@@ -113,7 +113,7 @@ The last line has `unique_entries=True`, which means that you can't add the same
 
 So this is how our injector looks like now. Note that we need to import the necessary tuning classes for our script to work.
 
-```
+```python
 import services
 from sims4.localization import TunableLocalizedString
 from sims4.resources import Types
@@ -143,7 +143,7 @@ class CareerEntitlementInjector(metaclass=HashedTunedInstanceMetaclass,
 
 Now, on to the injection part. First, we need a method that runs once the tuning is loaded. This method will run every time you boot the game. Note that unlike earlier, you can't rename this method, it has to be called `_tuning_loaded_callback`.
 
-```
+```python
     @classmethod
     def _tuning_loaded_callback(cls):
 ```
@@ -152,7 +152,7 @@ We need to inject the data into the career tuning as an ImmutableSlots object. I
 
 Here's the whole injector method:
 
-```
+```python
     @classmethod
     def _tuning_loaded_callback(cls):
         create_career_level_entitlement = make_immutable_slots_class(
@@ -176,7 +176,7 @@ First, we create the immutable slots class. Then, we go through every entry in o
 
 And that's it! Here's the whole code with imports:
 
-```
+```python
 import services
 from careers.career_tuning import Career
 from sims4.collections import make_immutable_slots_class
@@ -224,7 +224,7 @@ You can now compile the script into a .ts4script file by running `compile.py`.
 
 One final thing we need is the package with our XML snippet. My snippet looks like this:
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <I c="CareerEntitlementInjector" i="snippet" m="januksenkosketus_career_entitlement_injector" n="januksenkosketus:career_entitlement_injector_snippet" s="17429251746300160708">
   <L n="trait_based_career_entitlements">
