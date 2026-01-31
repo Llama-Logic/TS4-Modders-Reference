@@ -7,7 +7,7 @@ sidebar:
 
 <sup><sub>A tutorial by januksenkosketus</sup></sub>
 
-This is a tutorial for creating a simple injector script. This tutorial assumes that you have a basic understanding of tuning mods. Previous python and/or programming experience is helpful but not mandatory.
+This is a tutorial for creating a simple injector script. This tutorial assumes you have a basic understanding of tuning mods and the most common programming concepts, such as imports, classes, and objects (or the willingness to look them up).
 
 Tools I used:
 
