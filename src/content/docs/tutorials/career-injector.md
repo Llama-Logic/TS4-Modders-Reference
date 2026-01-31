@@ -1,6 +1,6 @@
 ---
 title: Creating an injector
-description: A tutorial for creating an injector for CareerTuning
+description: A tutorial for injecting into CareerTuning
 sidebar:
   order: 50
 ---
@@ -16,7 +16,7 @@ Tools I used:
 
 ## Let's get started!
 
-So, what's a tuning injector? Tuning injector essentially does the same thing as a tuning mod without having to override the tuning files. Instead of editing the tuning XML you edit the instance in python.
+So, what's a tuning injector? Tuning injector essentially does the same thing as a tuning mod without having to override the tuning files. Instead of editing the tuning XML you edit the tuning in python.
 Typically you don't need to create your own injectors. The Lot51 Core Library has injectors for most use cases, for example for adding interactions to objects. However, sometimes what you want to do is so specific that the core library can't help you.
 
 In this tutorial, we'll create a mod that allows sims with a specific trait start a career at a higher level. Let's take a look at `16051256355318702971<!--careers.career_tuning-->`. You can find a list called `TRAIT_BASED_CAREER_LEVEL_ENTITLEMENTS` which contains, well, trait-based career level entitlements. For example, if your sim has a degree in bartending, they can start a culinary career at the first level of the bartender track.
@@ -111,7 +111,7 @@ It's scary, I know, but let's go through it line by line. First, there's a Tunab
 
 The last line has `unique_entries=True`, which means that you can't add the same value to the `career_entitlements` more than once. In this case, it wouldn't really matter if you did, but I just wanted to mention it to show that the option exists.
 
-So this is how our injector looks like now:
+So this is how our injector looks like now. Note that we need to import the necessary tuning classes for our script to work.
 
 ```
 import services
@@ -246,3 +246,7 @@ One final thing we need is the package with our XML snippet. My snippet looks li
 Note that the names of the class and the module must be exactly the same as those of your python class and script file, otherwise the script won't find your snippet.
 
 Now just place your ts4script and package files in your Mods folders and tada! Your sim with the correct trait should now be able to start the specified career(s) at a higher level!
+
+---
+
+Originally written by [januksenkosketus](https://www.curseforge.com/members/januksenkosketus/projects) for this site.
