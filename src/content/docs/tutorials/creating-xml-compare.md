@@ -1,6 +1,7 @@
 ---
 title: Creating an XML Compare File with WinMerge
 description: How to create an XML Compare file using WinMerge after a patch
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---

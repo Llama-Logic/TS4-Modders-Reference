@@ -1,6 +1,7 @@
 ---
 title: Scumbumbo's XML File Finder
 description: A tutorial for using Scumbumbo XML File Finder
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---

@@ -1,6 +1,7 @@
 ---
 title: Links to Off-Site References
 description: A collection of links to references hosted on other sites
+lastUpdated: true
 sidebar:
   order: 100
 ---

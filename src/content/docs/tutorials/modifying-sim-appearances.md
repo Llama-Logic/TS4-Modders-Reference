@@ -1,6 +1,7 @@
 ---
 title: Modifying Sim Appearances
 description: A tutorial for modifying sim appearances in a mod you're creating for The Sims 4
+lastUpdated: 2025-11-12
 sidebar:
   order: 50
 ---

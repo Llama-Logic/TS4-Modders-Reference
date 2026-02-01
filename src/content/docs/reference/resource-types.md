@@ -1,6 +1,7 @@
 ---
 title: Resource Type Index
 description: List of all resources types.
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---

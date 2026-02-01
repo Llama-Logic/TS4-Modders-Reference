@@ -2,8 +2,9 @@
 title: How to contribute to this site using GitHub
 description: A tutorial on how to contribute to this site
 tableOfContents: true
+lastUpdated: 2025-09-18
 ---
-
+-
 <sup><sub> A tutorial by Jimantha</sup><sub>
 
 ## Welcome!

@@ -1,6 +1,7 @@
 ---
 title: Creating an injector
 description: A tutorial for injecting into CareerTuning
+lastUpdated: true
 sidebar:
   order: 50
 ---

@@ -1,6 +1,7 @@
 ---
 title: Collection of Random Modding Knowledge
 description: A collection of bits of random modding knowledge too small to become their own page
+lastUpdated: 2025-10-06
 sidebar:
   order: 99
 ---

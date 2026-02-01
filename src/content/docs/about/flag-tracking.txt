@@ -1,0 +1,29 @@
+---
+title: Flag Tracking
+description: Flag tracking
+tableOfContents: false
+---
+
+Flag markers are in the header, under Sidebar. They're kept on until the next patch, unless the next patch is very close to the time it was added. 
+Example:
+
+sidebar:
+  order: 50
+  badge:
+    text: NEW
+    variant: tip
+
+New:
+
+  badge:
+    text: NEW
+    variant: tip
+
+Ilkavelle: 
+Creating an Injector: Feb 1, 2025
+
+Updated:
+
+  badge:
+    text: UPD
+    variant: note
