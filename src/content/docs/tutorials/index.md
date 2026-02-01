@@ -2,6 +2,7 @@
 title: Index
 description: Index of Tutorials on the Modders Reference Website
 tableOfContents: false
+lastUpdated: true
 sidebar:
   order: 1
 ---
@@ -56,7 +57,10 @@ sidebar:
 
 <summary>Script Mods</summary>
 
+* [Creating an injector](../tutorials/creating-injector), by januksenkosketus
 * [Modifying Sim Appearances](../tutorials/modifying-sim-appearances/), by FellowFur
+* [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
+    * [Sims 4 Tuning 101: A Deep Dive into how Tuning is Generated from Python](../tutorials/links-offsite-tutorials/#sims-4-tuning-101-a-deep-dive-into-how-tuning-is-generated-from-python-by-leroidetout)
 
 </details>
 
@@ -100,6 +104,7 @@ sidebar:
 
 * [Comparing Files with WinMerge](../tutorials/compare-files-winmerge/), by Waffle
 * [Creating a Custom Pie Menu](../tutorials/creating-a-pie-menu), by Amethyst Lilac
+* [Creating an injector](../tutorials/creating-injector), by januksenkosketus
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/fix-for-new-occult), by Amethyst Lilac
@@ -113,6 +118,7 @@ sidebar:
     * [How I made the "Sell to publication increases Entrepreneur Skill" mod](../tutorials/links-offsite-tutorials/#how-i-made-the-sell-to-publication-increases-entrepreneur-skill-mod-by-jimantha), by Jimantha
     * [How to Stop Adults from Complaining About Prom on the Social Bunny App](../tutorials/links-offsite-tutorials/#how-to-stop-adults-from-complaining-about-prom-on-the-social-bunny-app-by-jimantha), by Jimantha
     * [Sims 4 Debugging Tipps](../tutorials/links-offsite-tutorials/#sims-4-debugging-tips-by-jimantha)
+    * [Sims 4 Tuning 101: A Deep Dive into how Tuning is Generated from Python](../tutorials/links-offsite-tutorials/#sims-4-tuning-101-a-deep-dive-into-how-tuning-is-generated-from-python-by-leroidetout)
     * [Social Bunny Tweaks](../tutorials/links-offsite-tutorials/#social-bunny-tweaks-by-jimantha), by Jimantha
 
 </details>
@@ -133,6 +139,7 @@ sidebar:
 May be stream of consciousness or about the thought process of modding
 
 * [Creating a Custom Pie Menu](../tutorials/creating-a-pie-menu), by Amethyst Lilac
+* [Creating an injector](../tutorials/creating-injector), by januksenkosketus
 * [Links to Off-Site Tutorials](../tutorials/links-offsite-tutorials):
     * [Figuring Out Venue Stuff - Waffle Explains It All!](../tutorials/links-offsite-tutorials/#figuring-out-venue-stuff---waffle-explains-it-all-by-waffle), by Waffle
     * [How to Stop Adults from Complaining About Prom on the Social Bunny App](../tutorials/links-offsite-tutorials/#how-to-stop-adults-from-complaining-about-prom-on-the-social-bunny-app-by-jimantha), by Jimantha
@@ -147,6 +154,7 @@ May be stream of consciousness or about the thought process of modding
 
 * [Comparing Files with WinMerge](../tutorials/compare-files-winmerge/), by Waffle
 * [Creating a Custom Pie Menu](../tutorials/creating-a-pie-menu), by Amethyst Lilac
+* [Creating an injector](../tutorials/creating-injector), by januksenkosketus
 * [Creating an XML Compare File with WinMerge](../tutorials/creating-xml-compare), by Amethyst Lilac
 * [Custom Maps](../tutorials/custom-maps/), by Alistu a.k.a. Menaceman44
 * [Fixing CC For New Occults](../tutorials/fix-for-new-occult), by Amethyst Lilac
@@ -181,6 +189,7 @@ May be stream of consciousness or about the thought process of modding
     * [How I made the "Sell to publication increases Entrepreneur Skill" mod](../tutorials/links-offsite-tutorials/#how-i-made-the-sell-to-publication-increases-entrepreneur-skill-mod-by-jimantha), by Jimantha
     * [How to Stop Adults from Complaining About Prom on the Social Bunny App](../tutorials/links-offsite-tutorials/#how-to-stop-adults-from-complaining-about-prom-on-the-social-bunny-app-by-jimantha), by Jimantha
     * [Sims 4 Debugging Tipps](../tutorials/links-offsite-tutorials/#sims-4-debugging-tips-by-jimantha)
+    * [Sims 4 Tuning 101: A Deep Dive into how Tuning is Generated from Python](../tutorials/links-offsite-tutorials/#sims-4-tuning-101-a-deep-dive-into-how-tuning-is-generated-from-python-by-leroidetout)
     * [Social Bunny Tweaks](../tutorials/links-offsite-tutorials/#social-bunny-tweaks-by-jimantha), by Jimantha
 
 </details>

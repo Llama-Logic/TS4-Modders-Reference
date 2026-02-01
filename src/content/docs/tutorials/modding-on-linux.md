@@ -1,6 +1,7 @@
 ---
 title: Modding on Linux (a Guide for Newbies)
 description: A tutorial for modding The Sims 4 on Linux
+lastUpdated: 2025-12-15
 sidebar:
   order: 50
 ---

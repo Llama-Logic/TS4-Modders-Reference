@@ -1,6 +1,7 @@
 ---
 title: How to Contribute
 description: Instructions on how to contribute to The Sims 4 Modders Reference
+lastUpdated: 2025-07-22
 ---
 Right now, there are two main ways to contribute to The Sims 4 Modders Reference.
 

@@ -1,6 +1,7 @@
 ---
 title: Sims 4 Studio Menus
 description: A guide to using the menus at the top of Sims 4 Studio
+lastUpdated: 2025-10-06
 tableOfContents:
   minHeadingLevel: 1
   maxHeadingLevel: 4
