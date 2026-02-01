@@ -27,3 +27,5 @@ Updated:
   badge:
     text: UPD
     variant: note
+
+Contribution Guidelines: 

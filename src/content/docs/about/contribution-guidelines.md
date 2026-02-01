@@ -1,7 +1,10 @@
 ---
 title: Contribution Guidelines
 description: Guidelines to follow if you want to contribute to The Sims 4 Modders Reference
-lastUpdated: 2025-09-18
+lastUpdated: true
+  badge:
+    text: UPD
+    variant: note
 ---
 
 **The Sims 4 Modders Reference** has the following guidelines for contributors and contributions alike. Please follow them to the best of your ability when submitting your contributions.
@@ -9,19 +12,35 @@ lastUpdated: 2025-09-18
 ## Naming convention
 Please name your files in lower-case, separating each word with an en-dash (-). Follow the example below.
 
+Please give the file a name as close to its title as possible. This keeps the sidebar in alphabetical order.
+
 ```markdown
 contribution-guidelines.md
 ```
 
-## Title and description 
+## Header 
+Each page has a header which gives certain information about the page.
+
 Pages need a title and a short description. The description won't be visible on the site, but it is visible for searching and embedding. 
 These need to be at the top of the page.
+
+The heeader should include the last updated date, which will in most cases be `true` so that the date is determined automatically. If this date is misleading, you can override it, using the format YYYY-MM-DD. The date will be displayed at the bottom right.
+
+The header should include the sidebar order, which in most cases will be set to 50. Exceptions are for collection pages. Any exceptions not already made must be discussed and approved.
+
+New pages will get a NEW flag (variant: tip), and updated pages will get an UPD flag (variant note), shown in the sidebar and will generally remain until the next patch.
 
 Please see the example below:
 ```markdown
 ---
 title: Scumbumbo's XML File Finder
 description: A tutorial for using Scumbumbo XML File Finder
+lastUpdated: 2025-10-06
+sidebar:
+  order: 50
+  badge:
+    text: NEW
+    variant: tip
 ---
 ```
 
