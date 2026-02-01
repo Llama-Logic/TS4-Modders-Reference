@@ -1,6 +1,7 @@
 ---
 title: Internal Compression of DBPF Files
 description: Internal Compression of Database Package (DBPF/.package) Files
+lastUpdated: 2026-10-06
 sidebar:
   order: 50
 ---

@@ -1,6 +1,7 @@
 ---
 title: Restricting a File to a Pack Using Group ID
 description: How to restrict part of a mod to a pack using group ID
+lastUpdated: 2025-11-12
 sidebar:
   order: 50
 ---

@@ -1,6 +1,7 @@
 ---
 title: String Table File (STBL) format
 description: A Format of a .package/DBPF file
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---

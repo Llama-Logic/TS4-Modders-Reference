@@ -1,6 +1,7 @@
 ---
 title: Scumbumbo's XML Extractor
 description: A tutorial for using Scumbumbo's XML Extractor
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---

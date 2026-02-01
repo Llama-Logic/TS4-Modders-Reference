@@ -2,6 +2,7 @@
 title: Index
 description: Index of References on the Modders Reference Website
 tableOfContents: false
+lastUpdated: true
 sidebar:
   order: 1
 ---

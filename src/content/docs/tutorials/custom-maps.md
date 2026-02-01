@@ -1,6 +1,7 @@
 ---
 title: Custom Maps
 description: A tutorial for creating custom maps for The Sims 4
+lastUpdated: 2025-10-06
 sidebar:
   order: 50
 ---
