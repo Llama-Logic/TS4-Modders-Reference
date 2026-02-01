@@ -61,7 +61,7 @@ The File menu has four options:
 
 The Settings button in the menu will bring up the Settings window for S4S.
 
-There are two tabs: General and UI. At the bottom is a Save button, which you need to use to save your settings.
+There are four tabs: General, UI, Language and Tuning. At the bottom is a Save button, which you need to use to save your settings.
 
 The General tab has:
 
@@ -71,13 +71,18 @@ The General tab has:
 * a box for your Sims 4 Documents folder. Typically, this would be located at `C:\Users\USERNAME\Documents\Electronic Arts\The Sims 4`. It's where your Mods folder is. You can type/paste it in manually or used the `...` button to the right to navigate to the folder.
 * a box for your Blender path. This should point to the `blender.exe` for the version of Blender that you want S4S to use. Refer to the download page for S4S to see the currently supported versions of Blender. You can type/paste it in manually or used the `...` button to the right to navigate to the folder.
 * a check box for Show saved files in Explorer.
-* a check box for Remember windoe size: if this is checked, S4S should open with the same window size it had when you last closed it.
+* a check box for Remember window size: if this is checked, S4S should open with the same window size it had when you last closed it.
 * a selection box for Number of recent projects: This setting determines how many files S4S will remember under My Projects on the main page of S4S. You can type in a number or use the plus and minus buttons.
 * a check box for Disable Hardware Rendering: This setting can be toggled if you're having issues like jagged edges, weird lines, CC being invisible in studio, or extreme lag. You may need to experiment with it toggled on and off, and it may need to be on in some situations and off in others.
 
 The UI tab has options to toggle on and off various confirmation messages, warnings and alerts.
 
-The Language tab has a drop down menu to select the language S4S will use plus a check box for changing the language used for resourse type names (not changed by default).
+The Language tab has a drop down menu to select the language S4S will use plus a check box to include changing the language used for resourse type names (not changed by default).
+
+The Tuning tab has:
+* a drop down menu for choosing the TDESC version you wish to use
+* check boxes for extraction options
+* a button to take you to the S4S Tuning Description folder
 
 </details>
 
