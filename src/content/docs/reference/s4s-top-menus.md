@@ -45,7 +45,7 @@ The File menu has four options:
 ![The File menu of S4S, with four options: Main Menu, Save, Save As..., and Exit](~/assets/S4S-file-menu-amethyst.png)
 
 1. Main Menu: This will take you back to the main page of Sims 4 Studio. It will exit any package you're editing ***without*** saving anything that isn't already saved. Note that some things auto save and some don't, so make sure to back up your files because exiting without saving doesn't always reverse accidental or mistaken changes.
-2. Save: This will save your currently open package file. It also shows the kwyboard shortcut for save-as, which id Ctrl + S. If you don't have a currently open package, this option will be greyed out.
+2. Save: This will save your currently open package file. It also shows the keyboard shortcut for Save, which is Ctrl + S. If you don't have a currently open package, this option will be greyed out.
 3. Save As...: This will save your currently open package file as a new file, and then will have that new file open. This will ***not*** re-instance your file, meaning that it will conflict with the original file. This can be used as a method of creating a new version of your file to test things in without changing the original, but it cannot be used to create a new file that will co-exist with the original, such as a recolour. Use the buttons below to create files for that. If you don't have a currently open package, this option will be greyed out.
 4. Exit: This will exit S4S immediately and without saving.
 
@@ -76,6 +76,8 @@ The General tab has:
 * a check box for Disable Hardware Rendering: This setting can be toggled if you're having issues like jagged edges, weird lines, CC being invisible in studio, or extreme lag. You may need to experiment with it toggled on and off, and it may need to be on in some situations and off in others.
 
 The UI tab has options to toggle on and off various confirmation messages, warnings and alerts.
+
+The Language tab has a drop down menu to select the language S4S will use plus a check box for changing the language used for resourse type names (not changed by default).
 
 </details>
 
