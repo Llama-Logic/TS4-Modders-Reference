@@ -1,0 +1,85 @@
+---
+title: Patch 1.121.342
+description: Changes between last patch and the current patch
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+import { LinkCard, LinkButton, Aside, Icon, Card } from '@astrojs/starlight/components';
+
+**Update: Feb 3, 2026** \
+**Version: PC: 1.121.342.1030 / Mac: 1.121.342.1230**
+
+Pre-Patch for the *Royalty & Legacy* Expansion Pack, *Silver Screen Style* Kit, *Tea Time Solarium* Kit, *Wonderland Playroom* Kit and *Yard Charm* Kit, as well as the new *Lost Legacies* Event.\
+\
+Notable bug fixes include a fix for photos turning black, introduced in the previous patch.
+
+This patch brings major changes to family trees, genealogy and relationship data. Mods that extend or interpret family an relationship data is expected to be affected. This resulting in missing relatives, unexpected relationship changes, family trees not reflecting other data and general breakage. Read the summary below under "Code & Tuning Changes" or the full article [here](https://forums.ea.com/blog/the-sims-game-info-hub-en/the-sims-4-code-changes-for-modders---feb-3rd-base-game-update/13120743).
+
+---
+<LinkButton href="/pages/1121342_report.html" icon="document" iconPlacement="start">XML Comparison</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/update-2-3-2026" variant="secondary" icon="external" iconPlacement="start">Patch Notes</LinkButton>
+
+### Packs & Kits
+DLC added with this patch.
+    | **Pack** | **Group ID** | **Number**         | **Name**              |       | **Release Date** |                                                    |
+    | -------- | ------------ | ------------------ | --------------------- | ----- | ---------------- |----------------------------------------------------|
+    | EP21     | 0x8D         | 141                | Royalty & Legacy      | -     | Feb 12, 2026     |                                                    |
+    | SP75     | 0x74         | 116                | Wonderland Playroom   | -     | Feb 26, 2026     |                                                    |
+    | SP76     | 0x75         | 117                | Silver Screen Style   | -     | Feb 12, 2026     |                                                    |
+    | SP77     | 0x76         | 118                | Tea Time Solarium     | -     | Feb 12, 2026     |                                                    |
+    | SP82     | 0x7B         | 123                | Yard Charm            | -     | Feb 26, 2026     |                                                    |
+
+### Assets
+
+##### Create-A-Sim
+TBA
+
+##### Build-Buy
+
+    | **Name**                                  | **String Name**                          |                                                                 |                                                                           |
+    | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------- |
+    | sculptTableMedium_EV007SPBphone           | Heirloom Easel of the Darong Family      | <abbr title="Lost Legacies Event"><Icon name="comment" /></abbr> |                                                                           |
+    | window2x1_EV008EVR3Tile                   | Ceremonial Dedication Fenestra for Cordelia Thebe           | <abbr title="Lost Legacies Event"><Icon name="comment" /></abbr> |  |
+    | memorialDisplay_EV008EVRregency           | Draped Memorial Display Table            | <abbr title="Lost Legacies Event"><Icon name="comment" /></abbr> | <abbr title="Life & Death EP"><Icon name="information" /></abbr> |
+    | collectSkeletonKeyDisplay_EV008EVR        | Antique Curio Display Table              | <abbr title="Lost Legacies Event"><Icon name="comment" /></abbr> |       |
+    | doorSingle2x1_EV008EVRbookcase3Tile       | Capp Library Bookcase                    | <abbr title="Lost Legacies Event"><Icon name="comment" /></abbr> |       |
+
+### CC Changes
+- The previous patch renamed the *Afro* tag to *Curly*, this patch reintroduces the *Afro* tag, but as a completely new one.
+- Note the new *Africana* tag for clothing.
+- CC fences are reported broken when used with the new flaired staircase feature.
+
+### Code & Tuning Changes
+
+<Card title="Relationship & Family Tree Changes">
+<Aside>Please see the [article](https://forums.ea.com/blog/the-sims-game-info-hub-en/the-sims-4-code-changes-for-modders---feb-3rd-base-game-update/13120743) provided my EA for detailed explanations and information on how to adapt/use the new systems.</Aside>
+
+##### Tuning
+- It is no longer allowed to use **relationship loots** to set any family relbits other than parents.
+- It is no longer allowed to use the Relationship Map in **premade_sim_relationships** to set up family relationships between households. Instead use the new **Family Relations Fixup**. 
+  - In-household relationships are still set using the household template as before.
+- The *relationship* / *family_relationship* / *target_family_relationship* is now **RelationshipType** instead of **FamilyRelationshipIndex** in the following tunings; 
+  - **whims.whim_set.GeneTargetFactory** 
+  - **filters.tunable.GenealogyFilterTerm**
+  - **aspirations.aspiration_tuning.AspirationFamilialTrigger**
+
+##### General
+- **SimInfo** and **GenealogyTracker** interface has seen slight changes.
+- Apart from direct Parent or Partner relations, it is no longer possible to set any family relations in Python or Tuning. All other relations will be automatically generated by the game using the new **Family Tree Service**. (This includes *siblings*, *grandparents*, *cousins* etc.). 
+  - Any indirect relations set by code before will be deducted and set by the new system.
+- The new **Family Tree Service** keeps a persistent, always growing Family Tree Graph for all sims in a save. It keeps data about sims while living and after their death (and possible purge of the sim from the save), unless manually deleted in CAS.
+- The above described **Family Tree Service** replaces the **genealogy_cache** completely.
+
+The game synchronizes the state of **SimInfos** with the Family Tree Graph and family relbits between all related sims on every loading.
+As a result of the above points, legacy relations recorded in the **GenealogyTracker**, other than parental relations, will only be used for portability between Python and Client. Only direct parental relations will be used as the truth for the Family Tree graph during loading-time sync.
+
+Any family relbits that has no correspoding relation in the Family Tree Graph during loading will be archived/removed from the game.
+To provide backwards compatibility with legacy saves, that may have been affected by mods, the game will attempt to reconstruct "unknown" parents in the Family Tree Graph for parentless siblings and grandchildren without parents only based on relbits. For safety reasons however, this may not always run.
+
+For further information, see the [article](https://forums.ea.com/blog/the-sims-game-info-hub-en/the-sims-4-code-changes-for-modders---feb-3rd-base-game-update/13120743).
+</Card>
+
+<LinkCard title="Protobuf Changes (External)" href="https://github.com/Llama-Logic/LlamaLogic/commit/39cda45c8ad4fae6a9975a39888eacf6f034f7be#diff-cd1b3461b31d6e178a4d8672f1f8a90f136d505763d975291229eefacf0b0eda" />
+---
+Originally written by [Kallixer](https://www.patreon.com/c/Kallixer) for this site.
