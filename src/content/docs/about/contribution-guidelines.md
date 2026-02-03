@@ -2,6 +2,7 @@
 title: Contribution Guidelines
 description: Guidelines to follow if you want to contribute to The Sims 4 Modders Reference
 lastUpdated: true
+next: true
 sidebar:
   badge:
     text: UPD

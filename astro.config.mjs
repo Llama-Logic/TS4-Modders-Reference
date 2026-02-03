@@ -8,6 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			favicon: 'favicon.png',
+			pagination: false,
 			customCss: [
 				'./src/style/site.css',
 			],
