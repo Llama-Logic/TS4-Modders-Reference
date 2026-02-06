@@ -37,7 +37,7 @@ Please see the example below:
 ---
 title: Scumbumbo's XML File Finder
 description: A tutorial for using Scumbumbo XML File Finder
-lastUpdated: 2025-10-06
+lastUpdated: true
 sidebar:
   order: 50
   badge:
