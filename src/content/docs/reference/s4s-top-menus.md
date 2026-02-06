@@ -13,7 +13,7 @@ sidebar:
 
 This guide will go over the various menus and buttons at the top of [Sims 4 Studio](https://sims4studio.com/board/6/download-sims-studio-open-version), possibly the most commonly used tool in Sims 4 modding and custom content creation.
 
-![Top top left of Sims 4 Studio on Windows. The title bar has a house, a paint palette, and the S4S version number. The menu below has five options: File, Settings, Tools, Content Management, and Help](~/assets/s4s-top-amethyst.png)
+![Top left of Sims 4 Studio on Windows. The title bar has a house, a paint palette, and the S4S version number. The menu below has five options: File, Settings, Tools, Content Management, and Help](~/assets/s4s-top-amethyst.png)
 
 *__Note__*: Macs have one set of menus at the top instead of two, and have the standard Mac app menu at the beginning and Window menu to the right, as seen below.
 
@@ -78,7 +78,7 @@ The General tab has:
 
 The UI tab has options to toggle on and off various confirmation messages, warnings and alerts.
 
-The Language tab has a drop down menu to select the language S4S will use plus a check box to include changing the language used for resourse type names (not changed by default).
+The Language tab has a drop down menu to select the language S4S will use plus a check box to include changing the language used for resource type names (not changed by default).
 
 The Tuning tab has:
 * a drop down menu for choosing the TDESC version you wish to use
@@ -133,7 +133,7 @@ At the bottom, there are four check boxes and two buttons.
 
 If you click this option, a new window will open called Game File Cruiser. You can use this to browse through the game's files.
 
-![The Game File Crusier window, as described below.](~/assets/s4s-gfc-amethyst.png)
+![The Game File Cruiser window, as described below.](~/assets/s4s-gfc-amethyst.png)
 
 At the top left is a list of file types with check boxes. Above them is a filter bar. If you type into the filter bar, it will show you only file types that contain your search term. Above that are two buttons, All and Clear. All will select all file types. Clear will clear all check boxes. To see any files, you need to check at least one box.
 
@@ -175,7 +175,7 @@ If you click this option, a new window will open called Hash Generator. You can 
 
 ![Sims 4 Studio's Hash Generator, with various hashing options.](~/assets/s4s-hash-generator-amethyst.png)
 
-At the top, you can convert between decimal and hexidecimal numbers.
+At the top, you can convert between decimal and hexadecimal numbers.
 
 Below, you can enter text and it will be converted to various types of hashes. Under the hashes, you can select the mode. The default is hexidecimal. You can switch to decimal if you need decimal.
 
@@ -289,6 +289,10 @@ If you have unused textures in the warehouse tab of the currently open package, 
 
 This will fix the currently open file for a preset that cause toddlers to have distorted faces. It will not fix presets that are broken in general, just ones that broke for toddlers with the For Rent patch.
 
+#### Scan Folder for Resource Conflicts
+
+This will scan your selected folder for 
+
 </details>
 
 ### Generate List
@@ -315,7 +319,7 @@ Will open a new window with an alphabetical list of the game's VFX that you can 
 
 #### Sounds
 
-Will open a new window with an alphabetical list of the game's sounds that you can scroll through and copy from, with with instance, name, and often the file where name and location the sound file is located.
+Will open a new window with an alphabetical list of the game's sounds that you can scroll through and copy from, with instance, name, and often the file where name and location the sound file is located.
 
 #### Object Tuning
 
@@ -324,6 +328,10 @@ Will open a new window with a list of the game's object tunings that you can scr
 #### Tag Usage
 
 Will export a set of files, one per tag, that list all game items that use that particular tag, in the folder you choose. It's advised to choose or create a dedicated folder, because there are thousands of files.
+
+#### Modifiers & Sculpts
+
+Will export a set of .csv files, one per modifier map or sculpt map, in a folder inside the folder you choose.
 
 </details>
 
@@ -395,7 +403,7 @@ A sub menu of Content Management, with two options:
 
 #### Find Resource
 
-Enter a resource id (a decimal or hexidecimal number, such as an instance in 0xAED50CC4 form or an instanceDecimal) into the window that opens, and S4S will check if that number is in a package in your mods folder.
+Enter a resource id (a decimal or hexadecimal number, such as an instance in 0xAED50CC4 form or an instanceDecimal) into the window that opens, and S4S will check if that number is in a package in your mods folder.
 
 #### Find objects with unsupported slot count
 
@@ -409,8 +417,7 @@ This will search the folder you select to check for any objects with more than E
 
 <summary>Hide</summary>
 
-![The Help menu of S4S, with the options listed below. The Cheats sub-menu is open to the right.](~/assets/s4s-tools-modding-amethyst.png)
-
+![The Help menu of S4S, with the options listed below. The Cheats sub-menu is open to the right.](~/assets/s4s-help-menu-amethyst.png)
 
 ### About
 
