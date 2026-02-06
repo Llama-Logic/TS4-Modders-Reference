@@ -1,0 +1,112 @@
+---
+title: Part 1 - Let's Start! - Iterations in Objectives
+description: A tutorial for changing the number of times a Sim completes an action in order to complete a task.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { Aside, Steps, LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+I want to teach you some modding, firstly how to do simple changes in mods to adjust them to your needs. And first thing I could think of were objectives in aspirations, where there is a number of iterations - how many times a Sim needs to repeat the action to complete the task.
+
+We all play differently, some play with long lifespan and some with the very short one. I play with the long one and I am aware that can affect how challenging my aspirations could be. So how about you could customize some aspects to your needs?
+
+## Before we start
+
+If you are new to modding - I recommend to make backup of your Save folder before entering game after changing the mods (and I recommend it also when you put a new mod in your game, to make sure, that even if something crashes, you won't lose your game progress).
+
+**Prerequisites** - Install Sims4Studio (known as S4S; to open the file and be able to modify it). You can download it from [here](https://sims4studio.com/board/6/download-sims-studio-open-version). Install the one for your operation system - Star for Windows and Aurora for Mac.
+
+![The page on the Sims 4 Studio forums where you choose which version of Sims 4 Studio to download.](~/assets/MIY-download-s4s-forum-ilkavelle.PNG)
+
+## How to change the number of iterations needed to complete a task in aspiration?
+
+<Steps>
+
+1. ### Open the mod
+
+   Once the Sims4Studio is installed, you'll be able to open with it a mod that you wish to modify. Go to the Mods folder and open a mod.
+
+   Let's practice on my [My Own Business Aspiration](https://ilkavelle.wixsite.com/simsquest/post/my-own-business-aspiration).
+
+   This is the view after opening a mod in S4S:
+
+   ![My Own Business aspiration, by ilkavelle, open as a file in Sims 4 Studio.](~/assets/MIY-my-own-business-open-in-s4s-ilkavelle.PNG)
+
+2. ### Look for Objective Tuning files
+
+   Look for them on the left side (I am not sure how the photo above is readable so below the larger fragment with Objective Tuning marked):
+
+   ![A fragment of the list of files in the My Own Business file, with Objective Tuning highlighted.](~/assets/MIY-objective-tuning-highlighted-ilkavelle.PNG)
+
+   Each objective tuning is responsible for a task within aspiration. You can see the name of it, the one that is highlighted is named `ilkavelle:objective_Asp_Entrepreneur_Hire` - so this is the objective to "Hire New Employee". It's quite recognizable, you can guess which task it is about. But files are not always named in a comprehensible way, unfortunately. I must admit, when I was starting modding, I wasn't naming them very well :( Now I try to be more organized with it, so it's definitely easier to search for files within my newer mods.
+
+   <Aside type="tip" icon="information">To easily find all objectives files, you can click on Type column and this will sort all the files according to their type - that way you'll find all Objective Tunings grouped together.</Aside>
+
+3. ### Click the Objective Tuning you want to modify
+
+   ...and look at the right side of the S4S. I clicked the Objective Tuning named: `ilkavelle:objective_Asp_Entrepreneur_PraiseOrCriticize`
+
+   ![The Objective Tuning `ilkavelle:objective_Asp_Entrepreneur_PraiseOrCriticize` selected.](~/assets/MIY-PraiseOrCriticize-selected-ilkavelle.PNG)
+
+   And this is what opened for me on the right side:
+
+   ![The XML for `ilkavelle:objective_Asp_Entrepreneur_PraiseOrCriticize`.](~/assets/MIY-XML-PraiseOrCriticize-ilkavelle.PNG)
+
+   Make sure you see the content of XML Tab (marked with yellow above).
+
+   Now you see how this objective is constructed.
+
+4. ### Change the number of iterations
+
+   Look for this fragment of code - `iterations_required_to_pass`, we can see number 15 next to it:
+
+   ![The section of the XML showing `iterations_required_to_pass` with the number 15 highlighted.](~/assets/MIY-15-iterations-ilkavelle.PNG)
+
+   This means (in this objective) that Sim must "Praise or Criticize an Employee" 15 times. You can change this number :) But be careful not to remove any other sign ;) Just change the number. For the training purposes I am changing it to 8.
+
+   ![The section of the XML showing `iterations_required_to_pass` with the number 8 highlighted.](~/assets/MIY-8-iterations-ilkavelle.PNG)
+
+5. ### Save the file
+
+   Click on the Save button in the bottom right corner:
+
+   ![The import, export, and save buttons in the bottom right of Sims 4 Studio](~/assets/MIY-import-export-save-buttons-ilkavelle.PNG)
+
+   You should see the notification saying that .package file was saved. Now you can close the mod.
+
+6. ### Open the game and check the changes
+
+   As you can see, the change is now visible in the game - 8 actions are here now required. (I had to cheat to quickly see this change as my Sim didn't have this aspiration ;) )
+
+   ![The aspiration in game, with Praise or Criticize an Employee showing 0/8 and highlighted in yellow.](~/assets/MIY-PraiseOrCriticize-8-in-game-ilkavelle.PNG)
+
+   Good news is, if you mess something up (e.g. by mistake delete something in the mod etc.), you can simply delete the mod and download it again ;)
+
+</Steps>
+
+## Final note
+
+* What I showed you here will work only for objectives where there is specified number of iterations for the given action. But there are other objectives: for skill progression, or career progression, or having a certain buff or mood etc. For these objectives there is usually no iteration aspect, but other parameters. You can of course check it by yourself and try to play with these other parameters on your own. As I mentioned, if you mess up, you can always redownload the mod :D
+
+* Career objectives work the same way, so you can alter them in the same way as shown here.
+
+* The fact that you changed the number of iterations will not automatically mean that the text also changed. In the example above the number of iterations was not specified in the task text, it was simply "Praise or Criticize an Employee". But sometimes it is specified and then it will stay unchanged until you change also the text. But this topic is not for today :)
+
+Did you find it useful? Was it comprehensible? Do you want me to make some other instructions like this? Please let me know your thoughts :)
+
+---
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-2-text-strings" icon="right-caret" iconPlacement="start">On to Part 2</LinkButton><br />
+
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/116318038) as part of the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

@@ -1,0 +1,101 @@
+---
+title: Part 10 - Aspiration Tuning
+description: A tutorial about Aspiration Tuning used within aspirations.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Today we'll cover only main Aspiration Tuning used within aspirations. There are few other types, e.g. for career assignments, but I think once you get the concept, everything else will be then more intuitive.
+
+Also, since my previous tutorials was put very simply, to make sure everyone gets the idea, I think there is no need anymore for such detailed explaining. So from now on, I will probably explain things less and less meticulously. But let me know if something is not clear.
+
+Aspiration tuning in aspirations is in other words - aspiration level. Tuning file looks like this (it's painter aspiration, 1st level):
+
+![The tuning for an Aspiration Tuning](~/assets/MIY-aspiration-tuning-ilkavelle.png)
+
+## Aspiration Tuning structure
+
+1. **Aspiration valid age type** - this defines for which age group this aspiration will be visible. There are only 3 possible options here:
+
+   * CHILD_ONLY
+   * TEEN_ONLY
+   * TEEN_OR_OLDER
+   * (There's also TODDLER_ONLY but toddlers can't have aspirations like this).
+
+2. **Display name** - this is name of this particular aspiration level.
+
+3. **Do not register events on load**
+
+   When set to True, it will start "checking" the task only when the aspiration in active.
+
+   When set to False - it will check towards the aspiration, even when your Sim has currently different aspiration chosen.
+
+4. **Objectives** - these are tasks to be done within aspiration. I never checked how many objectives you can have max within 1 aspiration level, but UI will only show correctly up to 4. Everything above 4 will not be visible from Simology panel.
+
+5. **On complete loot actions** - here you can add what happens upon completing this particular aspiration level. The one that is listed is responsible for increasing the path bar towards Souls Journey. But you can add your own too! For example, with this mechanism you could add a buff, when a Sim completes an aspiration level. Or maybe even a bonus, like skill increase, or money or something else. You can also entirely delete this section if you want.
+
+6. **Screen slam** - I don't know if I can explain it well :D So this is this aspiration icon enlarged that is popping on the screen when we complete an aspiration level. This:
+
+![What you see when you complete a level of an aspiration, in Polish](~/assets/miy-screen-slam-horse-ilkavelle.png)
+
+## SimData
+
+And now a look on SimData. We only modify values within the red frame.
+
+1. **Aspiration valid age type** is here represented by number 120, which corresponds with TEEN_OR_OLDER.
+
+   * 4 is for CHILD_ONLY
+   * 8 is for TEEN_ONLY
+
+   If you don't know what to use here, just check the game file that should have correct number.
+
+2. Descriptive text is 0x00000000 because there is no description defined for Aspiration level.
+
+![The SimData of an Aspiration Tuning, with the editable part in a red box](~/assets/miy-simdata-aspiration-tuning-ilkavelle.png)
+
+## Creating your own Aspiration Tuning
+
+Now create your own 4 aspiration levels. If you don't know how, go to [Modding basics](../miy-6-modding-basics).
+
+Make sure Tuning file and SimData file for each Aspiration Level has the same Instance, TuningId and Name.
+
+I have this outcome now:
+
+![A package open in Sims 4 Studio with one Aspiration Track Tuning, four Aspiration Tunings, and one SimData for each](~/assets/miy-aspiration-with-track-and-aspiration-tuning-ilkavelle.png)
+
+Now, take tuningId of each aspiration tuning created and put it correctly in a created previously Aspiration Track Tuning AND SimData.
+
+![The Data tab of one of the Aspiration Track Tunings with the TuningID field highlighted](~/assets/miy-aspiration-tuning-id-ilkavelle.png)
+
+## Final notes and tips - Local Tunings
+
+You don't need to check TuningId the way I showed above, actually. There's faster way in S4Studio. When you're at Aspiration Track tuning, go to Local at the bottom (marked on green). There you'll see all the tuning used within your package. You can copy values from there:
+
+![The tuning of the Aspiration Track Tuning with the instances of the Levels highlighted, and with the Local Tunings expanded at the bottom. The Local Tunings are in a green box with an arrow pointing to where they're referenced in the tuning](~/assets/miy-aspiration-track-local-tunings-ilkavelle.png)
+
+And of course, do not forget about Sim Data!
+
+![The SimData of the Aspiration Track Tuning, with the instances of the levels highlighted](~/assets/miy-aspiration-track-simdata-ilkavelle.png)
+
+That's all for today! I hope this was easy to follow :)
+
+Ask me any question regarding today topic. I'll try to reply tomorrow or within next days :)
+
+---
+
+<LinkButton href="../miy-9-icons-images" icon="left-caret" iconPlacement="start">Back to Part 9</LinkButton>
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-11-screen-slam" icon="right-caret" iconPlacement="start">On to Part 11</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/144742588) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

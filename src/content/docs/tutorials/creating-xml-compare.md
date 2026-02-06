@@ -12,7 +12,7 @@ An XML Compare file is used to compare the XML tuning from the game before and a
 
 To do an XML Compare, you need to have extracted tuning from the game *before* and *after* the patch in question, into *separate* folders. I usually have folders for each patch, sometimes multiple folders if there were hot fixes for the major patch, and one for the current patch. So as of right now, I have `1.116 Patch XMLs 1`, `1.116 Patch XMLs 2`, `1.116 Patch XMLs 3`, `1.116 Patch XMLs 4`, and `Current Patch XMLs`, along with folders for older patches. You could export to files with the full patch number, or any other naming scheme that you'll remember, but you do need to keep different patches in different folders. Unless you're very low on space, it's not recommended to delete old extracted files, because you never know when you'll need them.
 
-To extract tuning, follow [this tutorial](../xml-extractor/) or use Sims 4 Studio to extract the files.
+To extract tuning, follow [this tutorial](../scumbumbo-xml-extractor/) or use Sims 4 Studio to extract the files.
 
 Often, the files are extracted using the TGI + Name file naming format. That's the standard and what is recommended if you're using the XML Extractor. I *personally* prefer to use Name Only, so that's what any images will show, but I recommend that you use what works for you. For most people, that will be TGI + Name. For one thing, it allows you to import those files directly into Sims 4 Studio when you want to.
 

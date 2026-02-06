@@ -1,0 +1,52 @@
+---
+title: Part 12 - Objective Tuning
+description: A tutorial about Objective Tuning in aspirations.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Today we finally start discussing Objective Tuning - so that you can create various tasks for your aspirations.
+
+First let's take a look at the Tuning file structure.
+
+![The Objective tuning of an aspiration, with the parts listed below numbered](~/assets/MIY-objective-tuning-ilkavelle.png)
+
+1. Additional test - It is optional. Entire section can be deleted. It's sometimes very useful to set up additional test, but it all depends on what you want to achieve.
+2. Completion loot - Here you can add what happens upon completing this particular objective. It's the same as in Aspiration tuning. So for example, you could add a buff, when a Sim completes an objective. Or something else. The 2 things listed in this objective are common for all objectives, so I always keep them.
+
+3. Display name - this is obvious.
+
+4. Objective completion type AND Objective test - During next days I'll present how to create various objective tests.
+
+5. Satisfaction points - This is the value how many satisfaction points your Sim gets upon completion of an objective.
+
+6. Tooltip - this one is also obvious.
+
+## SimData structure
+
+In SimData you actually only put Display name, Satisfaction points and Tooltip:
+
+![The SimData for Objective tuning, with arrows pointing to Display Name, Satisfaction Points, and Tooltip](~/assets/MIY-objective-tuning-simdata-ilkavelle.jpg)
+
+Once you create your own Objective Tuning and its corresponding SimData, you need to place their TuningIds in Aspiration Tunings and their SimData.
+
+Next I'll show different types of Objectives tests. :)
+
+---
+
+<LinkButton href="../miy-11-screen-slam" icon="left-caret" iconPlacement="start">Back to Part 11</LinkButton>
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-13-objective-tuning-types" icon="right-caret" iconPlacement="start">On to Part 13</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/145054309) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

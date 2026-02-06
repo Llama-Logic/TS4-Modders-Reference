@@ -1,0 +1,103 @@
+---
+title: Part 15 - Objective Tuning - Types - Part 3
+description: A tutorial about the different types of Objective Tuning.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+
+Today continuation and last part of presentation various Objectives Types.
+
+## Relations Objective
+
+This objective gets completed if a Sim gains certain relation with other Sims.
+
+You can set it up to complete for more than one Sim. In the example below you need to befriend 3 different Sims (unique targets).
+
+![A relationship objective shown in an objective, with a list of possible relationship bits, requiring 3 unique targets](~/assets/MIY-objective-test-relations-ilkavelle.jpg)
+
+All relevant relations are listed. You can see a definition "match_any" - which means any of these 3 listed relations will be ok. But you can also set up in your objective to match all, example:
+
+![A relationship objective shown in an objective, with a list of two required relationship bits](~/assets/MIY-objective-test-relations-all-ilkavelle.jpg)
+
+In this example you need to at the same time have 2 relations with another Sim - to be married to this Sim and to have Soulmates relation.
+
+## Having object Objective
+
+This objective is about having a certain object in your household, or inventory. You can define this object by its TuningId, or by a general Tag:
+
+***TuningId definition:***
+
+![An object objective test shown in an objective, with the actual_object in the definition_id highlighted](~/assets/MIY-objective-test-object-tuningid-ilkavelle.jpg)
+
+***Tag definition:***
+
+![An object objective test shown in an objective, with the object's tag highlighted](~/assets/MIY-objective-test-object-tag-ilkavelle.jpg)
+
+You can actually set up many tests within this objective e.g.:
+
+* is object on active lot?
+* is the Sim with aspiration the owner of this object? (this will work only for object for which you can set up the ownership e.g. notebook)
+* when the check should be made? - here when you exit the build buy mode
+* etc. etc. many configurations to discover :)
+
+![An object objective test shown in an objective, with various tests in a red box](~/assets/MIY-objective-test-object-test-ilkavelle.jpg)
+
+## Earned money Objective
+
+You can set up an objective about money earned.
+
+![An earned money test shown in an objective, with TotalMoneyEarned highlighted](~/assets/MIY-objective-test-money-ilkavelle.jpg)
+
+It can be total money earned by your Sim, like in the example above, but you can also set up a specific Tag, for example for royalties:
+
+![An earned money test shown in an objective, with total_simoleons_earned_by_tag highlighted](~/assets/MIY-objective-test-money-source-ilkavelle.jpg)
+
+## Photo taken Objective
+
+There is also a nice way to make an objective for taken photos. You can do it simply listing interactions to take photo, or there is this nicer way:
+
+![A photo taken test shown in an objective](~/assets/MIY-objective-test-photos-ilkavelle.jpg)
+
+Here you can also specify taking photos in unique locations:
+
+![A photo taken test shown in an objective, with a unique_locations test highlighted](~/assets/MIY-objective-test-photos-location-ilkavelle.jpg)
+
+Or even photos of group of Sims:
+
+![A photo taken test shown in an objective, requiring two sims as targets](~/assets/MIY-objective-test-photos-sims-ilkavelle.jpg)
+
+## Perk Objective
+
+You can have an objective to buy a certain perk. Perks are these bonuses that you can buy for e.g. fame points, or club points, or occult points, you just need to know what its tag.
+
+![A perk objective, requiring purchasing club points](~/assets/MIY-objective-test-perk-ilkavelle.jpg)
+
+## Final Note
+
+As you can see, possibilities are almost endless. Well, almost ;) I often get stuck, because I have an objective in my head, but I can't find a way to actually make it in the game xD But for sure, there is a lot of ways to achieve various things. I didn't present all possible objective types, nor configurations. You need to discover some things on your own as well :)
+
+The more you'll do, the more you'll learn :)
+
+Next time, I will show the last thing about Objective Tuning, and then we'll move to other topics.
+
+Thank you!
+
+---
+
+<LinkButton href="../miy-14-objective-tuning-types-2" icon="left-caret" iconPlacement="start">Back to Part 14</LinkButton>
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-16-objective-tuning-additional-tests" icon="right-caret" iconPlacement="start">On to Part 16</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/145354708) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

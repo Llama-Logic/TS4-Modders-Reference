@@ -8,7 +8,7 @@ sidebar:
 
 <sup><sub>A tutorial by Waffle</sup></sub>
 
-So you've got your files extracted with ***[Scumbumbo XML Extractor](../xml-extractor).*** A new patch comes out...it's time to extract new files! But then what? Now you've got the old files and the new files...and you've joined **[Creator Musings](https://discord.com/invite/qxz5Kn5)**, where we have a patch thread that tells you exactly which files changed between patches.
+So you've got your files extracted with ***[Scumbumbo XML Extractor](../scumbumbo-xml-extractor).*** A new patch comes out...it's time to extract new files! But then what? Now you've got the old files and the new files...and you've joined **[Creator Musings](https://discord.com/invite/qxz5Kn5)**, where we have a patch thread that tells you exactly which files changed between patches.
 
 <br>
 

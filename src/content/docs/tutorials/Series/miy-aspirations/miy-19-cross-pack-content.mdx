@@ -1,0 +1,45 @@
+---
+title: Part 19 - Cross-Pack Content
+description: A tutorial about cross-pack content, content from multiple packs.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+There is still one thing that might be useful when creating an aspiration. We have right now so many packs for Sims 4. Sometimes we might want to mix the objectives in our aspiration, creating some objectives for Horse Ranch, some other for Island Living. So how to make it and still keep the base game compatibility?
+
+Each file has a Group number associating it with a certain pack. If you don't have this pack, the game will ignore these files. Well, there are some exceptions where it might generate an error, but in Objectives aspect - this works 100%
+
+![A list of Objective Tunings, with an arrow pointing at the Group column. Some, with group IDs that indicate they require a pack, are highlighted.](~/assets/miy-group-ids-ilkavelle.jpg)
+
+And so, 0000001E is for Eco Lifestyle, 0000001C is for Island Living, 0000001D is for Discover University etc.
+
+Base game is simply 00000000.<br></br><br></br>
+
+You need to also change that in SimData:
+
+![The SimData of an objective with the group ID highlighted](~/assets/miy-group-id-simdata-ilkavelle.jpg)
+
+That's all :)
+
+---
+
+[A list of Group IDs can be found here.](/reference/pack_data)
+
+---
+
+<LinkButton href="../miy-18-reward-tuning-types" icon="left-caret" iconPlacement="start">Back to Part 18</LinkButton>
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-20-aspirations-wrap-it-up" icon="right-caret" iconPlacement="start">On to Part 20</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/145602983) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

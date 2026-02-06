@@ -1,0 +1,87 @@
+---
+title: Part 5 - Strings Other Formatting
+description: A tutorial about formatting in strings.
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+
+import { LinkButton } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by ilkavelle</sub></sup>
+
+![ilkavelle's tutorial header, with a Sim standing in front of a white board with the words Tutorial Lab in front](~/assets/Tutorial-header-ilkavelle-MIY.jpg)
+
+Today I'll cover the last topic regarding strings. So other string formatting, commonly used, like italic or bold text. Just few examples (most of text examples are from the game).
+
+### Start of new line
+
+`\n` - equivalent of "Enter" ;) If you write `Hello,\nI would like to leave a message.\nThank you!` It will appear like this:
+
+> Hello,
+>
+> I would like to leave a message.
+>
+> Thank you!
+
+### Bold text
+
+`<b>text</b>`
+
+Examples: `Calm down? <b>CALM DOWN?</b> What do you think I am? I'll calm down when I'm ready to calm down!!`
+
+> Calm down? <b>CALM DOWN?</b> What do you think I am? I'll calm down when I'm ready to calm down!!
+
+### Italic text
+
+`<i>text</i>`
+
+Example: `<i>Ooo, la la</i>! {0.SimFirstName} is feeling a little warm. What an exotic dining experience!`
+
+> <i>Ooo, la la</i>! Bella is feeling a little warm. What an exotic dining experience!
+
+### Underline
+
+`<u>text</u>`
+
+Example: `<u>E-Sports Match Schedule</u>`
+
+> <u>E-Sports Match Schedule</u>
+
+### Size
+
+`<size=20>text</size>`
+
+### Color of the text
+
+`<font color='#0949AB'>text</font>`
+
+I am sorry, I don't have the list of defined font colors. I rarely use it. But if you need anything specific, you can look in the game for text in this color and later searched this text with LOT 51 String Search tool. Then you'll have what font was used for this text.
+
+Of course these things can be used all together in various combinations. Here's a nice combination from the game itself :D
+
+`<font color="#0949AB"><font size="14"><b>ThrifTea</b></font></font>\n<font color="#1A81E6"><font size="14">Go visit ThrifTea to hunt for your next Fashion Look. You can also talk to the owner about which Trends are hot right now.</font></font>\n\n<font color="#0949AB"><font size="14"><b>Trendi</b></font></font>\n<font color="#1A81E6"><font size="14">You can create Fashion Looks in ThrifTea and sell them on Trendi. You can also buy other listings, Hype them and sell those too.</font></font>\n\n<font color="#0949AB"><font size="14"><b>Trends and Hype</b></font></font>\n<font color="#1A81E6"><font size="14">Every Fashion Look belongs to a Trend. Wearing and Promoting a Fashion Look increases its Hype level, as well as making that Trend more popular.</font></font>\n\n<font color="#0949AB"><font size="14"><b>Followers</b></font></font>\n<font color="#1A81E6"><font size="14">Successfully Hyping and Selling Fashion Looks will gain Followers. More Followers increases your success when selling on Trendi.</font></font>\n\n`
+
+> <font color="#0949AB"><font size="14"><b>ThrifTea</b></font></font><br /><font color="#1A81E6"><font size="14">Go visit ThrifTea to hunt for your next Fashion Look. You can also talk to the owner about which Trends are hot right now.</font></font><br /><br /><font color="#0949AB"><font size="14"><b>Trendi</b></font></font><br /><font color="#1A81E6"><font size="14">You can create Fashion Looks in ThrifTea and sell them on Trendi. You can also buy other listings, Hype them and sell those too.</font></font><br /><br /><font color="#0949AB"><font size="14"><b>Trends and Hype</b></font></font><br /><font color="#1A81E6"><font size="14">Every Fashion Look belongs to a Trend. Wearing and Promoting a Fashion Look increases its Hype level, as well as making that Trend more popular.</font></font><br /><br /><font color="#0949AB"><font size="14"><b>Followers</b></font></font><br /><font color="#1A81E6"><font size="14">Successfully Hyping and Selling Fashion Looks will gain Followers. More Followers increases your success when selling on Trendi.</font></font><br /><br />
+
+### Final note and tips:
+
+Parlay in PlumbBuddy
+
+There is another great tool that I forgot to mention previously and it is also very helpful for managing your translations! It's [Parlay in PlumbBuddy App](https://plumbbuddy.app/features/parlay). It greatly simplifies the translation process thanks to its side-by-side interface for translators and its smart token auto-suggestions. It can also generate override packages automatically, making it effortless for modders to integrate any translation directly into their mods.
+
+And this is all I wanted to show you regarding creation of Strings. I hope this will be useful for both - your first mod and translating :)
+
+THANK YOU!
+
+---
+
+<LinkButton href="../miy-4-tokens" icon="left-caret" iconPlacement="start">Back to Part 4</LinkButton>
+
+<LinkButton href="/tutorials/series/miy-aspirations-index" icon="up-caret" iconPlacement="start" variant="secondary">Back to the index</LinkButton>
+
+<LinkButton href="../miy-6-modding-basics" icon="right-caret" iconPlacement="start">On to Part 6</LinkButton>
+
+---
+
+Originally posted on [ilkavelle's Patreon](https://www.patreon.com/posts/144711686) as part of her Simsmas Modvent Calendar, and collected in the [Mod It Yourself series](https://www.patreon.com/collection/1867986?view=expanded), where you can ask questions in the comments.

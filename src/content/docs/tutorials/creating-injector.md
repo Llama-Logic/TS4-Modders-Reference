@@ -4,6 +4,9 @@ description: A tutorial for injecting into CareerTuning
 lastUpdated: true
 sidebar:
   order: 50
+  badge:
+    text: NEW
+    variant: tip
 ---
 
 <sup><sub>A tutorial by januksenkosketus</sup></sub>
