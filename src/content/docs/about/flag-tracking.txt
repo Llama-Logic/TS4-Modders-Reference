@@ -19,13 +19,13 @@ New:
     text: NEW
     variant: tip
 
-Ilkavelle: Feb 6, 2026
-Creating an Injector: Feb 1, 2025
-
 Updated:
 
   badge:
     text: UPD
     variant: note
 
+--------------------------------
+Creating an Injector: Feb 1, 2025
+Ilkavelle: Feb 6, 2026
 Contribution Guidelines: Feb 6, 2026
