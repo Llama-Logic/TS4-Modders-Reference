@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="/favicon.png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<title>XML Comparison Version 1.121.361</title>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+			font-size: .875rem;
+			background-color: rgb(23, 24, 28);
+			color: rgb(168, 168, 168);
+			overflow-y: scroll;
+		}
+		h2 {
+			font-size: 2.1875rem;
+			text-align: center;
+			color: white;
+		}
+		header {
+			display: flex;
+			justify-content: center;
+			margin: auto;
+			margin-bottom: 20px;
+			width: 75%;
+		}
+		input {
+			padding: 8px;
+			border-radius: 15px;
+			border: 0;
+			font-size: .875rem;
+			width: 400px;
+			margin-left: 25%;
+			margin-right: 25%;
+			flex-grow: 1;
+		}
+		a {
+			background-color: rgb(23, 24, 28);
+			border: 1px;
+			border-color: white;
+			border-style: solid;
+			border-radius: 15px;
+			width: 100px;
+			padding: 8px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+		}
+		table {
+			border-collapse: collapse;
+			border: 1px solid gray;
+			color: black;
+			margin: auto;
+			width: 75%
+		}
+		th,td {
+			padding: 5px;
+			text-align: left;
+			vertical-align: middle;
+			border: 1px solid gray;
+		}
+		th {
+			color: rgb(23, 38, 79);
+			padding: 8px 8px;
+			background: rgb(179, 199, 255);
+			position: sticky; top: 0;
+		}
+		p {
+			text-align: center;
+		}
+		.download {
+			background-color: rgb(179, 199, 255);
+			color: rgb(23, 24, 28);
+			border-color: rgb(179, 199, 255);
+		}
+		.icon0 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%234e2232' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%234e2232' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23304e22' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cline x1='21' y1='12' x2='3' y2='12' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3Cline x1='12' y1='3' x2='12' y2='21' fill='none' stroke='%23304e22' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/line%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon10 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEgSURBVDhPY2CgFmhgYPiPjY0OsMqBBGES6DS6OlxyGJLYFOGTw5DEpgifHIYkNkX45FAEsSqAApxyt9rb/4Pw2bi4/9daWsBsdDU4wctZs/4/crb5/yrA6//Xo0f+33R3/H/K0ug/SBwkj24rCv9khjtY80cvl/+/z5z5//fvX7Ahl6xM/h8y1sEwBERjGPDSzQFswJ9LlyAGnD0LN+B8bQyGK1AM2OusDXYBCCO7AOQFkAG7vEzwG3Ao2en/TWtTMH7g4wY24LKTDVjzbm3V/2dKQvAbsLSoCKz4jInu/7vV5WDng2iQ5rWKUv83VJmi+hndABBY4On5f7uyMjjAQC4A0culpP7XWligKsQHQC5Zbmv7f76sLJgG8dHVYAMAy53y+q6o1NoAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon11 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEqSURBVDhPY2AYNODMTOP/p2cY/T85zeD/8Sl6/xkYGFQYGBh40NVhBSDN6OBQvybIEBuChiA0z0TD///v7VL5v6td8f/2FjncLgI5+//3if//f+nDxEhgT6cydheB/Pz/dev//88a/h+dpIMVH+hVhxlQAXUJAoAC7P+DKrBCXAAkx8DAsAWrAWCNV/L+Q8ICPRxmImtuweoFUGj/P5MGjkKwJlB4QDFBzSAA8h/IAIgXZkLCAwlDDUlgYGCQQNcLBqCoAhmwv0cNYsCDKgwMNQS7C0DxDDJgR6s8xIAreRh4QS47GOMyRGVrk8z/zQ1S/zfUiv9fVy36f3WF0P8Vpfz/lxbx/F9cwAXTvAKXV0AmgkwGRdEEPBgkj9UFIAASBMWvAR6MNSkDAARxWN8RVHnBAAAAAElFTkSuQmCC'); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon13 { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD/SURBVDhPY2AYBTjB0Uk6//d2qfzf1a74f3uL3P+tTTL/NzdI/d9QK/6fgYFBhYGBgQddDwoAGYANrKsWBRmQAzUENwAZAMMHetX/7+lU/r+jVf7/lkZpsEtAmJAhKlhd8awBTC0u4IK5BCcA+dEGYshMOP5xNB5ML8hlBxkwAV0TOkAY8n0iGL/fEwY2YF42K1EGQALzdSscP9vsCzZgTiYzYQPAmh9UoeA7K53BBsxKZ8RvwNIinv8g/P9KHgq+vMAKbMDMNAb8BjAwMEiADACFNijAQH4GORtkM1TzFgYGhgp0TcgAHIBQRSCb0DFIHCSPF4AMASUWAywYnJwB0dTkHazHTDAAAAAASUVORK5CYII='); background-repeat: no-repeat; background-size: 16px 16px; }
+		.icon26 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' stroke-linejoin='miter' stroke-linecap='butt'%3E%3Cpath d='M22,6H4A2,2,0,0,0,2,8v4' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpath d='M2,18H20a2,2,0,0,0,2-2V12' fill='none' stroke='%23000000' stroke-miterlimit='10' stroke-width='2'%3E%3C/path%3E%3Cpolyline points='18 10 22 6 18 2' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3Cpolyline points='6 14 2 18 6 22' fill='none' stroke='%23000000' stroke-linecap='square' stroke-miterlimit='10' stroke-width='2'%3E%3C/polyline%3E%3C/g%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: 16px 16px; }
+		.indent0 { padding-left: 20px; background-position: 2px center; }
+	</style>
+</head>
+<body>
+<h2>XML Comparison Version 1.121.361</h2>
+<p>Made with WinMerge</p>
+<header>
+	<a href="../reference/patches/1121361">Back</a>
+	<input type="text" id="search" placeholder="Search" autocomplete="off">
+	<a href="/pages/1121361_report.html" download="1121361_report.html" class="download">Download</a>
+</header>
+<table id="table">
+<th>Comparison Result</th><th>Folder</th><th>Filename</th><th>Differences</th></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\action</td><td>0c772e27!00000000!0000000000061fb9.loot_Married_ReMarry_FromGhost.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000000354a.mirror_SelfPepTalk.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000006611.mixer_social_AskToBeBoyfriend_targeted_romance_relationship.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000000709f.mixer_social_ShareBigNews_targeted_Friendly_alwaysOn_pregnancy.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!0000000000008520.Bed_Undercovers_Hide.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000002373b.mirror_SelfPepTalk_vanity.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\interaction</td><td>e882d22f!00000000!000000000006714b.r4Event_mirror_SelfPepTalk.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>7df2169c!00000000!000000000001fadc.affordanceList_ClubBeFriendly.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>7df2169c!00000000!000000000001fe25.social_Mixers_Romance_Touching_NoWoohoo_BeRomanticClub.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\snippet</td><td>7df2169c!00000000!0000000000027f76.social_Mixers_Friendly_NonTouching_ForReference.snippet.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>BG\tun</td><td>03b33ddf!00000000!bb48c8f09f5c91ec.kingdom.kingdom_tuning..xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP07\sim_template</td><td>0ca4c78b!0000001c!000000000007a99b.premadeAncestor_EP07_ManuKealoha.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP08\interaction</td><td>e882d22f!0000001d!00000000000368e8.mixer_social_AskToBeBoyfriend_targeted_romance_relationship_RoommateNPC.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\action</td><td>0c772e27!0000001f!000000000003c00a.Loot_Lifestyles_Progress_Lock_Workaholic.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\action</td><td>0c772e27!0000001f!000000000003c00c.loot_Lifestyles_Progress_Unlock_Workaholic.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\action</td><td>0c772e27!0000001f!000000000003df27.loot_Lifestyles_Progress_Unlock_Workaholic_WorkHard.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\action</td><td>0c772e27!0000001f!000000000003df28.loot_Lifestyles_Progress_Unlock_Workaholic_DailyTask.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\action</td><td>0c772e27!0000001f!000000000003df2a.loot_Lifestyles_Progress_Unlock_Workaholic_Max.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP10\interaction</td><td>e882d22f!0000001f!000000000003c102.super_Lifestyles_Workaholic_WorkOffHours.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP14\sim_template</td><td>0ca4c78b!00000037!000000000007a9a5.premadeAncestor_EP14_TallulahGrove.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP15\sim_template</td><td>0ca4c78b!00000038!00000000000552f1.premadeHouseholdTemplate_EP15_CahyaputriFamily.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\action</td><td>0c772e27!0000003a!000000000005eebf.loot_PremadesSetup_EP17_Alice_Edith.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP17\sim_template</td><td>0ca4c78b!0000003a!000000000007a9a7.premadeAncestor_EP17_OrodueynnaGomes.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP20\sim_template</td><td>0ca4c78b!0000003d!000000000007a9a9.premadeAncestor_EP20_PranavKunal.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721c1.loot_NobleFavor_Gain_Commoner_Huge.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721c2.loot_NobleFavor_Gain_Commoner_Medium.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721c3.loot_NobleFavor_Gain_Commoner_Small.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721c4.loot_NobleFavor_Gain_Commoner_Tiny.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721c5.loot_NobleFavor_Gain_Commoner_Large.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721dc.loot_NobleFavor_Gain_Royal_Tiny.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721dd.loot_NobleFavor_Gain_Royal_Small.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721de.loot_NobleFavor_Gain_Royal_Medium.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!00000000000721df.loot_NobleFavor_Gain_Royal_Large.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!000000000007221c.loot_NobleFavor_Gain_Royal_Huge.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000072572.loot_NobleCareer_OnQuit.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!000000000007462c.loot_Dynasty_ActionFeedback_PrestigeLevelGained.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074cd1.loot_NobleFavor_Gain_Commoner_Medium_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074cd3.loot_NobleFavor_Gain_Commoner_Small_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074ceb.loot_NobleFavor_Gain_Commoner_Tiny_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074cf1.loot_NobleFavor_Gain_Royal_Medium_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074cf3.loot_NobleFavor_Gain_Royal_Small_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000074cf5.loot_NobleFavor_Gain_Royal_Tiny_Target.action.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000075550.loot_SecretPassageway_Knowledge_Target.action.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000076a76.loot_ScandalSecret_CreateSecret_suspiciousCircumstances.action.xml</td><td>2</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000076f7f.loot_Dynasty_Married.action.xml</td><td>17</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\action</td><td>0c772e27!0000008d!0000000000078482.lootActions_WorkRival_NobleCareer_BitOnRemove_Rank9.action.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\action</td><td>0c772e27!0000008d!000000000007add2.loot_Dynasty_Marriage_Dialog_SameHousehold.action.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\action</td><td>0c772e27!0000008d!000000000007add3.loot_Dynasty_Marriage_Dialog_FromBuff.action.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!000000000006db92.swordsmanship_Duel_BackPosition.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!000000000006db93.swordsmanship_Duel_Center.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!000000000006db95.swordsmanship_Duel_ForwardPosition.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!0000000000071ff9.swordsmanship_Duel_Success.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!0000000000071ffa.swordsmanship_Duel_Fail.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!0000000000073b4e.swordsmanship_Duel_BackFromForward.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\animation</td><td>ee17c6ad!0000008d!0000000000073b4f.swordsmanship_Duel_ForwardFromBack.animation.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\buff</td><td>6017e896!0000008d!000000000007a5dc.buff_PowerShifts_Shoes_EnchantedSteps_Hidden.buff.xml</td><td>9</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\buff</td><td>6017e896!0000008d!000000000007adcf.buff_Dynasty_Hidden_JustMarried_PromptDelay.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\buff</td><td>6017e896!0000008d!000000000007add1.buff_Dynasty_Hidden_JustMarried_PromptCooldown.buff.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\club_interaction_group</td><td>fa0ffa34!0000008d!00000000000766b2.clubInteractionGroup_DynastyValue_Affection.club_interaction_group.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000006db5f.social_Swordsmanship_Duel_Fun.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000006db77.swordsmanship_Duel_Mixers_Center.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000006e281.secretPassageway_TravelThrough_PartA.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000006e282.secretPassageway_TravelThrough_PartB.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007054c.social_Swordsmanship_Duel_Simoleons.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007054d.social_Swordsmanship_Duel_CareerPromotion.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007054e.social_Swordsmanship_Duel_SimHeart.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000072a64.simPicker_DynastyPerk_ArrangePromotion.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000072a66.careerPicker_Phone_DynastyPerk_ArrangePromotionSelf.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074021.socials_Targeted_Friendly_ScandalSecret_KeepSecretForTarget.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007407a.social_Swordsmanship_Duel_Listen.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074565.social_Swordsmanship_Duel_Dynasty_ChallengeHead.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074a40.computer_ScandalSecret_Statements_Denial_Success.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074a41.computer_ScandalSecret_Statements_Apology_Success.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074e2f.powerShifts_Frog_SuperInteractions_Start.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000074f32.social_Adopt_IPCTYA.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007542b.mixer_Social_NobleCareer_InheritNobleTitle_Promise.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007542c.mixer_Social_NobleCareer_InheritNobleTitle_Request.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000075701.mixer_NobleCareer_IssueADenialStatement_Success.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000075702.mixer_NobleCareer_IssueAPublicApology_Success.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007580b.secretPassageway_GetIn.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000075bc6.secretPassageway_MoveAway.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000076523.social_Swordsmanship_Duel_Tournament.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!00000000000769fa.social_Swordsmanship_Duel_PermissionMarry.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000076f15.social_Swordsmanship_Duel_NobleRivalry.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000077192.social_FamilyTree_SecretChild_LieAbout.interaction.xml</td><td>4</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000077c9e.immediate_Dynasty_MarriageDynastyChoice.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!0000000000079df9.social_Swordsmanship_Duel_Burglar.interaction.xml</td><td>3</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007a51b.computer_ScandalSecret_Statements_Apology_Failure.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007a51c.computer_ScandalSecret_Statements_Denial_Failure.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007a55b.mixer_NobleCareer_IssueADenialStatement_Failure.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007a55c.mixer_NobleCareer_IssueAPublicApology_Failure.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\interaction</td><td>e882d22f!0000008d!000000000007a936.socialSI_NobleCareer_Atone.interaction.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\reward</td><td>6fa49828!0000008d!0000000000075544.careerRewards_NobleCareer_Level10.reward.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\reward</td><td>6fa49828!0000008d!000000000007557d.careerRewards_NobleCareer_Level04.reward.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\sim_filter</td><td>6e0dda9f!0000008d!00000000000763c3.filter_ScandalSecret_NPCSecretGeneration_LoverFilter_cheating.sim_filter.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\sim_filter</td><td>6e0dda9f!0000008d!000000000007779c.filter_ScandalSecret_NPCSecretGeneration_LoveFilter_LeftAltar.sim_filter.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\sim_filter</td><td>6e0dda9f!0000008d!0000000000077ddb.filter_ScandalSecret_NPCSecretGeneration_spouseFilter_suspiciousCircumstances.sim_filter.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\situation_goal</td><td>598f28e7!0000008d!0000000000077948.pivotalMomentsGoal_Onboarding_EP21_Dynasty_FriendlyInteractions.situation_goal.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\snippet</td><td>7df2169c!0000008d!00000000000723bc.dynastyValue_Ideal_Passionate.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\snippet</td><td>7df2169c!0000008d!00000000000723c7.dynastyValue_Ideal_Jolly.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\snippet</td><td>7df2169c!0000008d!00000000000723f6.dynastyValue_Skill_Dancing.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\snippet</td><td>7df2169c!0000008d!0000000000072409.dynastyValue_Skill_Romance.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\snippet</td><td>7df2169c!0000008d!00000000000780c0.testSetInstance_FamilyTree_Adoption_Relationship.snippet.xml</td><td>1</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\snippet</td><td>7df2169c!0000008d!000000000007ae8d.testSetInstance_Relationship_SignificantOther_HasBoundaries.snippet.xml</td><td>*</td></tr>
+<tr style='background-color: #dddddd'><td class="icon2 indent0">Added</td><td>EP21\snippet</td><td>7df2169c!0000008d!000000000007ae8e.testSetInstance_SecretChild_SignificantOther_NotLiedTo.snippet.xml</td><td>*</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>EP21\statistic</td><td>339bc5bd!0000008d!00000000000711aa.commodity_CareerBenefit_Noble.statistic.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\sim_template</td><td>0ca4c78b!00000011!000000000007a97d.premadeAncestor_GP04_GioiaVatore.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP04\sim_template</td><td>0ca4c78b!00000011!000000000007a986.premadeAncestor_GP04_VittorioPasquale.sim_template.xml</td><td>1</td></tr>
+<tr style='background-color: #f0de7d'><td class="icon26 indent0">Difference</td><td>GP12\sim_template</td><td>0ca4c78b!0000003f!000000000007a991.premadeAncestor_GP12_FiorenzaZhu.sim_template.xml</td><td>1</td></tr>
+</table>
+<script>
+var $rows = $('#table tr').not(':first');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
+</body>
+</html>
