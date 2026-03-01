@@ -4,6 +4,9 @@ description: A collection of bits of random modding knowledge too small to becom
 lastUpdated: 2025-10-06
 sidebar:
   order: 99
+  badge:
+    text: UPD
+    variant: note
 ---
 
 Things you just need to *know* somehow, despite it not being told to you.
