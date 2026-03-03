@@ -9,7 +9,7 @@ sidebar:
     variant: note
 ---
 
-Things you just need to *know* somehow, despite it not being told to you.
+Things you just need to *know* somehow, despite it not being told to you. 
 
 Disorganized chaos.
 
