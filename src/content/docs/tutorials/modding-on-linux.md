@@ -39,7 +39,7 @@ First, please open the Linux terminal. Then, in the terminal, paste <u>each indi
 
 If you have the wrong version of WINE installed, either version 11 or an earlier version, you'll want to completely remove it before trying to install WINE 10.0.
 
-These instructions will take you most of the way there. Please do this before trying to install WINE 11.
+These instructions will take you most of the way there. Please do this before trying to install WINE 10.
 
 ```
 sudo apt remove --purge wine
