@@ -26,8 +26,5 @@ Updated:
     variant: note
 
 --------------------------------
-Creating an Injector: Feb 1, 2025
-Ilkavelle: Feb 6, 2026
-Contribution Guidelines: Feb 6, 2026
 Random Modding Knowledge: March 3, 2026
 Modding on Linux: March 7, 2026

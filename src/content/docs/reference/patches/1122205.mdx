@@ -1,0 +1,200 @@
+---
+title: Patch 1.122.205
+description: Changes between last patch and the current patch
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+import { LinkCard, LinkButton, Aside, Icon, Card } from '@astrojs/starlight/components';
+
+**Update: Mar 17, 2026** \
+**Version: PC: 1.122.205.1030 / Mac: 1.122.205.1230**
+
+<Aside type="caution">This patch unexpectedly caused issues for the game loading mods. A Hotfix has been confirmed and is coming.</Aside>
+
+This patch brings the new Marketplace to the game as well as 60+ QoL bug fixes including Sim autonomy improvements, fixes to eyelids and a plethora of tagging fixes.
+
+It also introduces two new preferences for sims; *Phone* and *Computers*.
+
+<Aside>Please see the [forum post](https://forums.ea.com/blog/the-sims-game-info-hub-en/summary-of-updates-to-sims%E2%80%99-eye-blinking/13174182) for information on the eyelid fixes. </Aside>
+
+---
+<LinkButton href="/pages/1122205_report.html" icon="document" iconPlacement="start">XML Comparison</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/update-3-17-2026" variant="secondary" icon="external" iconPlacement="start">Patch Notes</LinkButton>
+
+### CC Changes
+All Base Game makeup available in the Everyday category is now tagged for Hot/Cold Weather. Various tagging changes were also made to Buy Mode objects, notably to some wall lights and benches.
+
+##### Tagging
+- Added filter tag to asset (ymBottom_EP16Jeans).
+- Removed filter tag from asset (yfTop_SP08TeeBoatNeck_GradientPink).
+- Updated swatch icon color for asset (yfMakeupLipstick_EF28GlossyLips_RedRuby).
+- Added Hot and Cold Weather Tags to the base prototypes for all makeup assets. 
+- Removed Hot and Cold Weather Tags on a few specific assets that also did not have Everyday Category tags.
+- The Cantina High Top Tables object now has a price of $550 Simoleons, rather than $0.
+- Removed WallPattern_Paint tag from assets (Panel02RR), (Panel01RR) and (Painted02MODERN_WSTR) wall patterns. 
+- Added WallPattern_Wallpaper tag to (Painted02MODERN_WSTR) wall pattern, and WallPattern_Paneling to (Panel02RR) and (Panel01RR).
+- Added BuyCatLD_MiscDecoration tag to the following;
+    - pedestal_SP67GENboxSmall
+    - pedestal_SP67GENboxTall
+    - pedestal_SP67GENchoppingBoard
+    - pedestal_SP67GENscale
+    - sculptTableMedium_SP67GENbake
+    - sculptTableMedium_SP67GENcerealBox
+    - sculptTableMedium_SP67GENcleaningCaddy
+    - sculptTableMedium_SP67GENdishrack
+    - sculptTableMedium_SP67GENfoodPrep
+    - sculptTableMedium_SP67GENknifeBlock
+    - sculptTableMedium_SP67GENlunchPrep
+    - sculptTableMedium_SP67GENsusan
+    - sculptTableMedium_SP67GENtabletStand
+    - sculptTableMedium_SP67GENteaTree
+    - sculptTableSmall_SP67GENclean
+    - sculptTableSmall_SP67GENcookieJar
+    - sculptTableSmall_SP67GENfoodJar
+    - sculptTableSmall_SP67GENglove
+    - sculptTableSmall_SP67GENjar
+    - sculptTableSmall_SP67GENplate
+    - sculptTableSmall_SP67GENspiceRack
+    - sculptTableSmall_SP67GENutensil
+- Added Build_Shrub and Build_Shrub_Bush tags to (plantLot1x1_EP19GENsharpLeaf). Also added Build_Flower and Build_Flower_GroundCover tags to (plantLot1x1_EP19GENwisp).
+- Added BuyCatLD_KidsDecoration tag to (sculptTableLarge_EF48GENanimalBasket) and (sculptTableLarge_EF48GENtoyBasket).
+- Added BuyCatLD_OutdoorLight tag to (lightOutdoorFloor_FP01GENdeadTreeHoliday) and (sculptFloor1x1_FP01GENholidaySnowman).
+- Removed BuyCatLD_Sculpture tag from (bookcaseSurface_SP15GENbooks) and (pedestal_SP15GEN).
+- Removed BuyCatLD_MiscDecoration from (lightTableCandle_FP01GENkinara) and (lightTableCandle_FP01GENmenorah) and added BuyCatLD_TableLamp to both items.
+- Marked RestrictCrossGender on (yfBottom_SDX040CCHSkirtPleated).
+- Added BuyCatLD_Clutter tag to (sculptTableGENTeenPencilHolder).
+- Replaced BuyCatLD_MiscDecoration tag with BuyCatEE_KidFurniture tag on (sculptFloor_EF48GENdiaper).
+- Added BuyCatEE_LifeEventActivity tag to (sculptTableMedium_SDX002GENholidayBow).
+- Deleted WallPattern_Paneling and added WallPattern_Misc to the "Martian Soil" wall pattern.
+- Removed BuyCatLD_WallLight tag and added BuyCatLD_OutdoorLight tag to the the following;
+    - lightOutdoorWallSGHigh
+    - lightOutdoorWallSGLow
+    - lightOutdoorWallSGMed
+    - lightWall_EP02PUBLIC
+    - lightWall_EP05GEN
+    - lightWall_EP11GENiron
+    - lightWall_SP10GENarrow
+    - lightWall_SP10GENmetal
+    - lightWallGFVerticalBars
+    - lightWallQA_01
+    - lightWallQA_07
+    - lightWallQA_10
+- Removed GenderMale tag on (ymTop_EV0641TankTwistBack_SolidBlackCyan).
+- Added (WallPattern_Mansory) and (WallPattern_Sidding) tags to the (wall_V_Clapboard02SGBrick_NT_PeachWhiteBrick) and (wall_V_Clapboard02SGBrick_NT_BlueRedBrick) wall patterns.
+- Added: (BuyCatLD_Sculpture) and deleted: (BuyCatSS_MiscSurface) to the Sycee of the Prosperous Moon, Right Side Up Gnome, and Bob the Butler Fancy Sculpture.
+- Added Venue_Object_Bench, BuyCatSS_OutdoorBench, BuyCatSS_OutdoorSeating, and BuyCat_Venue_Park tags and removed BuyCatSS_OutdoorChair and Venue_Object_Chair tags from various loveseats.
+- Updated some swatch variant textures for (rug3x3_EP17GENskull).
+- Added BuyCatLD_KidDecoration tag to the following; 
+    - clockWallKID_01
+    - decalWallBBYTree2x1x2_01
+    - decalWallKIDStencilBunny1x1x1_01
+    - decalWallKIDStencilBunny2x1x1_01
+    - decalWallKIDStencilClouds1x1x1_01
+    - decalWallKIDStencilClouds2x1x1_01
+    - decalWallKIDStencilDino1x1x1_01
+    - decalWallKIDStencilDino2x1x1_01
+    - lightCeilingGEN_03
+    - lightCeilingKID_01
+    - lightFloorKID_01
+    - lightTableBBYPanda_01
+    - lightTableKID_01
+    - lightTableKID_02
+    - lightTableKIDRobot_01
+    - lightTableMedium_EF48GENfox
+    - lightWall_EFGENmonster
+    - lightWallKID_01
+    - mirrorFloorKID_01
+    - mirrorWall2x1_EF28GENcloud
+    - paintWall1x1x1_SDX018GENItTakesTwo
+    - paintWallBBYDino1x1x1_01
+    - paintWallBBYElephant1x1x1_01
+    - paintWallBBYLadyBug1x1x1_01
+    - paintWallBBYRabbit1x1x1_01
+    - paintWallGENAnniversary1x1x1_01
+    - paintWallGENBookReadPoster1x1x1_01
+    - paintWallGENPosterDino1x1x1_01
+    - paintWallGenTeenIdol1x1x1_01
+    - paintWallGenTeenMagic1x1x1_01
+    - paintWallGenTeenRocker1x1x1_01
+    - paintWallGenTeenSoccer1x1x1_01
+    - paintWallKID1x1x1_01
+    - paintWallKID1x1x1_02
+    - paintWallKID2x1x1_01
+    - paintWallKIDGrowthChart1x1x2_01
+    - paintWallSC1x1x1_01
+    - rug_EF48GENinfantBlanket01
+    - rug3x2_EF48GENcute
+    - rugBBY Animals2x2_01
+    - rugBBY Animals2x2_02
+    - rugKID2x2_01
+    - rugKID3x2_01
+    - sculptFloor_EF48GENdiaper
+    - sculptFloor_EF48GENllama
+    - sculptTableMedium_EF03valentineBear
+    - sculptTableMedium_EF22GENchild01.
+
+### Code & Tuning Changes
+<Aside>Please see the [forum post](https://forums.ea.com/blog/the-sims-game-info-hub-en/summary-of-updates-to-sims%E2%80%99-eye-blinking/13174182) for information on the eyelid fixes. </Aside>
+
+##### General
+- Created a boolean tuning field 'allow_transfer_out_of_hh_inventory' that, when enabled, will allow an object in the HH inventory that cannot be directly placed in-world (eg. livestock animals) to be properly slotted to an in-world object. 
+    - Enabled this boolean in the tuning for the loot action that slots livestock animals to their sheds.
+- Modified the function that removes the animal shed object to return early if the shed is currently in the HH inventory (so the animal shed will not get erroneously unregistered from the animal service when moving HH).
+- Stopped tracking objects in the lost and found service if their location is currently in the Household Inventory (because they cannot be lost if they are in the HH inv).
+- Properly set the livestock animals' owner ID field in the python code after they are assigned to a shed (since livestock animals cannot be placed in-world they were bypassing the logic that normally sets that field, causing the Sim to not own them anymore after moving HH).
+- Objects duplicated between world and inventory will be discarded from inventory on load
+- When scheduling prom, we were testing for any early graduate Sims, but the Tests would always fail on older saves. Moved those tests to when prom is run.
+- Updated score multiplier test to return a default value instead of throwing an error when running on simless events. (In relation to Prom Goals not being completed.)
+- Re-exported premade household info with pets in game to fix pets missing in premade households.
+- Removing Unflirty tested outcomes from Mixer_social_Hug_targeted_Friendly_MiddleScore.
+- Fixing a test on landlordTenant_DoInspectionMaintenance (In relation to "Do Inspection and Maintenance" previously not being available on broken objects for landlord sims.).
+- Renamed some relbits and supporting descriptions in Parenthood. (In relation to Child and Teen sims getting the Super Sibling relationship, even if not related. This was implemented as a feature and the relationship renamed, instead of "fixed".)
+- Added state smallBusiness_OpenClose_close to object_RetailPedestal (the tuning file for the Plant Containment Cell). (In relation to a Script Call Fail error when the Plant Containment Cell is on the lot and the player tries to place other objects.)
+
+<Card title="Sim Autonomy">
+- Fixing a test on Socials_Romance_STC which governs autonomous tests for all romantic mixer socials (In relation to sims excessively flirting for players without Adventure Awaits).
+- Adding a new aggregate interaction (aggregate_SocialObservation_Chat) to determine the proper Sim to run SocialPickerSI on. (In relation to how sims determine who they speak with on a lot).
+- Adding tests to autonomousSimPicker_TriviaBox_ThumbsUp_PlayWith and autonomousSimPicker_TriviaBox_WooWho_PlayWith to ensure Sims who are writing on the computer are not considered.
+- Adding new Traits for phone and computer preferences. These are tested on the aptly named Phone and Computer super interactions.
+- Adjusting tests and adding a cooldown to DollHouse_Smash.
+- Adding a cooldown to the following; 
+    - PopcornPopper_StartCooking_Autonomously.
+    - ClayBlob_Mold
+    - the fun motive advertisement on pool-swim_Autonomous_Start.
+    - super_Papercraft_PaperAirplane_Self_Throw_AutonomousOnly
+    - super_Papercraft_PaperAirplane_Self_ThrowAround
+    - super_Papercraft_PaperAirplane_Throw
+    - super_Papercraft_PaperAirplane_Throw_FromInventory
+    - AutonomousObjectInInventory_SoccerBall and AutonomousObjectPicker_SoccerBall interactions.
+- Adding a cooldown to autonomously running the following;
+    - JungleGymBoat_Play and JungleGymRocketShip_Play.
+    - si_Yoga_Practice and Yoga_Routine.
+    - autonomous-enabled Computer_Reacreation interactions, and the beloved Computer_TrollForum interaction.
+    - Stereo_AutonomousPickChannel as well as adding dancing cooldowns.
+    - crossStitch_StartCrafting_Autonomously and craftingResume_CrossStitch.
+    - interactions under Violin_NonTieredMenu and Violin_TieredMenu.
+    - interactions under Guitar_NonTieredMenu and Guitar_TieredMenu.
+    - interactions like DanceFloor_Dance, Stereo_Dance and many others.
+    - considering sim_doPushUpsAutonomously, sim_doSitUpsAutonomously, Sim_doStretching, and Solo_WorkOut.
+    - autonomous-enabled Computer_Reacreation interactions, and the beloved Computer_TrollForum interaction. The Troll Forum interaction also received a test restructure for its availability.
+    - bar_StartCraftingAutonomously for Inspired/Foodie/Bro Sims.
+    - Chess_PonderMoves, Chess_Social and Chess_Table_Social.
+    - tv_WatchCooking_CulinaryTraining for Foodie Sims.
+</Card>
+
+<Card title="Safeguards Against Inappropriate Sibling Relationships">
+We've added safeguards in the game to check against inappropriate sibling relationships. When the game loads, the game will check to see if a Sim has any spouse or fiance, and if they do it will also check to see if they share parents. If any shared parents are found, the game will remove them from the Sim, and then reapply the correct relationship and remake the FamilyTree. This fix may not address all instances in which incorrectly available romantic actions can occur, but rather this specific kind. As always, please report any new instances on the forums so we can get them properly logged and accounted for in upcoming fixes.
+
+- After Load, the GenealogyTracker has a fix to remove shared parents from Sims that are married/engaged now.
+- When all Sims are fully loaded, the Genealogy Tracker checks if they have any spouses or fiancees, and if they share any parents.
+- If any shared parents are found, we're removing them from the Sim, and then we apply the correct bits, and remake the FamilyTree.
+- The source of truth for Sibling Sims comes from their parents, so we had to take some drastic measures to fix this retroactively. If we don't want to apply this fixup, there will be a need to override the fix from the Genealogy Tracker.
+</Card>
+
+### User Interface
+- 62ECC59A!00000000!8B54D2984ADC952E.downloadmanager.ScaleFormGFX was added.
+- Pack selection was moved from the ESC menu into the Marketplace, the button now leads to a Download Manager.
+
+---
+Originally written by [Kallixer](https://www.patreon.com/c/Kallixer) for this site.
