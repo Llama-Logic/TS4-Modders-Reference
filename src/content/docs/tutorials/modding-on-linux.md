@@ -4,9 +4,6 @@ description: A tutorial for modding The Sims 4 on Linux
 lastUpdated: true
 sidebar:
   order: 50
-  badge:
-    text: UPD
-    variant: note
 ---
 
 <sup><sub>A tutorial by OneMoreKayaker</sup></sub>

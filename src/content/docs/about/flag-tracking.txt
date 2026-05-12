@@ -26,5 +26,3 @@ Updated:
     variant: note
 
 --------------------------------
-Random Modding Knowledge: March 3, 2026
-Modding on Linux: March 7, 2026

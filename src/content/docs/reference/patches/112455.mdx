@@ -1,0 +1,453 @@
+---
+title: Patch 1.124.55
+description: Changes between last patch and the current patch
+lastUpdated: true
+sidebar:
+  hidden: true
+---
+import { LinkCard, LinkButton, Aside, Icon, Card } from '@astrojs/starlight/components';
+
+**Update: May 12, 2026** \
+**Version: PC: 1.124.54.1030 / Mac: 1.124.54.1230**
+
+Pre-patch for the *Lady Bridgerton’s Masquerade Ballroom Kit* and *Lady Bridgerton’s Masquerade Ball Fashion Kit* releasing May 14th, as well as the *Lady Bridgerton’s Masquerade Ball* limited time login event running from May 12th until July 7th.\
+\
+Also coming with this patch are 150+ bug fixes and a plethora of autonomy tweaks mainly related to infant and sleeping behaviour. An infant playmat was also added to the basegame, previously exclusive to Growing Together EP and the Storybook Nursery Kit.\
+\
+Additional features included are extended save backups and a new option under *Gameplay* allowing the player to disable caregiver autonomy.
+There are also an additional 6 fixes to black photos.
+
+This patch introduces base layers, a new asset sub-category to accessories in CAS. For more information please see the modder guide provided by Maxis [here](https://forums.ea.com/blog/the-sims-game-info-hub-en/layer-up-a-creator%E2%80%99s-guide-to-base-layers-in-cas/13349904)
+
+---
+<LinkButton href="/pages/112455_report.html" icon="document" iconPlacement="start">XML Comparison</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/update-5-12-2026" variant="secondary" icon="external" iconPlacement="start">Patch Notes</LinkButton>
+<LinkButton href="https://www.ea.com/games/the-sims/the-sims-4/news/lady-bridgerton-kits-and-event" variant="secondary" icon="external" iconPlacement="start">Event & Kit Collab Blog Post</LinkButton>
+
+### Packs & Kits
+DLC added with this patch.
+    | **Pack** | **Group ID** | **Number**         | **Name**                                      |       | **Release Date** |                                                    |
+    | -------- | ------------ | ------------------ | --------------------------------------------- | ----- | ---------------- |----------------------------------------------------|
+    | SP78     | 0x77         | 119                | Lady Bridgerton’s Masquerade Ball Fashion Kit |       | May 14, 2026     |                                                    |
+    | SP79     | 0x78         | 120                | Lady Bridgerton’s Masquerade Ballroom Kit     |       | May 14, 2026     |                                                    |
+
+### Assets
+<Aside>All new assets part of the Lady Bridgerton's Masquerade Ball Event can be found under EV009.</Aside>
+
+##### Create-A-Sim
+    | **Name**                             |                                                                                      |                                                                         |
+    | ------------------------------------ | -------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+    | ymBody_EV009LongcoatRE               | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | yfBody_EV009SpenDressRE              | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | ymBody_EV009SpenDressRE              | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | yfBody_EV009LongcoatRE               | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | ymShoes_EV009BootsRE                 | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | ymShoes_EV009BootsRE                 | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | yuAcc_GlassesEV009MaskMasquerade     | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | yfAcc_GlovesEV009EssentialRE         | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+    | yfAcc_GlovesEV009EssentialRE         | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                         |
+
+
+##### Build-Buy
+
+    | **Name**                                  | **String Name**                              |                                                                  |                                                                           |
+    | ----------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
+    | clockTableMedium_EV009BGTNqueenTimepiece  | Midnight Chime Clock                         | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMementoDisplay_EV009BGTN    | Mementos Pinboard                            | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNcard       | Filled Dance Card                            | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNcrown      | Handcrafted Birthday Crown                   | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNflower     | Floral Bookmark                              | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNhankie     | Moonlit Keepsake                             | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNinvite     | Lady Bridgerton's Masquerade Ball Invitation | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | collectRegencyMemento_EV009BGTNletter     | Sealed Love Letter                           | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | handFan_EV009BGTN                         | Fluttering Hand Fan                          | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | tableGame_EV009BGTN                       | Felted Game Table                            | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | tableVanity2x1_EV009BGTN                  | Debutante's Vanity                           | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | fountainPark_EV009BGTN                    | Whispering Waters Fountain                   | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | bookcaseSurface_EV009BGTN                 | Buzz of Desire Book Set                      | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | sculptTableSmall_EV009BGTNpaperStack??    | Lady Whistledown's Society Papers            | <abbr title="Lady Bridgerton's Masquerade Ball Event"><Icon name="comment" /></abbr> |                                                                           |
+    | infantPlaymat_EF00QOLplush                | Lil'Wiggle Playmat                           |                                                                                      |                                                                           |
+
+### CC Changes
+- The addition of a new asset type; base layers, found in the accessories category in CAS. For more information please see the modder guide provided by Maxis [here](https://forums.ea.com/blog/the-sims-game-info-hub-en/layer-up-a-creator%E2%80%99s-guide-to-base-layers-in-cas/13349904)
+- Hair color for *EP04ShaggyCatEars_DirtyBlonde* dirty blonde variant has been changed to be consistent with other hair assets in this target color.
+- Hair colors Black and NeutralBlack for *yfHair_AfroMedium_NeutralBlack* and *yfHair_AfroMedium_Black* have been changed to be more aligned with majority of existing hair assets in the Black and NeutralBlack colors.
+- Fixes to the interfering textures of that occurred so it no longer happens. The Alpha mask of the asset was incorrectly masked so that it spilled colors into other assets' texture space, a re-adjustment to the mask resolved the interference. This is done for the following:
+  - yfTop_GP08BlazerBow_SolidBlack
+  - cmBottom_EP07SkirtGrass
+- Corrected mismatched swatch colors for:
+  - yfTop_GP01Hermit
+- Added updated thumbnail to thumbnails2.package for Prairie Dreams CAS outfit asset swatches, to no longer appear darker than intended.
+- Added updated thumbnail to thumbnails2.package for
+  - ymAcc_NecklaceSP81CK011Daisy
+  - yfTop_SP08TeeBoatNeck_SimlishWhite
+
+- Fixes the Nail color interference for yfTop_EP11BlouseShirred only. UV space for the Nails is inconsistent but the asset in question had enough safe space to give extra UV texture space in the Alpha mask to the specified Nails without causing problems for the clothing asset.
+
+<Card title="CAS Tagging">
+- Added missing ShowInUI BitField to ymBottom_GP10SkinnyJeanFlanel, making it show up for masculine frame male sims with the Masculine Style preference removed.
+
+Added **RestrictCrossGender** Bitfield and removed **RestrictCrossBodyFrameGender** BitField:
+  - SDX037DressAline
+  - SDX037DressPencil
+
+Removed **GenderAppropriate_Male** from child instances of:
+- SDX037DressAline
+- SDX037DressPencil
+
+Added **GenderAppropriate_Male** and removed **GenderAppropriate_Female** tag from:
+- ymHair_EP21GoldDecoBraids
+- ymAcc_WristLeftSP62CK004WatchLuxury
+- ymAcc_NecklaceSP62CK004Elegant
+
+Removed **GenderAppropriate_Male**:
+- yuAcc_GlassesSP62CK001Reading
+- yuAcc_GlassesSP62CK001CatEye
+- yfAcc_NecklaceSP62CK001Elegant
+
+Added **DefaultForMaleBodyType** BitField:
+- cmBottom_Underwear
+
+Removed **AllowForRandom** Bit:
+- yuHeadDeco_EP19HeadbandBoho
+
+Removed **OutfitCategory_Swimwear**:
+- yfShoes_EF63EVRMuckySandals
+- ymShoes_EF63EVRMuckySandals
+
+Added **Gender_Male** and removed **Gender_Female** tag from:
+- yfHair_EP11MessyPixieBabyBang
+
+Repaired and improved visual glitches on pants for the following assets when used on the feminine frame:
+- ymBody_HoodieHiphop
+- ymBody_CoatShortTrench
+- ymBody_ShortsHigh
+- ymBody_EP03SuitWideLapel
+- ymBody_EP05SuitLoveDay
+- ymBody_EP09OverallHenley
+- ymBody_EP11SuitMayor
+- ymBody_EP11CrittterTender
+- ymBody_EP11Suspenders
+- ymBody_EP11OverallFarmand
+- ymBody_Tourist
+
+Added **OutfitCategory_HotWeather** and **OutfitCategory_ColdWeather** tags to:
+- yfAcc_WristLeftGP08BraceletLeather
+- yfAcc_WristLeftGP04CuffRuffle
+- ymAcc_WristLeftSP60WatchBeads
+- yfAcc_WristLeftSP62CK004WatchLuxury
+- yfAcc_WristLeftSP01Rectangles
+- yfAcc_WristLeftEP07Leaf
+- yfAcc_WristRightGP07BraceletStone
+- yfAcc_WristRightGP08Gems
+- yfAcc_WristRightGP08BraceletBicepGemstone
+- yfAcc_WristRightGP04CuffRuffle
+- yfAcc_WristRightSP24Bangles
+- yfAcc_WristRightSP48BraceletSpikes
+- yfAcc_WristRightEP07Leaf
+- yfAcc_NecklaceEP06Squares
+- yfAcc_NecklaceGP07Stone
+- yfAcc_NecklaceGP07Stones
+- yfAcc_NecklaceGP08Gem
+- yfAcc_NecklaceSP18Layered
+- yfAcc_NecklaceEP18Bandana
+- yfAcc_NecklaceSP24Choker
+- yfAcc_NecklaceGP11Laurel
+- yfAcc_NeckchokerGP08
+- yfAcc_NecklaceGP08Multi
+- yfAcc_NecklaceGP10Layer
+- yfAcc_NecklaceEP07Whistle
+- yfAcc_NecklaceEP14Tassels
+- yfAcc_NecklaceSP48Rings
+- yfAcc_NecklaceSP66MedAlert
+- yfAcc_NecklaceSP62CK004Elegant
+- yfAcc_NecklaceSP60Chain
+- yfAcc_NecklaceSP66WeddingRing
+- yfAcc_NecklaceSP66Glasses
+- yfAcc_NecklaceSDX037Scarf
+- yfAcc_NecklaceEF14Jade
+- yuAcc_NoseLeftSP24Ring
+- yuAcc_EarringsEP06Earpiece
+- yfAcc_EarringsEP06Squares
+- yfAcc_EarringsSP15Mosch
+- yuAcc_EarGP08Multi
+- yfAcc_EarringsGP10
+- yfAcc_EarringsGP10PaintSwatch
+- yuAcc_EarringSP24Bell
+- yfAcc_EarringGP11Blossom
+- yfAcc_EarGP11ConnectingJewelerySA
+- yfAcc_EarringGP11Laurel
+- yuAcc_EarringsEP13Gemstone
+- yfAcc_RingLeftSP66Multi
+
+Added **OutfitCategory_HotWeather**:
+- cfBottom_GP10Skirt
+- yfBottom_GP10ShortsPaperbag
+- yfBottom_GP10SkirtMini
+- yfBottom_GP10SkirtWrap
+- yfBottom_GP10WorkKilt
+- yfBottom_SP15MoschShortsLeather
+- yfBottom_SP15MoschSkirt
+- yfBottom_SP15SkirtFlaredMosch
+- ymBottom_GP10ShortsPaperbag
+- ymBottom_GP10SkirtMini
+- ymBottom_GP10SkirtWrap
+- ymBottom_GP10WorkKilt
+- ymBottom_SP15MoschShortsLeather
+- ymBottom_SP15MoschSkirt
+- ymBottom_SP15SkirtFlaredMosch
+
+Added **OutfitCategory_Formal**:
+- cuAcc_EarringsSP49GemStuds
+- iuAcc_EarringsSP49GemStuds
+- puAcc_EarringsSP49GemStuds
+
+Added **GenderAppropriate_Male** tag and **ShowinUI** bitfield:
+- yfBody_EP10SnowSuitExtremeUnisex
+</Card>
+
+<Card title="BB Tagging">
+Added **BuyCatEE_MiscElectronics**:
+- sculptWall_EF02GENstockTicker01
+- sculptWallRWSpyTactMap
+- photoDigitalFramePortrait_SP15GEN
+- photoDigitalFrameLandscape_SP15GEN
+- photoCollage_SP15GEN
+
+Added ** BuyCat_OTG_Plumbing**, **Tooltip_OffTheGrid**, **Func_OffTheGrid**, **Func_OffTheGrid_Toggle_UtilityUsage**:
+- bathtub_EP20BATH
+- showerBox1x1_EP20CABINpanel
+
+Removed **BuyCatEE_KidToy**:
+- Crabby Bottom Armadillo Yellow
+- Wacky Wonderful Carnival Sock Alien
+
+Added **WallPattern_Paneling** and removed **WallPattern_Wallpaper**:
+- SP61_wall_S_Playwood01CK003
+
+Added **Basic Style**:
+- Doorsingle1x1_Genrustic
+- Doorsingle1x1_SDX027Genbathvenue3tile
+- Doorsingle1x1_SDXOOOgenbathvenue3tile01
+- Doorsingle1x1_SDXOOOgenbathvenue3tile02
+- Doorsingle2x1_SDX037gentileable3tile
+- Doorsingle1x1_sdx037gen3tile+set1
+- Doorsinglegen1x1x3_01_set1
+- Doorsinglegen1x1x3_02_set1
+- Doorsinglegenderfemale_EF0gen
+- Doorsinglegendermale_EF0GEN
+- Doorsinglegen1x1x3_07
+- DoorsingleSGLow2x1x3_02
+- DoorsingleMlow1x1x3_02
+- DoorsingleMlow1x1x3_03
+- Doordoublemhigh2x1x3_03
+- Doordoublemhigh2x1x3_04
+- DoordoubleM2x1x3xhigh_01
+- Doordoublesliding2x1_Sdx037buildertileable3tile
+- Doordoublearchmhigh2x1x3_02
+- Doordoublearchmhigh3x1x3_01
+- Doordoublearchsghigh2x1x3_02
+- Doordoublearchsghigh3x1x3_01
+- Doordoublearchsghigh3x1x4_01
+- Doordoublearchmhigh2x1x3_01
+- Doordouble3x1_SDX037gentileable4tile
+- Doordoubleslidingsingle4x1_SDX037buildertileable4tile
+- Doordoublem2x1x4xhigh_01
+- Doordoublesliding2x1x4_EF11gen01
+- Doordoublearchmhigh2x1x4_01
+- Doordoublearchmmhigh3x1x4_01
+- Doordoublearchsghigh2x1x4_01
+- DoordoublearchSGhigh2x1x5_01
+- Doordoublem2x1x5xhigh_01
+- Doordoublearchmhigh2x1x5_01
+- Doordoublearchmhigh3x1x5_01
+- DoordoublearchSGhigh2x1x4_01
+- DoordoublearchSGhigh2x1x5_01
+- Doorsingle1x1_EP12genteenplain
+- Doorsingle1x1_EP03gengrungy_01
+- Doorsinglearch1x1_EP16plasterrustlc3tile
+- Doorsinglearch2x1_ep16plasterrustlc3tile_set2
+- Doordoublesliding2x1_EP16genshowerglass3tile
+- Doordouble2x1_sp40gentileable3tile
+- Doordouble2x1_SP40gentileable4tile
+- Doorsingle1x1_ep08gendorm3tile
+
+- Added **Color_Purple** tag to various wallpapers and removed other color tags for that swatch (Not specified).
+</Card>
+
+### Code & Tuning Changes
+- Added Actor and Target Sim as Excluded Participants from broadcaster_JealousyUpdates_WooHoo_WoohooExclusivity 's loot_ScandalSecret_Witness_Cheating tests
+- Adding *socials_Toddler_AskFor_Present* to *HolidayTraditionGoal_TalkToFatherWinter*.
+- Removing a debug recipe from being visible in the restaurant menu (Placeholder coffee drink) that was never meant to be visible.
+- Adding a new interaction stereo_LoudNoisesTurnOff that is pushed to Sims when they're woken up by loud noises.
+- Adding a tooltip to bed_Nap interaction.
+- Adding the display name "Local Weirdo" to Jobs_OpenStreets_CityLife_Weirdos as a clarification.
+- Removing an unneeded test on Chess_Table_Social
+- Made sure the carry fixup check is set back to false if the sim isn't waiting for a carry fixup to fix the following;
+  - We've addressed an issue where Toddler Sims could be hungry but would remain idle, despite having food. This should no longer occur.
+  - We addressed an issue where Children Sims could enter a state where they wouldn't eat after traveling or when hungry. This is fixed retroactively in old saves.
+  - Child Sims are now able to eat normally both while traveling and after returning home from a Restaurant Venue. This fix is retroactive.
+- Changed how commodity_Motive_Thirst works, preventing Sims from wanting to drink autonomously.
+- Added a test to rescueNeglectedDependent_Child that ensures the child must be a LevelF student before running this interaction.
+- Furniture will now be carried over, if selected, when moving from tiny households. The issue was happening because the venue owner was being cleared before the move out setup in the neighborhood service. Fixed it by changing the order and only clearing the venue owner after the move out setup.
+- Acne is no longer carried over when the sim age up from teen into a young adult. When the aging up happens, the acne is removed. The issue happened due to a missing bitflag for the acne when going through which parts to remove from the sim in the aging up process. Adding the bitflag fixed the issue.
+- Fixed Hens and Chickens randomly disappearing on game load due to some chickens having world transform position of 0 when bought. ThThe solution is to look for the corresponding home and use that transform, in the case that the animal is not already roaming(pos different than 0)
+- Stopped forcing RankingStatistic filter term to filter for sims that are not famous on templated sims when selecting a sim to be the police officer.
+- Removed Stat Use Multiplier commodity_Motive_Nausea from buff_ChildhoodInspiration_RewardTrait_LiveDangerously. Added decay modifier for BadFood_Buffs to buff_ChildhoodInspiration_RewardTrait_LiveDangerously
+- It was previously possible to sort a sim as both brother and son, now if it happens the blood relationship to the mother's spouse is removed.
+- Added Actor Cone Constraint bookshelf_ReadRandom_Rallyable so it cannot cancel Si interactions.
+- In python code, re-populated relevant scandal secret variables when scandal is about to expire so that scandal can be properly ended/cleaned up. Additionally, removed trait_Hidden_ScandalSecret_VFX from sims who had that trait but were not in an active scandal.
+- Removed Test from computer_Programming_Festival_LogicFair_HackthePlanet that tested/required the Sim to be on a getaway.
+- Added Actor and Target Sim age Tests to Socials_Friendly_STC and Socials_Funny_STC's broadcaster_Reaction_Jealousy_Trait which pushes reaction_Jealousy_Trait_LovedOne_JealousPangs that was causing some of the Jealousy Buffs and Fear of Being Cheated on. Deleted broadcaster_Reaction_Jealousy_Trait from Prototype Socials_InfantToSim_Friendly_AlwaysOn_STC and Socials_Targeted_Friendly_CrossAge_Interactions. Deleted broadcaster_Reaction_Jealousy_Trait from interactions mixer_socials_TellFunnyStory_group_Funny_alwaysOn_toddler and mixer_social_MakeFunnyFaces_Toddler.
+- Set Target Participant Type to ‘PickedSim’ instead of ‘TargetSim’ in testSet_SexualOrientation_KnowledgeGate_Romantic_PickedSim’s KnowledgeTest and GenderPreferenceTest.
+- Corrected previously gender specific identification of the grandparent relations when assigning virtual parents to the parentless siblings on loading. As we can legitimately have female in FATHER and male in MOTHER slots in our saves, now it's properly supported and doesn't cause introduction of the same virtual parent between spouses.
+- Fixes the live mode relationship tree in the specific case where Spouse Sims could become related if you create a genetic sibling for one of the spouse Sims in CAS and both Sims have a child together.
+- Reworking the interaction super_CuddleOnBed_RandomizeSleepType to be named "Sleep and Cuddle" in game, and changed its functionality to always push Sims to cuddle.
+- SimService tries to use cached stuff creating incorrect results when a build type sunbath request arrives. So I changed it to make a full build request.
+  - We fixed a rather silly looking bug where a Sim's portrait appearance could get distorted after Sunbathing when a Sim was nude or in a Swimsuit.
+- When creating a Grand Ball event, sims will correctly wear masks during the event if the mask option is selected. The issue was happening due to the AppearanceModifier not being passed to the SituationEditData, leaving missing information to be handled when creating the event. Fixed it by passing the AppearanceModifier to the SituationEditData when creating the event.
+- Added a check to see if the values to remove are the same as the values to add. If so, this sentiment calculation no longer occurs for the Poor Leadership sentiment.
+- In python code, modified a call to one of the age-checking functions to pass in a sim info instead of a sim object (which is what the function expects).
+- Removing the vacuum interaction from object_trash_diaper and object_HairPile
+- Added posture preferences to make it more likely that sitting on the ground can be selected when trying to read a book.
+- Gameplay script fix: added backward-compatibility handling for older pregnancy save data so pre-EP21 pregnancies continue to resolve to the expected partner instead of being treated as secret births.
+- Added a check in the inventory panel to prevent an object with the same object_id to be added twice
+- Adding cooldowns to Sims running stereo_Metal_Headbang, and increasing buff_SimPreference_Timer_Dance to one day.
+- Fixing affordances on object_fire_ash
+- Further increasing buff_SimPreference_Timer_Dance to last a day
+- updated Actor Career hair/makeup application rules to remove outdated skin-tone gating, and adjusted the shared Hair & Makeup chair socials so makeover changes no longer get canceled or rolled back during the chair interaction.
+- The Family Dynamic option is disabled for pets (grey out). Even selecting the Household Member option, the Family Dynamic remains disabled.
+- Gameplay script fix: adjusted the daycare send flow so daycare state is applied before milestone data is snapshotted, allowing the daycare milestone to register correctly for infants and toddlers.
+- A test creation that makes Unlock possible only if the birth is of a human for Special Touch Family Recipe.
+- Gameplay script fix: off-screen NPC births now complete through the proper pregnancy-completion flow, so newborn Sims correctly fire the offspring-created event and can be added to dynasties / receive title updates.
+
+<Card>
+There were previously three inconsistent methods for calculating the price of a craftable multi-serve object. The first method used the base crafting formula with a quality multiplier; the second applied a shelf or food cart price markup to the first method's result; and the third calculated the total price based solely on the value of a single serving.
+Also, the price of Nectar shown in a Sim's inventory is now the same as the actual selling price for the Nectar.
+- This patch standardizes the price calculation within the gameplay code through the following changes: Added the is_obj_single_serving method to crafting_process to check if an object has the CraftingTuning.SERVINGS_STATISTIC tracker and relevant serving information. Updated the price routing logic to rely on is_obj_single_serving. If the object is a single serving, it returns the single-serving price; otherwise, it returns the default crafting formula price multiplied by the quality multiplier.
+- Modified light_retail_surface_component and payment_cost to use this new, unified price calculation before applying the shelf or food cart price markup. This replaces the previous method of multiplying the single-serving price by the number of remaining servings in the object.
+</Card>
+
+<Card>
+The Sims 4 intentionally does not associate any Causes of Death with infants and toddlers. However, the *"GhostMoleculeButton"* was not disabled for these age groups, which resulted in an empty Cause of Death list appearing when the button was clicked.
+- This patch addresses the issue within the UI code through the following changes: Updated the GhostMoleculeButton enable/disable conditions to include a Sim age verification check. Refactored the button's tooltip system—which previously relied on a fixed localized string—to allow for dynamic injection of localized text when needed.
+- Created a new localized string [UI/Shared/SimTraitsMolecule:NoCauseOfDeathForAge (0xDC111813)] to replace the default tooltip text whenever the button is disabled due to these new conditions.
+</Card>
+
+<Card title="Milestones">
+- Allowed the developmental milestone tracker to load for NPC sims if they are above a certain level of detail threshold, e.g. were previously played. This will ensure unlocked milestones persist for played sims when interacting with them from other households.
+- Removed prerequisite goals from the following Milestones:
+  - lifeMilestone_Toddler_LearnedToClimbStairs
+  - lifeMilestone_Toddler_LearnedToDance
+  - lifeMilestone_Toddler_LearnedToRun
+  - lifeMilestone_Toddler_MaxMovement
+- Increasing the milestone unlock rate when running for the following interactions:
+  - social_InfantMilestones_TummyTimeTogether
+  - social_InfantMilestones_TummyTimeTogether_Playmat
+  - infantMilestone_TummyTime_Solo
+- Gameplay script fix: corrected the developmental milestone unlock-state check so infant-related TNS notifications are not triggered twice after travel.
+- Modified the way developmental milestones are saved to the protocol buffer to ensure that milestones get saved before the sim is injected into the inactive zone.
+</Card>
+
+<Card title="Infants">
+- Adding an age test to buff_SlowExperiences_States_EmotionalControl, stopping infants from gaining the *"Controlled Emotions" *moodlet when sleeping near a fireplace.
+- Fixing an age test on social_Thanatology_Hauntings, stopping infants from displaying the *"Inquire about Local Hauntings"* interaction.
+- Fixing an age test on *mixer_social_SpreadMeanHistory_grouch_mischief_skills*, fixing teen and adult sims running the *"Spread Rumors about Others"* interaction on infants.
+- Babies motives were already not being lowered automatically when on an active household, and off lot. This now applies to Infants and Toddlers as well, fixing their needs dropping if the active sim (and player) is in a different lot.
+- After a caregiver feeds and infant, they'll gain an invisible buff (buff_Infant_Caregiver_CleanUp) that pushes them to tidy up autonomously
+- Reducing the autonomy modifier for hunger decay on buff_Trait_Infant
+- Reducing the Goal Completion Time on socials_Infant_CradleHold_BabyFeed_Bottle_Succeed
+- Increasing the Hunger motive gains from HighChair_Infants_FeedInfant
+- Reducing the Mood strength of buff_Infant_AwakeTime
+- After changing diapers, caregiving Sims are now more likely to throw away dirty diapers due to an invisible buff (buff_Infant_Caregiver_CleanUp)
+- Added a being held posture checks to "Check Infant" to avoid other Sims trying to run that interaction to an already held toddler.
+- Use a negated "WetHere" test instead of Custom floor level interval to check if the area the interaction wants to run is on water for interactions like;
+  - Practice Standing
+  - Tummy Time
+  - Practice Crawling
+- Adding buff_Infant_CheckOn_ClashPrevention and buff_Infant_ShowConcernCooldown to socialSuperInteraction_CarryPickUp_Infant_Autonomous.
+- Caregivers will no longer run socialSuperInteraction_CarryPickUp_Infant_Autonomous on an Infant who is already in a crib.
+- The sleep continuation that needs a pickup is not able to be queued anymore if an Infant is in a crib, preventing a second caregiver from picking up a recently placed infant in a crib and placing it on the floor instead.
+- Disallowed commodity value to be changed in set_to_auto_satisfy_value if it is locked.
+- Adding buff_Infant_ShowConcernCooldown to socialSuperInteraction_CarryPickUp_Infant_Autonomous, TYAE_CheckOn_Infant_Minor and TYAE_Watch_Infant_Autonomous
+- There were a few changes done around sims placing infants on the floor for no apparent reason or due to hidden interaction failures. 
+  - Tuning wise, the interactions that find the cribs and select them for put downs are a lot more lenient in finding cribs now. 
+  - The put down interactions now make sure the Sim trying to put down is carrying the Sim. 
+  - Social SIs can relax the constraints around them if its related to carrying an infant, to alleviate putting down, and another Sim picking them up. 
+  - When transitioning between postures, we also added special handling for when a Sim has multiple transitions so they keep the path and finish them, instead of only running one, this only happens when carrying Sims.
+- Adding tests to ensure Infants aren't sleeping to successfully run interactions like social_Infant_Interim_ChangeDiaper and socialSuperInteraction_CarryPickUp_Infant_ToBathe
+- Added a posture check to Tummy Time together to avoid Sims clashing by trying to run it when other specific infant states are on the infant.
+- Adding new loots to SimCheckOn_Infant that fire a cooldown if canceled while in the interaction queue.
+- Increasing the Content Score for interactions like social_Infant_Interim_Bottle_Feed and social_Infant_Interim_ChangeDiaper
+- Adding Buff_Infant_CheckOn_Cooldown to several interactions including TYAE_CheckOn_Infant as well as socialSuperInteraction_CarryPickUp_Infant_Autonomous. On top of this, a Sim cannot autonomously run socialSuperInteraction_CarryPickUp_Infant_Autonomous on Infants who are already in a crib.
+- Adding a new buff (buff_Infant_LoudNoises) and a new notification to Super_Infant_LoudNoise_React, as well as a new buff buff_Infant_RecentlyWokenUp to ensure only recently woken up Infants receive these new features.
+- Infants CAS animations now loop correctly while browsing categories.
+- Adding tooltips to BabyFeed_Preference_Bottle and BabyFeed_Preference_Body
+- Added a field to sim_info "carrying_sim" that holds the id of the sim that is being carried.
+- Added a posture check to Tummy Time together to avoid Sims clashing by trying to run it when other specific infant states are on the infant.
+- Adding a new test to all TYAE_CheckOn_Infant interactions, making it so Check On does not run autonomously in game with the Game Option enabled. Also adding a new Check On (TYAE_CheckOn_Infant_OptionDisabled) only when Caregiving is disabled, this interaction is only meant to be run manually and will not run autonomously.
+- Adding an autonomous test to Social_InfantMilestones_TummyTimeTogether to ensure Sims do not pull an Infant out of the back carrier to run Tummy Time.
+- Ensuring TableChangeDiaper_Infant_ChangeDiaper only lasts 10 seconds.
+- Carrying infants have special handling on Social SIs to relax some of the constraints around them, that could derail them and decide to play on the floor, instead of handing over.
+- Added a small cooldown to autonomousSimPicker_Infant_Hygiene so it wouldn’t run multiple times in a row & cancel itself out. Additionally, increased the priority of infant_AskForHygiene and social_Infant_Interim_ToBathe (other interactions in the autonomous bathing chain) so that they wouldn’t be canceled out by other interactions.
+- Other Sims could derail the Give Infant a Nap interaction, now it should consistently try to finish instead of having another Sim derail it.
+- Adding a new Exit Condition on Social_InfantMilestones_TummyTimeTogether that exits the interaction if the target Infant falls asleep.
+- Adding a new interaction consume_Eat_Infant_HighChair_UserDirected on Object_Food_PeanutButterPuffs, Object_Food_YogurtMelt, object_Food_OatyOs, and Object_Food_BananaSlices
+- Added posture checks to CheckOn Infant to avoid clashing when other caretakers are already taking care of the Infant
+- Added additional posture tests around Practice Standing.
+- If a Sim holding an infant would route far away for a continuation with the infant, if canceled on route, we would derail the infant's posture, and the game would default to placing it on the carrier's feet, we are disallowing this cancel until the routing is done now.
+</Card>
+
+<Card title="Fairies">
+- When generating thumbnail, if sim is in occult form, set to force hidden attachments to be visible instead of ignoring hide/unhide checks in LoadLOD for sim. In relation to fairy sims now always having their wings displayed in Sim Portraits.
+
+- Fairy Sim wings will reappear after a Fairy Sim puts away their book. This fix is retroactive if the wings were missing.
+    1. Check if the put down is for the proxy wing object when handling pickup. 
+    2. Move the pickup interaction to the same bucket as the super interaction in case it is of CARRY_CANCEL_AOP 
+    3. In FairySatisfyConstraintSuperInteraction, if cancelling the source_interaction for the posture fails, try to cancel the owning_interactions.
+</Card>
+
+<Card title="Sleeping">
+- Adding a test for sleeping Sims on Idle_RomanceDynamic_PartnerThoughts, fixing the idle interaction *"Think About Partner"* running while a sim is sleeping, causing the to wake up.
+- Prevented Sim_EnergyFailure from interrupting sleep if the Sim is in posture_BedSleep, posture_BedUndercovers, and posture_SleepingBagSleep.
+- The bed object part from the multi-tasking did not have restrict_autonomy_preference set, so it would result in a None subroot_index, causing preference assignment bugs. The fix is to get the closest part to it that has restrict_autonomy_preference set to True.
+- Modified super_Social_CuddleOnBed_Cuddle_Sleep so that when this interaction is done, one sim will stay sleeping and the other sim will wake up (rather than having them both stay sleeping). Modified the exit conditions of this interaction so that it is always the sim with higher energy waking & the lower energy one continues sleeping.
+- Added a generator capable of providing all (or index specified) restricted sims to a preference tag on the object, while also providing a new Test for the quantity of sims restricted on the object, and adding a "full target" option for the autonomy scoring preference test. Added a new tooltip for when there are 2 sims assigned to the bed using 'autonomy scoring preference count' test and 'From Object Preference' generator to get both sim names for the localized string, and to change the third localization token to be 'From Object Preference' generator, that returns a list of all assigned sims.
+- Fixing Continuation affordances on super_Social_CuddleOnBed_Cuddle_Sleep, ensuring both Sims do not exit the bed if one Sim cancels the interaction
+</Card>
+
+<Card title="Build Mode">
+- Prevented infinitely load caused by the corrupted footprint when building the navigation system, resulting in new objects unplaceable, disappear or unable to be deleted, caused by placement cheats.
+</Card>
+
+<Card title="Black Photos">
+There was an instance of Black Photos occurring when a user applied a filter while taking a photo, then placed the photo on the wall, and then used a filter again. We were able to fix this to prevent it from breaking in the future, including in old saves when taking new pictures. If the black photo issue already occurred in an old save, the texture was not able to be recovered in this case. However, if the filter was changed while taking a photo but it had not been changed a second time yet, then the photo is now also fixed in old saves. A new filter can be applied safely to those photos without it breaking.
+- Saved the original photo texture instead of the one with filter to the game save.
+
+Photos will not appear black when they are viewed from a different loaded lot than the current lot they are on. This fix is retroactive and if it was previously occurring will no longer be occurring in old saves.
+- Added a new behavior to show the custom painting in neighborhood lot.
+
+All wall and surface Photos should now be able to properly retain data when being uploaded to the gallery. This fix is retroactive and should no longer occur when downloaded from a Gallery upload where the bug was occurring.
+- The wall and surface photo objects did not have the required tag (BuyCat_Shareable) to save their texture data when uploaded to the gallery.
+
+Medium and Large Photos captured with the in-game camera will no longer appear blurry. This fix is not retroactive and will not fix photos that were already taken in past saves.
+- Compressed the custom textures with higher resolution, from 256256 to 512512.
+
+- Build/Buy fix: corrected failed live-drag cleanup for photos placed from inventory, so unsuccessful wall placement restores the correct held inventory object instead of leaving it stuck or desynced.
+</Card>
+
+<Card title="Blank Paintings">
+If a custom painting (Paint from Reference) was happening off lot then the painting on the easel would appear to have a white texture. We updated the game to check for the proper textures if the Sim isn't loaded into the current lot. This would correct itself if you loaded back into the lot with the painting and it still will, so this is compatible with old saves.
+- Distinguished painting object in the open street from the object in the inventory, so that painting can be changed in real-time.
+
+Paintings will not appear white when they are viewed from a different loaded lot than the current lot they are on. This fix is retroactive and if it was previously occurring will no longer be occurring in old saves.
+- Add a new behavior to show the custom painting in neighborhood lot.
+
+If a custom painting (Paint from Reference) painting is uploaded and downloaded from the Gallery it will now retain its texture properly and there is no longer an assert. This was also creating a "System Issue" for some players when placing paintings on a lot. This is no longer happening. This fix is retroactive and should no longer occur when downloaded from a Gallery upload where the bug was occurring.
+- Saved the original photo texture instead of the one with filter to the game save.
+
+- state component adds a listener seed to the statistic tracker on the statistic removal callback to guarantee that its statistic change listeners will be re-assigned if the statistic is removed and added back.
+</Card>
+
+---
+Originally written by [Kallixer](https://www.patreon.com/c/Kallixer) for this site.
