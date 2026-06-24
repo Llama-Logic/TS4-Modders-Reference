@@ -17,7 +17,7 @@ export default defineConfig({
 				{
 					icon: 'discord',
 					label: 'Join the Creator Musings Discord',
-					href: 'https://discord.com/invite/qxz5Kn5'
+					href: 'https://discord.gg/yXK5mqXqNv'
 				},
 				{
 					icon: 'github',

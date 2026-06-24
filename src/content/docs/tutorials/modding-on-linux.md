@@ -239,4 +239,4 @@ I hope this tutorial was helpful to you, or at least informative.
 
 ---
 
-Originally posted on the [Creator Musings Discord server](https://discord.com/invite/qxz5Kn5).
+Originally posted on the [Creator Musings Discord server](https://discord.gg/yXK5mqXqNv).
