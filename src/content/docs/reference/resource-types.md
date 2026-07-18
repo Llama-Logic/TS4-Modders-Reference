@@ -19,22 +19,22 @@ sidebar:
 | 13CF0ED2 | Deco Trim             |
 | 0418FE2A | Fence                 |
 | B4F762C9 | Floor                 |
-| 01661233 | Floor Trim            |
+| 84C23219 | Floor Trim            |
 | D382BF57 | Footprint             |
 | 2FAE983E | Foundation            |
-| 01661233 | Fountain Trim         |
-| 01661233 | Frieze                |
+| E7ADA79D | Fountain Trim         |
+| A057811C | Frieze                |
 | 9151E6BC | Half Wall             |
 |          | Half Wall Trim        |
-| 01661233 | Ladder                |
-| B4F762C9 | Magalog               |
+| CC09004D | Ladder                |
+| B91E18DB | Magalog               |
 | 01D0E75D | Material Definition   |
 | 01661233 | Model                 |
 | 01D10F34 | Model LOD             |
 | 9917EACD | Modular Piece         |
 | A0451CBD | Modular Piece Catalog |
 | 319E4F1D | Object Catalog        |
-| B91E18DB | Object Catalog Set    |
+| FF56010C | Object Catalog Set    |
 | C0DB5AE7 | Object Definition     |
 | 99C07284 | Platform              |
 | 2F7D0004 | PNG Image             |
@@ -146,6 +146,7 @@ For more information on worlds and world resources, see the [Ts4 World Documenta
 | D65DAFF9 | Region Description            |
 | 48C28979 | Spawner                       |
 | 1709627D | Water Manifest                |
+| 47FDDFBC | Water Mask                    |
 | 656322B7 | World Camera Mesh Reference   |
 | A680EA4B | World Description             |
 | 4F726BBE | World Landing Strip           |
@@ -224,14 +225,15 @@ For more information on worlds and world resources, see the [Ts4 World Documenta
 ## Miscellaneous
 *Types that does not fit a category/affect multiple areas.*
 
-| **Type** | **Name**               |
-| -------- | ---------------------- |
-| 62E94D38 | Combined Binary Tuning |
-| DB43E069 | Deformer Map           |
-| 0166038C | Name Map               |
-| 545AC67A | Sim Data               |
-| 9F5CFF10 | Style                  |
-| B93A9915 | Thumbnail Cache        |
+| **Type** | **Name**                  |
+| -------- | ------------------------- |
+| 62E94D38 | Combined Binary Tuning    |
+| 346CB93E | Tuning Dependencies Cache |
+| DB43E069 | Deformer Map              |
+| 0166038C | Name Map                  |
+| 545AC67A | Sim Data                  |
+| 9F5CFF10 | Style                     |
+| B93A9915 | Thumbnail Cache           |
 
 ## Other
 *Types that are yet to be categorized.*
@@ -244,7 +246,7 @@ For more information on worlds and world resources, see the [Ts4 World Documenta
 | AC03A936 | Generic MTX                 |
 | 03B4C61D | Light                       |
 | 122FC66A | Lot Type Event Map          |
-| B91E18DB | Magazine Collection         |
+| 74050B1F | Magazine Collection         |
 | 02019972 | Material Set                |
 | 1A8506C5 | Modal Music Mapping         |
 | 07576A17 | Model Cutout                |
@@ -261,8 +263,6 @@ For more information on worlds and world resources, see the [Ts4 World Documenta
 | 1B192049 | Visual Effects              |
 | 1B19204A | Visual Effects Instance Map |
 | EA5118B0 | Visual Effects Merged       |
-| 47FDDFBC | Water Mask                  |
-| A4BA8645 | Water Mask List             |
 | A8F7B517 | Window Set                  |
 
 ---
