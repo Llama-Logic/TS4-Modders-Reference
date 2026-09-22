@@ -1,0 +1,80 @@
+---
+title: Instanced Pinwheel Shader
+description: A Brief Guide to the Instanced Pinwheel Shader for CC Creators
+lastUpdated: 2026-09-22
+sidebar:
+  order: 50
+  badge:
+    text: NEW
+    variant: tip
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+<sup><sub>A tutorial by Alistu a.k.a. Menaceman44</sub></sup>
+## Introduction
+
+When creating CC, the pinwheel shader is useful if you want to have all or part of your object rotate around a fixed point. Objects such as ceiling fans and the spinning flower decor from Backyard Stuff make use of this shader. It can either be active at all times or be used in combination with object states to enable it to be turned on and off. This basic guide won't cover that last bit though.
+
+Something important to point out is that you MUST have seperate mesh groups for things that you want to spin differently from each other. If your static object base and the rotating part are both in the same mesh group then you can only apply one set of rotation rules to both parts. Your rotating parts will need to be in a separate group to the base static part, and multiple rotating parts must be seperate from each other if they move differently to each other. Got that? Good.
+
+So, you can control the axis, speed, and direction of the spin from within the Model and Model LOD resource entries of your object.
+
+---
+## Steps
+
+<Steps>
+
+1. In the Warehouse tab of Sims 4 Studio, select one of your Model LOD entries (but don't bother with the shadows) then in the right window switch to the Data tab and click on Edit Items... next to Meshes.
+
+2. In the next window click on the Instanced Pinwheel entry and then scroll down on the right until you find Entries under the Material section. Click the Edit Items... button.*
+
+3. The new window that pops up shows the default texture set for the object you cloned and a set for every swatch you have added to your package.
+
+    It is always best to do this with only a single swatch in your package otherwise you have to manually alter the settings for EVERY item in this list. If you do it first then the settings are copied over automatically to newly added swatches.\
+    Your swatches will start with "VariantId: set#-materialvariant" and will have a Default entry for each. They may also have Burnt and Dirty entries depending on what type of object you cloned from.
+
+    <Aside>If you have not yet set your object to use the Instanced Pinwheel shader, then you can do so at this stage by selecting the group that you want to use the Instanced Pinwheel shader, and in the window that opens after clicking the Material section Edit Items... button, scroll down on the right to find the Shader entry and select Instanced Pinwheel from the drop-down menu. \
+    \
+    Do this for every VariantID in the list on the left.</Aside>
+
+4. Select your first entry and then click the Edit Items... button on the right.
+
+5. In here you are looking for the SpinAxis, SpinPoint, and SpinSpeed entries. \
+    If you don't already have them, you are able to add them yourself by using the Add button in the bottom left. \
+    SpinAxis needs to be a Float typecode with three Value entries. \
+    SpinPoint is the same. \
+    SpinSpeed is also a Float but with only a single Value entry.
+
+6. The three Value entries for SpinAxis relate to the X, Z, and Y axes, in that order, and you just need to set the correct one to 1 for the relevant axis your mesh spins around. Set the other Values to 0. You can also use decimals so that your mesh can rotate around a custom axis but I won't be covering that here.
+
+7. The SpinPoint entry states where the centre of the rotation is. Value [1] is the X axis, Value [2] is the Z axis, and Value [3] is the Y axis which is inverted (positives are entered as negatives and vice versa). You may be able to obtain these values from blender if you now what you are doing. (I don't, so I fight through trial and error.)
+
+8. For SpinSpeed, positive values spin one way and negative values spin the other way. The higher the number the faster the spin. You can use decimals.
+
+9. Hit Save to close the pop-up window and commit your changes. Now repeat these same steps for the other VariantId entries.
+
+10. When you've changed all of the entries you need to, just keep clicking the Save button in each pop-up window until you return to the Main Sims 4 Studio program window.
+
+11. You will need to do this for the Model resource as well. \
+
+    Click Edit Items... next to Lods, select the lowest detail entry there is that isn't a shadow, click Edit Items... next to Meshes and then carry on as before.
+
+12. Once you are done, save your package and test it out in the game.
+
+    <Aside>Remember; don't start adding more swatches until you know the spin is working as you want it to.</Aside>
+
+</Steps>
+
+You should now have successfully been able to edit, or add, the Instanced Pinwheel shader for your object.
+
+If you have any questions then please feel free to leave them in comments of the original [Patreon post](https://www.patreon.com/menaceman44/posts/brief-guide-to-169427610) and I'll try my best to answer them.
+
+Credit also goes to Sims 4 Studio users [mylittleponyoh](https://sims4studio.com/user/1072632) and [kirikasims](https://sims4studio.com/user/896949) for clarifying some details.
+
+The original thread these details came from can be found [here](https://sims4studio.com/thread/18239/solved-object-animation-gramophone).
+
+---
+
+Tutorial written by Alistair Stuart a.k.a [Menaceman44](https://modthesims.info/member.php?u=59363) a.k.a. [Alistu](https://alistu.tumblr.com/). Please do not repost without permission.

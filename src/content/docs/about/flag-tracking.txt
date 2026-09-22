@@ -26,3 +26,5 @@ Updated:
     variant: note
 
 --------------------------------
+
+New | Instanced Pinwheel Shader - Added Sep 22nd 2026

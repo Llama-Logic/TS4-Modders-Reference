@@ -80,6 +80,8 @@ sidebar:
 
 <summary>Build/Buy</summary>
 
+* [Instanced Pinwheel Shader](../tutorials/instanced-pinwheel-shader), by Alistu a.k.a. Menaceman44
+
 </details>
 
 </details>
